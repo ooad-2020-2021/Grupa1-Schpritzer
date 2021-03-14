@@ -1,7 +1,7 @@
 # Grupa1-Schpritzer
 Tema: 
 -------------------------
-###Članovi tima:
+### Članovi tima:
 1. Benjamin Pašić
 2. Muhamed Borovac
 3. Eldar Čivgin

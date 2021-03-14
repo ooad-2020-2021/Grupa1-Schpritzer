@@ -2,10 +2,10 @@
 ## Tema: Imunizacija '21
 ![covid19-vaccine-hope-with-syringe-vial-vector-illustration-design_24908-66868](https://user-images.githubusercontent.com/72746986/111054595-016b2480-846e-11eb-898e-2622bd02b3e2.jpg)
 ## Članovi tima:
-1. Benjamin Pašić
-2. Muhamed Borovac
-3. Eldar Čivgin
-4. Dženan Nuhić
+1. [Muhamed Borovac](https://github.com/mborovac1)
+2. [Eldar Čivgin](https://github.com/ecivgin1)
+3. [Dženan Nuhić](https://github.com/dnuhic)
+4. [Benjamin Pašić](https://github.com/bpasic1)
 ## Opis teme:
 Imunizacija '21 je web aplikacija koja omogucava jednostavnu i brzu prijavu osobe za vakcinisanje i testiranje, direktnu komunikaciju sa strucnom osobom, ulazak na vlastiti racun putem JMBG-a, uvid u licni COVID karton kao i preuzimanje potvrde o vakcinaciji ili testiranju. 
 Prilikom procesa prijave za vakcinisanje, korisnik ima mogucnost odabira jedne od dostupnih vakcina.

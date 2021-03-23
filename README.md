@@ -27,7 +27,7 @@ Svrha aplikacije je da olaksa i ubrza proces imunizacije i podigne svijest stano
 - Pregled dosadasnjih testiranja na koronu
 - Mogucnost zahtjeva za novo testiranje
 - Dobijanje potvrde za testiranje
-- Mogucnost slanja poruka doktoru/strucnoj osobi vezano za 
+- Mogucnost slanja poruka doktoru/strucnoj osobi vezano za testiranje/samoizolaciju
 ### Strucna osoba:
 - Potvrda vakcinacije, potvrda testiranja
 - Uvid u covid izvjestaj (historija) korisnika

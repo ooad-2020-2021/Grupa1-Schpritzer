@@ -1,6 +1,7 @@
 # Grupa 1 - Schpritzer
 ## Tema: Imunizacija '21
-![covid19-vaccine-hope-with-syringe-vial-vector-illustration-design_24908-66868](https://user-images.githubusercontent.com/72746986/111054595-016b2480-846e-11eb-898e-2622bd02b3e2.jpg)
+![Schpritzer](https://user-images.githubusercontent.com/73041886/112235549-2cf4c880-8c3f-11eb-8bd7-f4aa65fa27e7.png)
+
 ## Članovi tima:
 1. [Muhamed Borovac](https://github.com/mborovac1)
 2. [Eldar Čivgin](https://github.com/ecivgin1)

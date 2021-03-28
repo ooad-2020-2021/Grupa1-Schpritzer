@@ -1,0 +1,5 @@
+Najkompleksnije funkcionalnosti za kreiranje slučajeva upotrebe:
+1. Prijava za vakcinaciju
+2. Prijava za testiranje
+3. Pregled i/ili uređivanje korisničkog računa 
+4. Odobravanje vakcinacije

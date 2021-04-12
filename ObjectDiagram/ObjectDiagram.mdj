@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Model",
+			"name": "ObjectDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLObjectDiagram",
@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ObjectDiagram1",
+					"name": "ObjectDiagram",
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
@@ -76,9 +76,9 @@
 											"font": "Arial;13;0",
 											"left": -128,
 											"top": -2976,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -285,9 +285,9 @@
 											"font": "Arial;13;0",
 											"left": -512,
 											"top": -3344,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -476,9 +476,9 @@
 											"font": "Arial;13;0",
 											"left": -960,
 											"top": -2800,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -650,9 +650,9 @@
 											"font": "Arial;13;0",
 											"left": 208,
 											"top": -3648,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -960,9 +960,9 @@
 											"font": "Arial;13;0",
 											"left": 176,
 											"top": -3104,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1185,9 +1185,9 @@
 											"font": "Arial;13;0",
 											"left": 144,
 											"top": -3168,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1444,9 +1444,9 @@
 											"font": "Arial;13;0",
 											"left": -624,
 											"top": -2608,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1650,9 +1650,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"top": -3056,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1840,9 +1840,9 @@
 											"font": "Arial;13;0",
 											"left": -576,
 											"top": -3152,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2065,9 +2065,9 @@
 											"font": "Arial;13;0",
 											"left": -368,
 											"top": -2960,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4153,9 +4153,9 @@
 											"font": "Arial;13;0",
 											"left": 1216,
 											"top": -3872,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4361,9 +4361,9 @@
 											"font": "Arial;13;0",
 											"left": 576,
 											"top": -4240,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5492,9 +5492,9 @@
 											"font": "Arial;13;0",
 											"left": 960,
 											"top": -3488,
-											"width": 73.67724609375,
+											"width": 124.96630859375,
 											"height": 13,
-											"text": "(from Model)"
+											"text": "(from ObjectDiagram)"
 										},
 										{
 											"_type": "LabelView",

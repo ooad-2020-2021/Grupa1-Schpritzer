@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Activity1",
+			"name": "ActivityDiagram2",
 			"ownedElements": [
 				{
 					"_type": "UMLActivityDiagram",
@@ -17,7 +17,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF4dfdSKBtvmkM="
 					},
-					"name": "ActivityDiagram1",
+					"name": "ActivityDiagram2",
+					"defaultDiagram": true,
 					"ownedViews": [
 						{
 							"_type": "UMLSwimlaneView",
@@ -207,9 +208,9 @@
 											"font": "Arial;13;0",
 											"left": -192,
 											"top": -352,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram2)"
 										},
 										{
 											"_type": "LabelView",
@@ -311,9 +312,9 @@
 											"font": "Arial;13;0",
 											"left": -208,
 											"top": -352,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram2)"
 										},
 										{
 											"_type": "LabelView",
@@ -1538,9 +1539,9 @@
 										"$ref": "AAAAAAF4diONRiBJz1Y="
 									},
 									"font": "Arial;13;0",
-									"left": 480,
+									"left": 479,
 									"top": 704,
-									"width": 25.28271484375,
+									"width": 27.4345703125,
 									"height": 13,
 									"alpha": 1.9539723193351737,
 									"distance": 24.166091947189145,
@@ -1764,7 +1765,7 @@
 									"font": "Arial;13;0",
 									"left": 536,
 									"top": 653,
-									"width": 25.28271484375,
+									"width": 25.9873046875,
 									"height": 13,
 									"alpha": -1.6345397692912869,
 									"distance": 188.38258942906586,

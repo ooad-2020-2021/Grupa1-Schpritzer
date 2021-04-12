@@ -5,30 +5,11 @@
 	"ownedElements": [
 		{
 			"_type": "UMLModel",
-			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "Model",
-			"ownedElements": [
-				{
-					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFF+qBtyKM79qY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Main",
-					"defaultDiagram": true
-				}
-			]
-		},
-		{
-			"_type": "UMLModel",
 			"_id": "AAAAAAF4YLlo7ha/Zg4=",
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Model1",
+			"name": "UseCaseDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLUseCaseDiagram",
@@ -36,7 +17,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF4YLlo7ha/Zg4="
 					},
-					"name": "UseCaseDiagram1",
+					"name": "UseCaseDiagram",
+					"defaultDiagram": true,
 					"ownedViews": [
 						{
 							"_type": "UMLActorView",
@@ -93,9 +75,9 @@
 											"font": "Arial;13;0",
 											"left": 32,
 											"top": 816,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -273,9 +255,9 @@
 											"font": "Arial;13;0",
 											"left": 2432,
 											"top": 304,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -453,9 +435,9 @@
 											"font": "Arial;13;0",
 											"left": 2240,
 											"top": 80,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -645,9 +627,9 @@
 											"font": "Arial;13;0",
 											"left": 288,
 											"top": 256,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -862,9 +844,9 @@
 											"font": "Arial;13;0",
 											"left": -96,
 											"top": 480,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1061,9 +1043,9 @@
 											"font": "Arial;13;0",
 											"left": 16,
 											"top": 464,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1278,9 +1260,9 @@
 											"font": "Arial;13;0",
 											"left": 384,
 											"top": 304,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1495,9 +1477,9 @@
 											"font": "Arial;13;0",
 											"left": -736,
 											"top": 640,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1694,9 +1676,9 @@
 											"font": "Arial;13;0",
 											"left": 448,
 											"top": -144,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1894,9 +1876,9 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": 720,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2095,9 +2077,9 @@
 											"font": "Arial;13;0",
 											"left": -48,
 											"top": 272,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2293,9 +2275,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -176,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2487,9 +2469,9 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": -112,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2687,9 +2669,9 @@
 											"font": "Arial;13;0",
 											"left": -288,
 											"top": 128,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2886,9 +2868,9 @@
 											"font": "Arial;13;0",
 											"left": -160,
 											"top": 16,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -3275,9 +3257,9 @@
 											"font": "Arial;13;0",
 											"left": -96,
 											"top": 32,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4028,9 +4010,9 @@
 											"font": "Arial;13;0",
 											"left": -208,
 											"top": 32,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4245,9 +4227,9 @@
 											"font": "Arial;13;0",
 											"left": -176,
 											"top": 256,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4713,9 +4695,9 @@
 											"font": "Arial;13;0",
 											"left": -272,
 											"top": -304,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4912,9 +4894,9 @@
 											"font": "Arial;13;0",
 											"left": -272,
 											"top": -80,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5111,9 +5093,9 @@
 											"font": "Arial;13;0",
 											"left": -192,
 											"top": -16,
-											"width": 80.9072265625,
+											"width": 140.86083984375,
 											"height": 13,
-											"text": "(from Model1)"
+											"text": "(from UseCaseDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5450,8 +5432,8 @@
 								"$ref": "AAAAAAF4YLlo7xbADfU="
 							},
 							"font": "Arial;26;0",
-							"left": 568,
-							"top": 48,
+							"left": 560,
+							"top": 64,
 							"width": 345,
 							"height": 49,
 							"text": "Imunizacija '21"

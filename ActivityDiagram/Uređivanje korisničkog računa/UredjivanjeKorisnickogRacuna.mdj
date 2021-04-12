@@ -4,31 +4,12 @@
 	"name": "Untitled",
 	"ownedElements": [
 		{
-			"_type": "UMLModel",
-			"_id": "AAAAAAFF+qBWK6M3Z8Y=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "Model",
-			"ownedElements": [
-				{
-					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFF+qBtyKM79qY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Main",
-					"defaultDiagram": true
-				}
-			]
-		},
-		{
 			"_type": "UMLActivity",
 			"_id": "AAAAAAF4de2TOXQcvEc=",
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "Activity1",
+			"name": "ActivityDiagram4",
 			"ownedElements": [
 				{
 					"_type": "UMLActivityDiagram",
@@ -36,7 +17,8 @@
 					"_parent": {
 						"$ref": "AAAAAAF4de2TOXQcvEc="
 					},
-					"name": "ActivityDiagram1",
+					"name": "ActivityDiagram4",
+					"defaultDiagram": true,
 					"ownedViews": [
 						{
 							"_type": "UMLSwimlaneView",
@@ -182,9 +164,9 @@
 											"font": "Arial;13;0",
 											"left": -96,
 											"top": -16,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -378,9 +360,9 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -16,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -683,9 +665,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 32,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -973,9 +955,9 @@
 											"font": "Arial;13;0",
 											"left": -96,
 											"top": 32,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -1169,9 +1151,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 48,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -1563,9 +1545,9 @@
 											"font": "Arial;13;0",
 											"left": -64,
 											"top": 32,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -1870,9 +1852,9 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -32,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",
@@ -2161,9 +2143,9 @@
 											"font": "Arial;13;0",
 											"left": -16,
 											"top": -32,
-											"width": 86.6708984375,
+											"width": 135.79541015625,
 											"height": 13,
-											"text": "(from Activity1)"
+											"text": "(from ActivityDiagram4)"
 										},
 										{
 											"_type": "LabelView",

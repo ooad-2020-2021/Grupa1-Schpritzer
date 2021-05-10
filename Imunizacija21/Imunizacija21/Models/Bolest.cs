@@ -10,11 +10,16 @@ namespace Imunizacija21.Models
     {
         #region Properties
         [Required]
+        [Key]
+        public int ID { get; set; }
+        [Required]
         public string Doktor;
         [Required]
         [DataType(DataType.Date)]
         public DateTime DatumDijagnoze;
         #endregion
+
+        public Bolest() { }
 
         public Bolest(string doktor, DateTime datumDijagnoze)
         {

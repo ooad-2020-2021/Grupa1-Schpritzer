@@ -9,6 +9,9 @@ namespace Imunizacija21.Models
     public class CovidTest
     {
         #region Properties
+        [Required]
+        [Key]
+        public int ID { get; set; }
         [EnumDataType(typeof(TipCovidTesta))]
         [Required]
         public TipCovidTesta TipCovidTesta { get; set; }
@@ -22,5 +25,7 @@ namespace Imunizacija21.Models
         [Required]
         public string Lokacija { get; }
         #endregion
+
+        public CovidTest() { }
     }
 }

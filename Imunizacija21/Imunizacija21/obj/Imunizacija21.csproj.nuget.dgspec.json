@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muham\\source\\repos\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj": {}
+    "C:\\Users\\eldar\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muham\\source\\repos\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj": {
+    "C:\\Users\\eldar\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muham\\source\\repos\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
+        "projectUniqueName": "C:\\Users\\eldar\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
         "projectName": "Imunizacija21",
-        "projectPath": "C:\\Users\\muham\\source\\repos\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
-        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muham\\source\\repos\\Imunizacija21\\Imunizacija21\\obj\\",
+        "projectPath": "C:\\Users\\eldar\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
+        "packagesPath": "C:\\Users\\eldar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eldar\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eldar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

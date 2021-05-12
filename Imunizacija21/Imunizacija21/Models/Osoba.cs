@@ -7,6 +7,29 @@ using System.Threading.Tasks;
 
 namespace Imunizacija21.Models
 {
+    public enum LokalnaZdravstvenaUstanova
+    {
+        [Display(Name = "Vrazova")]
+        VRAZOVA,
+        [Display(Name = "Saraj polje")]
+        SARAJ_POLJE,
+        [Display(Name = "Omer Maslić")]
+        OMER_MASLIC,
+        [Display(Name = "Ilidža")]
+        ILIDZA,
+        [Display(Name = "Otoka")]
+        OTOKA,
+        [Display(Name = "Stari grad")]
+        STARI_GRAD,
+        [Display(Name = "Hadžići")]
+        HADZICI,
+        [Display(Name = "Trnovo")]
+        TRNOVO,
+        [Display(Name = "Ilijaš")]
+        ILIJAS,
+        [Display(Name = "Vogošća")]
+        VOGOSCA
+    }
     public abstract class Osoba
     {
         #region Properties

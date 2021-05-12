@@ -6,6 +6,22 @@ using System.Threading.Tasks;
 
 namespace Imunizacija21.Models
 {
+    public enum TipAlergije
+    {
+        [Display(Name = "Pencilin")]
+        PENCILIN,
+        [Display(Name = "Polen")]
+        POLEN,
+        [Display(Name = "Prašina")]
+        PRASINA,
+        [Display(Name = "Kikiriki")]
+        KIKIRIKI,
+        [Display(Name = "Gluten")]
+        GLUTEN,
+        [Display(Name = "Jagode")]
+        JAGODE
+    }
+
     public class Alergija: Bolest
     {
         #region Properties

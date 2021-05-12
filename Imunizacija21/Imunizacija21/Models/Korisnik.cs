@@ -6,6 +6,30 @@ using System.Threading.Tasks;
 
 namespace Imunizacija21.Models
 {
+    public enum Zanimanje
+    {
+        [Display(Name = "Medicinski radnik")]
+        MEDICINSKI_RADNIK,
+        [Display(Name = "Penzioner")]
+        PENZIONER,
+        [Display(Name = "Policajac")]
+        POLICAJAC,
+        [Display(Name = "Ugostitelj")]
+        UGOSTITELJ,
+        [Display(Name = "Trgovac")]
+        TRGOVAC,
+        [Display(Name = "Prosvjetni radnik")]
+        PROSVJETNI_RADNIK,
+        [Display(Name = "Privrednik")]
+        PRIVREDNIK,
+        [Display(Name = "Nezaposlen")]
+        NEZAPOSLEN,
+        [Display(Name = "Student")]
+        STUDENT,
+        [Display(Name = "Ucenik")]
+        UCENIK
+    }
+
     public class Korisnik: Osoba
     {
         #region Properties

@@ -5,32 +5,73 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Imunizacija21.Models
-{
-    public class Vakcinacija
-    {
+namespace Imunizacija21.Models {
+    public class Vakcinacija {
+
         #region Properties
+
+        public int test;
         [Required]
         [Key]
         public int ID { get; set; }
-        //[Required]
-        public Vakcina Vakcina;
-        //[Required]
+        public Vakcina Vakcina { get; set; }
         [NotMapped]
-        public Tuple<DateTime, string, bool> PrvaDoza; // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio prvu dozu
-        //[Required]
+        public Tuple<DateTime, string, bool> PrvaDoza { get; set; } // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio prvu dozu
         [NotMapped]
-        public Tuple<DateTime, string, bool> DrugaDoza; // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio drugu dozu 
-        //[Required]
-        public StrucnaOsoba StrucnaOsoba;
+        public Tuple<DateTime, string, bool> DrugaDoza { get; set; } // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio drugu dozu 
+        public StrucnaOsoba StrucnaOsoba { get; set; }
         #endregion
+
+        #region Constructors
 
         public Vakcinacija() { }
 
-        public Vakcinacija(Vakcina vakcina, StrucnaOsoba strucnaOsoba)
-        {
+        public Vakcinacija(Vakcina vakcina, StrucnaOsoba strucnaOsoba) {
             Vakcina = vakcina;
             StrucnaOsoba = strucnaOsoba;
+            PrvaDoza = null;
+            DrugaDoza = null;
         }
+
+        #endregion
+
+        #region Methods
+
+        public void ZakaziDozu(DateTime datum, string lokacija) {
+            if(PrvaDoza == null) {
+                PrvaDoza = new Tuple<DateTime, string, bool>(datum, lokacija, false);
+            } else {
+                DrugaDoza = new Tuple<DateTime, string, bool>(datum, lokacija, false);
+            }
+        }
+
+        public void SetPrimioDozu() {
+            if(PrvaDoza == null)
+                throw new ArgumentNullException("Prva doza nije definisana");
+            if(PrvaDoza.Item3 == false)
+                PrvaDoza = new Tuple<DateTime, string, bool>(PrvaDoza.Item1, PrvaDoza.Item2, true);
+            else
+                DrugaDoza = new Tuple<DateTime, string, bool>(DrugaDoza.Item1, DrugaDoza.Item2, true);
+        }
+
+        public string GetStatusDoze(int i) {
+            if(i == 1) {
+                if(PrvaDoza == null)
+                    throw new FieldAccessException("Prva doza nije definisana");
+                if(PrvaDoza.Item3)
+                    return "Primljena";
+                else return "Zakazana";
+            } else if(i == 2) {
+                if(DrugaDoza == null)
+                    throw new FieldAccessException("Druga doza nije definisana");
+                if(DrugaDoza.Item3)
+                    return "Primljena";
+                else return "Zakazana";
+            } else
+                throw new ArgumentException("Ne postoji doza " + i);
+        }
+
+        #endregion
+
     }
 }

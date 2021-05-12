@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace Imunizacija21.Models
 {
+    public enum TipCovidTesta
+    {
+        [Display(Name = "Serološki")]
+        SEROLOSKI,
+        [Display(Name = "PCR")]
+        PCR,
+        [Display(Name = "Antigenski")]
+        ANTIGENSKI
+    }
+
     public class CovidTest
     {
         #region Properties

@@ -19,6 +19,7 @@ namespace Imunizacija21.Models
         public DateTime DatumDijagnoze;
         #endregion
 
+        #region Constructors
         public Bolest() { }
 
         public Bolest(string doktor, DateTime datumDijagnoze)
@@ -26,5 +27,10 @@ namespace Imunizacija21.Models
             Doktor = doktor;
             DatumDijagnoze = datumDijagnoze;
         }
+        #endregion
+
+        #region Methods
+        public abstract string getTip();
+        #endregion
     }
 }

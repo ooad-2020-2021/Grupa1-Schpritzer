@@ -38,11 +38,20 @@ namespace Imunizacija21.Models
         public string OpisDijagnoze;
         #endregion
 
+        #region Constructors
         public Oboljenja() { }
 
         public Oboljenja(string doktor, DateTime datumDijagnoze, VrsteOboljenja vrsteOboljenja): base(doktor, datumDijagnoze)
         {
             Tip = vrsteOboljenja;
         }
+        #endregion
+
+        #region Methods
+        public override string getTip()
+        {
+            return "oboljenje";
+        }
+        #endregion
     }
 }

@@ -23,11 +23,13 @@ namespace Imunizacija21.Models
         public StrucnaOsoba StrucnaOsoba { get; set; }
         #endregion
 
+        #region Constructors
         public Zahtjev() { }
 
         public Zahtjev(Korisnik korisnik)
         {
             Korisnik = korisnik;
         }
+        #endregion
     }
 }

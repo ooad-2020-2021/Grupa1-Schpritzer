@@ -30,11 +30,20 @@ namespace Imunizacija21.Models
         public TipAlergije Tip { get; }
         #endregion
 
+        #region Constructors
         public Alergija() { }
 
         public Alergija(string doktor, DateTime datumDijagnoze, TipAlergije tip) : base(doktor, datumDijagnoze)
         {
             Tip = tip;
         }
+        #endregion
+
+        #region Methods
+        public override string getTip()
+        {
+            return "alergija";
+        }
+        #endregion
     }
 }

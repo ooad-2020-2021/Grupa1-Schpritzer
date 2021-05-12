@@ -28,7 +28,7 @@ namespace Imunizacija21.Models
         [DataType(DataType.Date)]
         [Required]
         public DateTime DatumTestiranja { get; set; }
-        [Required]
+        //[Required]
         public bool Rezultat { get; set; }
         [Required]
         public string OpisTesta { get; }
@@ -36,6 +36,22 @@ namespace Imunizacija21.Models
         public string Lokacija { get; }
         #endregion
 
+        #region Constructors
         public CovidTest() { }
+
+        public CovidTest(TipCovidTesta tipCovidTesta, DateTime datumTestiranja, string opisTesta, string lokacija) {
+            TipCovidTesta = tipCovidTesta;
+            DatumTestiranja = datumTestiranja;
+            OpisTesta = opisTesta;
+            Lokacija = lokacija;
+        }
+        #endregion
+
+        #region Methods
+        public Tuple<TipCovidTesta, DateTime, string> GetInfo()
+        {
+            return Tuple.Create(TipCovidTesta, DatumTestiranja, Lokacija);
+        }
+        #endregion
     }
 }

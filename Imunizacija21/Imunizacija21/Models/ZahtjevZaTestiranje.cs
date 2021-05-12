@@ -17,6 +17,7 @@ namespace Imunizacija21.Models
         public string Opis { get; }
         #endregion
 
+        #region Constructors
         public ZahtjevZaTestiranje() { }
 
         public ZahtjevZaTestiranje(Korisnik korisnik, List<string> razlozi, string opis): base(korisnik)
@@ -24,5 +25,6 @@ namespace Imunizacija21.Models
             Razlozi = razlozi;
             Opis = opis;
         }
+        #endregion
     }
 }

@@ -13,8 +13,10 @@ namespace Imunizacija21.Models
         [NotMapped]
         //[Required]
         public List<Zahtjev> Zahtjevi;
+
         #endregion
 
+        #region Constructors
         public StrucnaOsoba() { }
 
         public StrucnaOsoba(string ime, string prezime, string spol, string jmbg, string email, List<String> brojeviTelefona,
@@ -22,5 +24,31 @@ namespace Imunizacija21.Models
         {
 
         }
+        #endregion
+
+        #region Methods
+        public CovidTest odobriIZakaziTest(ZahtjevZaTestiranje zahtjevZaTestiranje)
+        {
+            CovidTest covidTest = new CovidTest();
+            zahtjevZaTestiranje.OdobrenZahtjev = true;
+            return covidTest;
+        }
+
+        public Vakcinacija odobriVakcinaciju()
+        {
+            Vakcinacija vakcinacija = new Vakcinacija();
+            return vakcinacija;
+        }
+
+        public void dodajZahtjev(Zahtjev zahtjev)
+        {
+          
+        }
+
+        public void obrisiZahtjev(Zahtjev zahtjev)
+        {
+
+        }
+        #endregion
     }
 }

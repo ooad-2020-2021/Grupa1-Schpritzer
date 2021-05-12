@@ -45,7 +45,7 @@ namespace Imunizacija21.Models
         //[Required]
         public string JMBG { get; }
         [Required]
-        public string Email { get; }
+        public string Email { get; set; }
         [NotMapped]
         //[Required]
         public List<string> BrojeviTelefona;
@@ -54,6 +54,7 @@ namespace Imunizacija21.Models
         public LokalnaZdravstvenaUstanova LokalnaZdravstvenaUstanova;
         #endregion
 
+        #region Constructors
         public Osoba() { }
 
         public Osoba(string ime, string prezime, string spol, string jmbg, string email, List<String> brojeviTelefona, 
@@ -67,5 +68,6 @@ namespace Imunizacija21.Models
             BrojeviTelefona = brojeviTelefona;
             LokalnaZdravstvenaUstanova = lokalnaZdravstvenaUstanova;
         }
+        #endregion
     }
 }

@@ -38,11 +38,13 @@ namespace Imunizacija21.Models
         [Required]
         public CovidKarton CovidKarton { get; }
         [Required]
-        public string Adresa;
+        public string Adresa { get; set; }
         [Required]
-        public Zanimanje Zanimanje;
+        public Zanimanje Zanimanje { get; set; }
         #endregion
 
+
+        #region Constructors
         public Korisnik() { }
 
         public Korisnik(string ime, string prezime, string spol, string jmbg, string email, List<String> brojeviTelefona, 
@@ -54,5 +56,6 @@ namespace Imunizacija21.Models
             Adresa = adresa;
             Zanimanje = zanimanje;
         }
+        #endregion
     }
 }

@@ -26,6 +26,24 @@ namespace Imunizacija21.Models
         public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; }
         #endregion
 
-        public CovidKarton() { }
+        #region Constructors
+        public CovidKarton() {
+            Vakcinacija = new Vakcinacija();
+            Testovi = new List<CovidTest>();
+            Bolesti = new List<Bolest>();
+            ZahtjeviZaTestiranje = new List<ZahtjevZaTestiranje>();
+        }
+        #endregion
+
+        #region Methods
+        public void DodajTest(CovidTest covidTest)
+        {
+            Testovi.Add(covidTest);
+        }
+        public void DodajBolesti(Bolest bolest)
+        {
+            Bolesti.Add(bolest);
+        }
+        #endregion 
     }
 }

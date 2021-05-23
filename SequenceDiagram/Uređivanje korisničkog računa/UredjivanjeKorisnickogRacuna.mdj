@@ -1,7 +1,7 @@
 {
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
-	"name": "Uredjivanje korisnickog racuna - dijagram sekvence",
+	"name": "Untitled",
 	"ownedElements": [
 		{
 			"_type": "UMLModel",
@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "UredjivanjeKorisnickogRacuna"
+			"name": "Model"
 		},
 		{
 			"_type": "UMLCollaboration",
@@ -33,7 +33,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5lfaBbF8jvhM="
 							},
-							"name": "SequenceDiagram1",
+							"name": "Uređivanje korisničkog računa",
 							"defaultDiagram": true,
 							"ownedViews": [
 								{
@@ -55,9 +55,9 @@
 											"font": "Arial;13;0",
 											"left": 128.72998046875,
 											"top": 13,
-											"width": 115.9052734375,
+											"width": 175.1416015625,
 											"height": 13,
-											"text": "SequenceDiagram1"
+											"text": "Uređivanje korisničkog računa"
 										},
 										{
 											"_type": "LabelView",
@@ -475,7 +475,7 @@
 													"top": 47,
 													"width": 134.99169921875,
 													"height": 13,
-													"text": "baza: BazaPodataka"
+													"text": "data: DataContext"
 												},
 												{
 													"_type": "LabelView",
@@ -680,12 +680,12 @@
 												"$ref": "AAAAAAF5lmXc2mCfdDY="
 											},
 											"font": "Arial;13;0",
-											"left": 211,
-											"top": 131,
+											"left": 216,
+											"top": 127,
 											"width": 297,
 											"height": 26,
-											"alpha": 1.515297267703043,
-											"distance": 18.027756377319946,
+											"alpha": 1.3045438545670969,
+											"distance": 22.80350850198276,
 											"hostEdge": {
 												"$ref": "AAAAAAF5lmXc2mCgVec="
 											},
@@ -2123,7 +2123,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF5lfaBbF8jvhM="
 							},
-							"name": "baza",
+							"name": "data",
 							"represent": {
 								"$ref": "AAAAAAF5lgXqiV+++JM="
 							},
@@ -2220,7 +2220,7 @@
 						"$ref": "AAAAAAF5lfaBa18iEBk="
 					},
 					"name": "Role4",
-					"type": "BazaPodataka"
+					"type": "DataContext"
 				},
 				{
 					"_type": "UMLAttribute",

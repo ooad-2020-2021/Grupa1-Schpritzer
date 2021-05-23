@@ -2493,7 +2493,7 @@
 											"top": 681,
 											"width": 343,
 											"height": 13,
-											"text": "+odobriIZakaziTest(): CovidTest",
+											"text": "+odobriIZakaziTest(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2510,7 +2510,7 @@
 											"top": 696,
 											"width": 343,
 											"height": 13,
-											"text": "+odobriIVakcinaciju(): Vakcinacija",
+											"text": "+odobriIVakcinaciju(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -14155,9 +14155,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4vEznmRF/1gI="
 									},
-									"type": {
-										"$ref": "AAAAAAF4vDxr4A8Y5uU="
-									},
+									"type": "void",
 									"direction": "return"
 								}
 							]
@@ -14176,9 +14174,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF4vEzseRGFp3w="
 									},
-									"type": {
-										"$ref": "AAAAAAF4vDjfIg6r8RI="
-									},
+									"type": "void",
 									"direction": "return"
 								}
 							]

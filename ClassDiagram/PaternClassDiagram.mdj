@@ -9,7 +9,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "ClassDiagram - MVC",
+			"name": "PaternClassDiagram",
 			"ownedElements": [
 				{
 					"_type": "UMLClassDiagram",
@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF4vDPzxg3yqwE="
 					},
-					"name": "ClassDiagramMVC",
+					"name": "PaternClassDiagram",
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
@@ -77,7 +77,7 @@
 											"top": 1808,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -357,7 +357,7 @@
 											"top": 1024,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -726,7 +726,7 @@
 											"top": -656,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -989,7 +989,7 @@
 											"top": -464,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1235,7 +1235,7 @@
 											"top": -624,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1481,7 +1481,7 @@
 											"top": 1040,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1676,7 +1676,7 @@
 											"top": 96,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -1888,7 +1888,7 @@
 											"top": 560,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2189,7 +2189,7 @@
 											"top": 1552,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2511,7 +2511,7 @@
 											"top": -464,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -2763,7 +2763,7 @@
 											"top": -624,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -3134,7 +3134,7 @@
 											"top": -672,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4183,7 +4183,7 @@
 											"top": -672,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4414,7 +4414,7 @@
 											"top": -752,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -4628,7 +4628,7 @@
 											"top": -432,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5083,7 +5083,7 @@
 											"top": 368,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5421,7 +5421,7 @@
 											"top": -352,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -5837,12 +5837,12 @@
 										"$ref": "AAAAAAF4vRKxX7T1e+8="
 									},
 									"font": "Arial;13;0",
-									"left": 955,
-									"top": 1018,
+									"left": 944,
+									"top": 1023,
 									"width": 7.22998046875,
 									"height": 13,
-									"alpha": -0.5235987755982988,
-									"distance": 25,
+									"alpha": -1.0128298551615076,
+									"distance": 17.69180601295413,
 									"hostEdge": {
 										"$ref": "AAAAAAF4vRKxX7T4pj4="
 									},
@@ -6725,11 +6725,11 @@
 									},
 									"font": "Arial;13;0",
 									"left": 451,
-									"top": 247,
+									"top": 248,
 									"width": 19.5126953125,
 									"height": 13,
-									"alpha": 0.5670774387963804,
-									"distance": 21.18962010041709,
+									"alpha": 0.5618161203061054,
+									"distance": 21.95449840010015,
 									"hostEdge": {
 										"$ref": "AAAAAAF4vbf1RPAnzwc="
 									},
@@ -7270,12 +7270,12 @@
 										"$ref": "AAAAAAF4vg22J1X+bCc="
 									},
 									"font": "Arial;13;0",
-									"left": 829,
-									"top": 431,
+									"left": 840,
+									"top": 429,
 									"width": 19.5126953125,
 									"height": 13,
-									"alpha": -0.5235987755982988,
-									"distance": 25,
+									"alpha": -0.38505084412339435,
+									"distance": 35.35533905932738,
 									"hostEdge": {
 										"$ref": "AAAAAAF4vg22J1YBx8Y="
 									},
@@ -7341,7 +7341,7 @@
 									"hostEdge": {
 										"$ref": "AAAAAAF4vg22J1YBx8Y="
 									},
-									"text": "0..*"
+									"text": "1"
 								},
 								{
 									"_type": "UMLQualifierCompartmentView",
@@ -8302,7 +8302,7 @@
 											"top": -192,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -9286,7 +9286,7 @@
 											"top": 80,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -10162,7 +10162,7 @@
 											"top": -128,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -11162,7 +11162,7 @@
 											"top": 1120,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -11338,7 +11338,7 @@
 											"top": -48,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -11552,7 +11552,7 @@
 											"top": 192,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -11837,7 +11837,7 @@
 											"top": 816,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -12013,7 +12013,7 @@
 											"top": 48,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -12366,7 +12366,7 @@
 											"top": 992,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -12542,7 +12542,7 @@
 											"top": 1344,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -12718,7 +12718,7 @@
 											"top": 1296,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -12894,7 +12894,7 @@
 											"top": 1216,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -13070,7 +13070,7 @@
 											"top": 128,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -13282,7 +13282,7 @@
 											"top": 1136,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -13458,7 +13458,7 @@
 											"top": 192,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -13707,7 +13707,7 @@
 											"top": 1072,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -13883,7 +13883,7 @@
 											"top": 96,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -14151,7 +14151,7 @@
 											"top": 976,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -14327,7 +14327,7 @@
 											"top": 208,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -14595,7 +14595,7 @@
 											"top": 1040,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -14771,7 +14771,7 @@
 											"top": -192,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -15059,7 +15059,7 @@
 											"top": 64,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -15305,7 +15305,7 @@
 											"top": 752,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -15481,7 +15481,7 @@
 											"top": 368,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -15744,7 +15744,7 @@
 											"top": 928,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -15920,7 +15920,7 @@
 											"top": 864,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -18135,7 +18135,7 @@
 											"top": -32,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -19294,7 +19294,7 @@
 											"top": -128,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -19492,7 +19492,7 @@
 											"top": -128,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -20620,7 +20620,7 @@
 											"top": -128,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -20794,7 +20794,7 @@
 											"top": -48,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -21155,7 +21155,7 @@
 											"top": -48,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -21329,7 +21329,7 @@
 											"left": -48,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -21692,7 +21692,7 @@
 											"top": -320,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -22159,7 +22159,7 @@
 											"top": 112,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -22376,7 +22376,7 @@
 											"top": 304,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -23116,7 +23116,7 @@
 											"top": 16,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -23312,7 +23312,7 @@
 											"left": -16,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -23506,7 +23506,7 @@
 											"top": 288,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -23701,7 +23701,7 @@
 											"top": 64,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -23896,7 +23896,7 @@
 											"top": -32,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -25446,7 +25446,7 @@
 											"top": 32,
 											"width": 160.341796875,
 											"height": 13,
-											"text": "(from ClassDiagram - MVC)"
+											"text": "(from PaternClassDiagram)"
 										},
 										{
 											"_type": "LabelView",
@@ -28556,7 +28556,7 @@
 									"$ref": "AAAAAAF4vD3pmQ9bEiQ="
 								},
 								"aggregation": "shared",
-								"multiplicity": "0..*"
+								"multiplicity": "1"
 							}
 						}
 					],

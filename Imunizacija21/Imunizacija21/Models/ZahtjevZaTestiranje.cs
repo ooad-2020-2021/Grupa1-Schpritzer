@@ -15,15 +15,19 @@ namespace Imunizacija21.Models
         public List<string> Razlozi { get; }
         //[Required]
         public string Opis { get; }
+        [EnumDataType(typeof(TipCovidTesta))]
+        [Required]
+        public TipCovidTesta TipCovidTesta { get; private set; }
         #endregion
 
         #region Constructors
         public ZahtjevZaTestiranje() { }
 
-        public ZahtjevZaTestiranje(Korisnik korisnik, List<string> razlozi, string opis): base(korisnik)
+        public ZahtjevZaTestiranje(Korisnik korisnik, List<string> razlozi, string opis, TipCovidTesta tip): base(korisnik)
         {
             Razlozi = razlozi;
             Opis = opis;
+            TipCovidTesta = tip;
         }
         #endregion
     }

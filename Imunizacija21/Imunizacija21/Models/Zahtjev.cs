@@ -18,13 +18,13 @@ namespace Imunizacija21.Models
         [Required]
         public DateTime DatumZahtjeva { get; }
         //[Required]
-        public bool OdobrenZahtjev { get; set; }
+        public bool? OdobrenZahtjev = null { get; set; }
         [Required]
         public StrucnaOsoba StrucnaOsoba { get; set; }
         #endregion
 
         #region Constructors
-        public Zahtjev() { }
+        public Zahtjev() {}
 
         public Zahtjev(Korisnik korisnik)
         {

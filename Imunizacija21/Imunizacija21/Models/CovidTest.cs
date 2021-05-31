@@ -39,10 +39,10 @@ namespace Imunizacija21.Models
         #region Constructors
         public CovidTest() { }
 
-        public CovidTest(TipCovidTesta tipCovidTesta, DateTime datumTestiranja, string opisTesta, string lokacija) {
+        public CovidTest(TipCovidTesta tipCovidTesta, DateTime datumTestiranja, string lokacija) {
             TipCovidTesta = tipCovidTesta;
             DatumTestiranja = datumTestiranja;
-            OpisTesta = opisTesta;
+            OpisTesta = ""; //TODO
             Lokacija = lokacija;
         }
         #endregion

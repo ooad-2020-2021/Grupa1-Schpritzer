@@ -30,7 +30,7 @@ namespace Imunizacija21.Models
         [Display(Name = "Vogošća")]
         VOGOSCA
     }
-    public abstract class Osoba
+    public abstract class Osoba : IPrototip
     {
         #region Properties
         [Required]
@@ -40,6 +40,9 @@ namespace Imunizacija21.Models
         public string Ime { get; }
         [Required]
         public string Prezime { get; }
+        [DataType(DataType.Date)]
+        [Required]
+        public DateTime DatumRodjenja { get; private set; }
         [Required]
         public string Spol { get; }
         //[Required]
@@ -52,6 +55,10 @@ namespace Imunizacija21.Models
         [EnumDataType(typeof(LokalnaZdravstvenaUstanova))]
         [Required]
         public LokalnaZdravstvenaUstanova LokalnaZdravstvenaUstanova;
+        [NotMapped]
+        public Dictionary<Osoba, string> PrimljenePoruke { get; set; }
+        [NotMapped]
+        public Dictionary<Osoba, string> PoslanePoruke { get; set; }
         #endregion
 
         #region Constructors
@@ -67,6 +74,21 @@ namespace Imunizacija21.Models
             Email = email;
             BrojeviTelefona = brojeviTelefona;
             LokalnaZdravstvenaUstanova = lokalnaZdravstvenaUstanova;
+        }
+        #endregion
+
+        #region Methods
+        public IPrototip Clone()
+        {
+            return this;
+        }
+        public void DodajPoslanuPoruku(Osoba posiljalac, string sadrzajPoruke)
+        {
+            PoslanePoruke.Add(posiljalac, sadrzajPoruke);
+        }
+        public void DodajPrimljenuPoruku(Osoba primalac, string sadrzajPoruke)
+        {
+            PrimljenePoruke.Add(primalac, sadrzajPoruke);
         }
         #endregion
     }

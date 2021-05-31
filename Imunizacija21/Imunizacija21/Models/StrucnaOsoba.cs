@@ -11,6 +11,7 @@ namespace Imunizacija21.Models {
         [NotMapped]
         //[Required]
         public List<Zahtjev> Zahtjevi;
+        public IZahtjeviSort Strategija;
 
         #endregion
 
@@ -61,6 +62,15 @@ namespace Imunizacija21.Models {
 
         public void obrisiZahtjev(Zahtjev zahtjev) {
             Zahtjevi.Remove(zahtjev);
+        }
+
+        public void PromijeniStrategiju(IZahtjeviSort strategija)
+        {
+            Strategija = strategija;
+        }
+        public void Sortiraj()
+        {
+            Strategija.SortirajZahtjeve(Zahtjevi);
         }
         #endregion
     }

@@ -32,6 +32,7 @@ namespace Imunizacija21.Models
         public static int BrojStanovnika;
         #endregion
 
+        #region Constructors
         static StatistikaKSSingleton() { }
         private StatistikaKSSingleton() { }
 
@@ -42,6 +43,18 @@ namespace Imunizacija21.Models
                 return instance;
             }
         }
+        #endregion
 
+        #region Methods
+        public void DodajZarazenog()
+        {
+            BrojZarazenih += 1;
+        }
+
+        public void DodajVakcinisanog()
+        {
+            BrojVakcinisanih += 1;
+        }
+        #endregion
     }
 }

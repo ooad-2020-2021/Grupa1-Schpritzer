@@ -22,7 +22,7 @@ namespace Imunizacija21.Models
         [Required]
         public List<Bolest> Bolesti { get; }
         [Required]
-        public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; private set; }
+        public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }
         [NotMapped]
         [Required]
         public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; }

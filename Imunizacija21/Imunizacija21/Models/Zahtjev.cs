@@ -18,7 +18,7 @@ namespace Imunizacija21.Models
         [Required]
         public DateTime DatumZahtjeva { get; }
         //[Required]
-        public bool? OdobrenZahtjev = null { get; set; }
+        public bool? OdobrenZahtjev { get; set; } = null;
         [Required]
         public StrucnaOsoba StrucnaOsoba { get; set; }
         #endregion

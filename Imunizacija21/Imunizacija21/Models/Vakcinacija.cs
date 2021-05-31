@@ -9,16 +9,13 @@ namespace Imunizacija21.Models {
     public class Vakcinacija {
 
         #region Properties
-
-        public int test;
         [Required]
         [Key]
         public int ID { get; set; }
         public Vakcina Vakcina { get; set; }
+        public Doza PrvaDoza { get; set; }
+        public Doza DrugaDoza { get; set; }
         [NotMapped]
-        public Tuple<DateTime, string, bool> PrvaDoza { get; set; } // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio prvu dozu
-        [NotMapped]
-        public Tuple<DateTime, string, bool> DrugaDoza { get; set; } // DateTime - kad je primio, string - lokacija gdje je primio, bool - da li je primio drugu dozu 
         public StrucnaOsoba StrucnaOsoba { get; set; }
         #endregion
 
@@ -39,32 +36,32 @@ namespace Imunizacija21.Models {
 
         public void ZakaziDozu(DateTime datum, string lokacija) {
             if(PrvaDoza == null) {
-                PrvaDoza = new Tuple<DateTime, string, bool>(datum, lokacija, false);
+                PrvaDoza = new Doza(datum, lokacija, false);
             } else {
-                DrugaDoza = new Tuple<DateTime, string, bool>(datum, lokacija, false);
+                DrugaDoza = new Doza(datum, lokacija, false);
             }
         }
 
         public void SetPrimioDozu() {
             if(PrvaDoza == null)
-                throw new ArgumentNullException("Prva doza nije definisana");
-            if(PrvaDoza.Item3 == false)
-                PrvaDoza = new Tuple<DateTime, string, bool>(PrvaDoza.Item1, PrvaDoza.Item2, true);
+                throw new FieldAccessException("Prva doza nije definisana");
+            if(PrvaDoza.Primljena == false)
+                PrvaDoza.Primljena = true;
             else
-                DrugaDoza = new Tuple<DateTime, string, bool>(DrugaDoza.Item1, DrugaDoza.Item2, true);
+                DrugaDoza.Primljena = true;
         }
 
         public string GetStatusDoze(int i) {
             if(i == 1) {
                 if(PrvaDoza == null)
                     throw new FieldAccessException("Prva doza nije definisana");
-                if(PrvaDoza.Item3)
+                if(PrvaDoza.Primljena)
                     return "Primljena";
                 else return "Zakazana";
             } else if(i == 2) {
                 if(DrugaDoza == null)
                     throw new FieldAccessException("Druga doza nije definisana");
-                if(DrugaDoza.Item3)
+                if(DrugaDoza.Primljena)
                     return "Primljena";
                 else return "Zakazana";
             } else

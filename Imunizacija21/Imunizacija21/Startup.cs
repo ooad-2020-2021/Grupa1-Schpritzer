@@ -1,4 +1,3 @@
-using Imunizacija21.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Imunizacija21.Data;
 
 namespace Imunizacija21
 {
@@ -30,7 +30,10 @@ namespace Imunizacija21
             services.AddDbContext<DataContext>(options =>
                 options.UseMySQL(
                     Configuration.GetConnectionString("DataContext")));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<DataContext>();
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

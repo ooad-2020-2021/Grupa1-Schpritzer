@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imunizacija21.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210531201739_PrvaMigracija")]
+    [Migration("20210608220458_PrvaMigracija")]
     partial class PrvaMigracija
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.13")
+                .HasAnnotation("ProductVersion", "3.1.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Imunizacija21.Models.Bolest", b =>
@@ -26,6 +26,13 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("BolestTip")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("DatumDijagnoze")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Doktor")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -65,6 +72,14 @@ namespace Imunizacija21.Migrations
 
                     b.Property<DateTime>("DatumTestiranja")
                         .HasColumnType("datetime");
+
+                    b.Property<string>("Lokacija")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("OpisTesta")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<bool>("Rezultat")
                         .HasColumnType("tinyint(1)");
@@ -110,7 +125,22 @@ namespace Imunizacija21.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Ime")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("JMBG")
+                        .HasColumnType("text");
+
                     b.Property<string>("OsobaTip")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Prezime")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Spol")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -181,6 +211,9 @@ namespace Imunizacija21.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DatumZahtjeva")
+                        .HasColumnType("datetime");
 
                     b.Property<bool?>("OdobrenZahtjev")
                         .HasColumnType("tinyint(1)");
@@ -361,10 +394,12 @@ namespace Imunizacija21.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("text");
@@ -401,10 +436,12 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("varchar(767)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(128)")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value")
                         .HasColumnType("text");
@@ -418,12 +455,27 @@ namespace Imunizacija21.Migrations
                 {
                     b.HasBaseType("Imunizacija21.Models.Bolest");
 
+                    b.Property<int>("Tip")
+                        .HasColumnType("int");
+
                     b.HasDiscriminator().HasValue("Alergija");
                 });
 
             modelBuilder.Entity("Imunizacija21.Models.Oboljenja", b =>
                 {
                     b.HasBaseType("Imunizacija21.Models.Bolest");
+
+                    b.Property<string>("OpisDijagnoze")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Tip")
+                        .HasColumnName("Oboljenja_Tip")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ustanova")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasDiscriminator().HasValue("Oboljenja");
                 });
@@ -436,8 +488,17 @@ namespace Imunizacija21.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("CovidKartonID")
+                        .HasColumnType("int");
+
                     b.Property<int>("Zanimanje")
                         .HasColumnType("int");
+
+                    b.Property<string>("ZdravstvenaKartica")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasIndex("CovidKartonID");
 
                     b.HasDiscriminator().HasValue("Korisnik");
                 });
@@ -452,6 +513,9 @@ namespace Imunizacija21.Migrations
             modelBuilder.Entity("Imunizacija21.Models.ZahtjevZaTestiranje", b =>
                 {
                     b.HasBaseType("Imunizacija21.Models.Zahtjev");
+
+                    b.Property<string>("Opis")
+                        .HasColumnType("text");
 
                     b.Property<int>("TipCovidTesta")
                         .HasColumnType("int");
@@ -563,6 +627,15 @@ namespace Imunizacija21.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Imunizacija21.Models.Korisnik", b =>
+                {
+                    b.HasOne("Imunizacija21.Models.CovidKarton", "CovidKarton")
+                        .WithMany()
+                        .HasForeignKey("CovidKartonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

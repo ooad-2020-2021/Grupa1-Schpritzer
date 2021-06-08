@@ -12,12 +12,12 @@ namespace Imunizacija21.Models
         #region Properties
         [Required]
         [NotMapped]
-        public List<string> Razlozi { get; }
+        public List<string> Razlozi { get; set; }
         //[Required]
-        public string Opis { get; }
+        public string Opis { get; set; }
         [EnumDataType(typeof(TipCovidTesta))]
         [Required]
-        public TipCovidTesta TipCovidTesta { get; private set; }
+        public TipCovidTesta TipCovidTesta { get; set; }
         #endregion
 
         #region Constructors

@@ -17,15 +17,15 @@ namespace Imunizacija21.Models
         public Vakcinacija Vakcinacija { get; set; }
         [NotMapped]
         [Required]
-        public List<CovidTest> Testovi { get; }
+        public List<CovidTest> Testovi { get; set; }
         [NotMapped]
         [Required]
-        public List<Bolest> Bolesti { get; }
+        public List<Bolest> Bolesti { get; set; }
         [Required]
         public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }
         [NotMapped]
         [Required]
-        public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; }
+        public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; set; }
         #endregion
 
         #region Constructors

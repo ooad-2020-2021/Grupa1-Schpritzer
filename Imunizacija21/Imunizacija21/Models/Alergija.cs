@@ -27,7 +27,7 @@ namespace Imunizacija21.Models
         #region Properties
         [EnumDataType(typeof(TipAlergije))]
         [Required]
-        public TipAlergije Tip { get; }
+        public TipAlergije Tip { get; set; }
         #endregion
 
         #region Constructors

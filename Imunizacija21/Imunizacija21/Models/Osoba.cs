@@ -37,16 +37,16 @@ namespace Imunizacija21.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        public string Ime { get; }
+        public string Ime { get; set; }
         [Required]
-        public string Prezime { get; }
+        public string Prezime { get; set; }
         [DataType(DataType.Date)]
         [Required]
-        public DateTime DatumRodjenja { get; private set; }
+        public DateTime DatumRodjenja { get; set; }
         [Required]
-        public string Spol { get; }
+        public string Spol { get; set; }
         //[Required]
-        public string JMBG { get; }
+        public string JMBG { get; set; }
         [Required]
         public string Email { get; set; }
         [NotMapped]

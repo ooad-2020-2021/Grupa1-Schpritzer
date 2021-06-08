@@ -13,10 +13,10 @@ namespace Imunizacija21.Models
         [Key]
         public int ID { get; set; }
         [Required]
-        public string Doktor;
+        public string Doktor { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        public DateTime DatumDijagnoze;
+        public DateTime DatumDijagnoze { get; set; }
         #endregion
 
         #region Constructors

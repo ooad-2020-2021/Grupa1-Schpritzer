@@ -14,55 +14,20 @@ namespace Imunizacija21.Controllers
     {
         private readonly DataContext _context;
 
+        static CovidKarton covidKarton = new CovidKarton();
+        static Korisnik user = new Korisnik("Bogić", "Bogičević", "M", "1904952170031", "bogic.bogicevic@gmail.com", new List<string>() { "061123456" }, LokalnaZdravstvenaUstanova.VRAZOVA, "1A2B3C4D", covidKarton, "Zmaja od Bosne 23", Zanimanje.PENZIONER);
+
         public ProfilChangeController(DataContext context)
         {
             _context = context;
+            /*_context.Add(user);
+            _context.SaveChangesAsync();*/
         }
 
         // GET: ProfilChange
         public async Task<IActionResult> Index()
         {
             return View(await _context.Osoba.ToListAsync());
-        }
-
-        // GET: ProfilChange/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var osoba = await _context.Osoba
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (osoba == null)
-            {
-                return NotFound();
-            }
-
-            return View(osoba);
-        }
-
-        // GET: ProfilChange/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ProfilChange/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,DatumRodjenja,Email")] Osoba osoba)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(osoba);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(osoba);
         }
 
         // GET: ProfilChange/Edit/5
@@ -114,35 +79,6 @@ namespace Imunizacija21.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(osoba);
-        }
-
-        // GET: ProfilChange/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var osoba = await _context.Osoba
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (osoba == null)
-            {
-                return NotFound();
-            }
-
-            return View(osoba);
-        }
-
-        // POST: ProfilChange/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var osoba = await _context.Osoba.FindAsync(id);
-            _context.Osoba.Remove(osoba);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool OsobaExists(int id)

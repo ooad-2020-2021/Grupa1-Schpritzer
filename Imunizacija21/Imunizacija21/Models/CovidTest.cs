@@ -31,9 +31,9 @@ namespace Imunizacija21.Models
         //[Required]
         public bool Rezultat { get; set; }
         [Required]
-        public string OpisTesta { get; }
+        public string OpisTesta { get; set; }
         [Required]
-        public string Lokacija { get; }
+        public string Lokacija { get; set; }
         #endregion
 
         #region Constructors

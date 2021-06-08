@@ -11,6 +11,7 @@ namespace Imunizacija21.Models {
         [NotMapped]
         //[Required]
         public List<Zahtjev> Zahtjevi;
+        [NotMapped]
         public IZahtjeviSort Strategija;
 
         #endregion

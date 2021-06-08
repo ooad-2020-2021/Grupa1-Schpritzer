@@ -31,11 +31,11 @@ namespace Imunizacija21.Models
         #region Properties
         [Required]
         [EnumDataType(typeof(VrsteOboljenja))]
-        public VrsteOboljenja Tip { get; }
+        public VrsteOboljenja Tip { get; set; }
         [Required]
-        public string Ustanova;
+        public string Ustanova { get; set; }
         [Required]
-        public string OpisDijagnoze;
+        public string OpisDijagnoze { get; set; }
         #endregion
 
         #region Constructors

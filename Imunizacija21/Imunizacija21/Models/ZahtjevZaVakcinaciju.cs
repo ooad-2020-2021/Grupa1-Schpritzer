@@ -12,7 +12,7 @@ namespace Imunizacija21.Models
         #region Properties
         [Required]
         [NotMapped]
-        public List<Vakcina> OdabraneVakcine { get; }
+        public List<Vakcina> OdabraneVakcine { get; set; }
         #endregion
 
         #region Constructors

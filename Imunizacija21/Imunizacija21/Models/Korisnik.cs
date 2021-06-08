@@ -34,9 +34,9 @@ namespace Imunizacija21.Models
     {
         #region Properties
         [Required]
-        public string ZdravstvenaKartica { get; }
+        public string ZdravstvenaKartica { get; set; }
         [Required]
-        public CovidKarton CovidKarton { get; }
+        public CovidKarton CovidKarton { get; set; }
         [Required]
         public string Adresa { get; set; }
         [Required]

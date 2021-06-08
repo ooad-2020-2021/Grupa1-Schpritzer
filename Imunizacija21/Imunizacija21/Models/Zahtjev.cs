@@ -16,7 +16,7 @@ namespace Imunizacija21.Models
         public Korisnik Korisnik;
         [DataType(DataType.Date)]
         [Required]
-        public DateTime DatumZahtjeva { get; }
+        public DateTime DatumZahtjeva { get; set; }
         //[Required]
         public bool? OdobrenZahtjev { get; set; } = null;
         [Required]

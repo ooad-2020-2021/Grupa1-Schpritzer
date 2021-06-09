@@ -21,8 +21,9 @@ namespace Imunizacija21.Models
         [NotMapped]
         [Required]
         public List<Bolest> Bolesti { get; set; }
+        [NotMapped]
         [Required]
-        public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }
+        public ZahtjevZaVakcinaciju? ZahtjevZaVakcinaciju { get; set; }
         [NotMapped]
         [Required]
         public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; set; }
@@ -38,6 +39,10 @@ namespace Imunizacija21.Models
         #endregion
 
         #region Methods
+        public void DodajZahtjevZaTestiranje(ZahtjevZaTestiranje zahtjev)
+        {
+            ZahtjeviZaTestiranje.Add(zahtjev);
+        }
         public void DodajTest(CovidTest covidTest)
         {
             Testovi.Add(covidTest);

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imunizacija21.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210608220458_PrvaMigracija")]
+    [Migration("20210608235459_PrvaMigracija")]
     partial class PrvaMigracija
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,14 +52,9 @@ namespace Imunizacija21.Migrations
                     b.Property<int>("VakcinacijaID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ZahtjevZaVakcinacijuID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
 
                     b.HasIndex("VakcinacijaID");
-
-                    b.HasIndex("ZahtjevZaVakcinacijuID");
 
                     b.ToTable("CovidKarton");
                 });
@@ -178,6 +173,27 @@ namespace Imunizacija21.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Vakcina");
+                });
+
+            modelBuilder.Entity("Imunizacija21.Models.VakcinaZahtjevZaVakcinaciju", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("VakcinaID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ZahtjevZaVakcinacijuID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("VakcinaID");
+
+                    b.HasIndex("ZahtjevZaVakcinacijuID");
+
+                    b.ToTable("VakcinaZahtjevZaVakcinaciju");
                 });
 
             modelBuilder.Entity("Imunizacija21.Models.Vakcinacija", b =>
@@ -535,6 +551,15 @@ namespace Imunizacija21.Migrations
                     b.HasOne("Imunizacija21.Models.Vakcinacija", "Vakcinacija")
                         .WithMany()
                         .HasForeignKey("VakcinacijaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Imunizacija21.Models.VakcinaZahtjevZaVakcinaciju", b =>
+                {
+                    b.HasOne("Imunizacija21.Models.Vakcina", "Vakcina")
+                        .WithMany()
+                        .HasForeignKey("VakcinaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

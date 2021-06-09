@@ -17,10 +17,11 @@ namespace Imunizacija21.Controllers
         static CovidKarton covidKarton = new CovidKarton();
         static Korisnik user = new Korisnik("Bogić", "Bogičević", "M", "1904952170031", "bogic.bogicevic@gmail.com", new List<string>() { "061123456" }, LokalnaZdravstvenaUstanova.VRAZOVA, "1A2B3C4D", covidKarton, "Zmaja od Bosne 23", Zanimanje.PENZIONER);
 
+        static StrucnaOsoba strucna = new StrucnaOsoba("Eldar", "Čivgin", "M", "2606000170053", "ecivgin1@etf.unsa.ba", new List<string>() { "0601234567" }, LokalnaZdravstvenaUstanova.SARAJ_POLJE);
         public ProfilChangeController(DataContext context)
         {
             _context = context;
-            /*_context.Add(user);
+            /*_context.Add(strucna);
             _context.SaveChangesAsync();*/
         }
 
@@ -58,6 +59,16 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
+            /*Osoba k;
+            if (osoba is Korisnik)
+            {
+                k = (Korisnik) osoba;
+            }
+            else
+            {
+                k = (StrucnaOsoba) osoba;
+            }*/
+            
             if (ModelState.IsValid)
             {
                 try

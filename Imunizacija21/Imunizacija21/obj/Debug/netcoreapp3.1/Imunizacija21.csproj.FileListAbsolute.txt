@@ -584,9 +584,6 @@ C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\De
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Details.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Edit.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Index.cshtml.g.cs
-C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Create.cshtml.g.cs
-C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Delete.cshtml.g.cs
-C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Details.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Edit.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Index.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Create.cshtml.g.cs

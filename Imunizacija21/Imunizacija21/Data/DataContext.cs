@@ -29,6 +29,7 @@ namespace Imunizacija21.Data
         public DbSet<ZahtjevFacade> ZahtjevFacade { get; set; }
         public DbSet<ZahtjevZaTestiranje> ZahtjevZaTestiranje { get; set; }
         public DbSet<ZahtjevZaVakcinaciju> ZahtjevZaVakcinaciju { get; set; }
+        public DbSet<VakcinaZahtjevZaVakcinaciju> VakcinaZahtjevZaVakcinaciju { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -69,6 +70,7 @@ namespace Imunizacija21.Data
             modelBuilder.Entity<ZahtjevFacade>().ToTable("ZahtjevFacade");
             //modelBuilder.Entity<ZahtjevZaTestiranje>().ToTable("ZahtjevZaTestiranje");
             //modelBuilder.Entity<ZahtjevZaVakcinaciju>().ToTable("ZahtjevZaVakcinaciju");
+            modelBuilder.Entity<VakcinaZahtjevZaVakcinaciju>().ToTable("VakcinaZahtjevZaVakcinaciju");
         }
     }
 }

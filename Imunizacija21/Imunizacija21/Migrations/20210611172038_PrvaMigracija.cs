@@ -99,6 +99,31 @@ namespace Imunizacija21.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Osoba",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Ime = table.Column<string>(nullable: false),
+                    Prezime = table.Column<string>(nullable: false),
+                    DatumRodjenja = table.Column<DateTime>(nullable: false),
+                    Spol = table.Column<string>(nullable: false),
+                    JMBG = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: false),
+                    BrojTelefona = table.Column<string>(nullable: true),
+                    LokalnaZdravstvenaUstanova = table.Column<int>(nullable: false),
+                    OsobaTip = table.Column<string>(nullable: false),
+                    ZdravstvenaKartica = table.Column<string>(nullable: true),
+                    CovidKartonID = table.Column<int>(nullable: true),
+                    Adresa = table.Column<string>(nullable: true),
+                    Zanimanje = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Osoba", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Vakcina",
                 columns: table => new
                 {
@@ -223,6 +248,30 @@ namespace Imunizacija21.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Zahtjev",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    DatumZahtjeva = table.Column<DateTime>(nullable: false),
+                    OdobrenZahtjev = table.Column<bool>(nullable: true),
+                    StrucnaOsobaID = table.Column<int>(nullable: false),
+                    ZahtjevTip = table.Column<string>(nullable: false),
+                    Opis = table.Column<string>(nullable: true),
+                    TipCovidTesta = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Zahtjev", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Zahtjev_Osoba_StrucnaOsobaID",
+                        column: x => x.StrucnaOsobaID,
+                        principalTable: "Osoba",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Vakcinacija",
                 columns: table => new
                 {
@@ -253,78 +302,6 @@ namespace Imunizacija21.Migrations
                         principalTable: "Vakcina",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CovidKarton",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    VakcinacijaID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CovidKarton", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_CovidKarton_Vakcinacija_VakcinacijaID",
-                        column: x => x.VakcinacijaID,
-                        principalTable: "Vakcinacija",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Osoba",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Ime = table.Column<string>(nullable: false),
-                    Prezime = table.Column<string>(nullable: false),
-                    DatumRodjenja = table.Column<DateTime>(nullable: false),
-                    Spol = table.Column<string>(nullable: false),
-                    JMBG = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: false),
-                    OsobaTip = table.Column<string>(nullable: false),
-                    ZdravstvenaKartica = table.Column<string>(nullable: true),
-                    CovidKartonID = table.Column<int>(nullable: true),
-                    Adresa = table.Column<string>(nullable: true),
-                    Zanimanje = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Osoba", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Osoba_CovidKarton_CovidKartonID",
-                        column: x => x.CovidKartonID,
-                        principalTable: "CovidKarton",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Zahtjev",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    DatumZahtjeva = table.Column<DateTime>(nullable: false),
-                    OdobrenZahtjev = table.Column<bool>(nullable: true),
-                    StrucnaOsobaID = table.Column<int>(nullable: false),
-                    ZahtjevTip = table.Column<string>(nullable: false),
-                    Opis = table.Column<string>(nullable: true),
-                    TipCovidTesta = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Zahtjev", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Zahtjev_Osoba_StrucnaOsobaID",
-                        column: x => x.StrucnaOsobaID,
-                        principalTable: "Osoba",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -379,6 +356,25 @@ namespace Imunizacija21.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "CovidKarton",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    VakcinacijaID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CovidKarton", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_CovidKarton_Vakcinacija_VakcinacijaID",
+                        column: x => x.VakcinacijaID,
+                        principalTable: "Vakcinacija",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -420,11 +416,6 @@ namespace Imunizacija21.Migrations
                 name: "IX_CovidKarton_VakcinacijaID",
                 table: "CovidKarton",
                 column: "VakcinacijaID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Osoba_CovidKartonID",
-                table: "Osoba",
-                column: "CovidKartonID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vakcinacija_DrugaDozaID",
@@ -488,6 +479,9 @@ namespace Imunizacija21.Migrations
                 name: "Bolest");
 
             migrationBuilder.DropTable(
+                name: "CovidKarton");
+
+            migrationBuilder.DropTable(
                 name: "CovidTest");
 
             migrationBuilder.DropTable(
@@ -503,22 +497,19 @@ namespace Imunizacija21.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Zahtjev");
-
-            migrationBuilder.DropTable(
-                name: "Osoba");
-
-            migrationBuilder.DropTable(
-                name: "CovidKarton");
-
-            migrationBuilder.DropTable(
                 name: "Vakcinacija");
+
+            migrationBuilder.DropTable(
+                name: "Zahtjev");
 
             migrationBuilder.DropTable(
                 name: "Doza");
 
             migrationBuilder.DropTable(
                 name: "Vakcina");
+
+            migrationBuilder.DropTable(
+                name: "Osoba");
         }
     }
 }

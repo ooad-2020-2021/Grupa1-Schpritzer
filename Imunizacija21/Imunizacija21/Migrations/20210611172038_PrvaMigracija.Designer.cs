@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imunizacija21.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210608235459_PrvaMigracija")]
+    [Migration("20210611172038_PrvaMigracija")]
     partial class PrvaMigracija
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -113,6 +113,9 @@ namespace Imunizacija21.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("BrojTelefona")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("DatumRodjenja")
                         .HasColumnType("datetime");
 
@@ -126,6 +129,9 @@ namespace Imunizacija21.Migrations
 
                     b.Property<string>("JMBG")
                         .HasColumnType("text");
+
+                    b.Property<int>("LokalnaZdravstvenaUstanova")
+                        .HasColumnType("int");
 
                     b.Property<string>("OsobaTip")
                         .IsRequired()
@@ -514,8 +520,6 @@ namespace Imunizacija21.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasIndex("CovidKartonID");
-
                     b.HasDiscriminator().HasValue("Korisnik");
                 });
 
@@ -652,15 +656,6 @@ namespace Imunizacija21.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Imunizacija21.Models.Korisnik", b =>
-                {
-                    b.HasOne("Imunizacija21.Models.CovidKarton", "CovidKarton")
-                        .WithMany()
-                        .HasForeignKey("CovidKartonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

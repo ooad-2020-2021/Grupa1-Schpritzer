@@ -30,13 +30,13 @@ namespace Imunizacija21.Models
         UCENIK
     }
 
-    public class Korisnik: Osoba
+    public class Korisnik : Osoba
     {
         #region Properties
         [Required]
         public string ZdravstvenaKartica { get; set; }
         [Required]
-        public CovidKarton CovidKarton { get; set; }
+        public int CovidKartonID { get; set; }
         [Required]
         public string Adresa { get; set; }
         [Required]
@@ -47,12 +47,12 @@ namespace Imunizacija21.Models
         #region Constructors
         public Korisnik() { }
 
-        public Korisnik(string ime, string prezime, string spol, string jmbg, string email, List<String> brojeviTelefona, 
-            LokalnaZdravstvenaUstanova lokalnaZdravstvenaUstanova, string zdravstvenaKartica, CovidKarton covidKarton, 
-            string adresa, Zanimanje zanimanje): base(ime, prezime, spol, jmbg, email, brojeviTelefona, lokalnaZdravstvenaUstanova)
+        public Korisnik(string ime, string prezime, string spol, string jmbg, string email, string brojTelefona, 
+            LokalnaZdravstvenaUstanova lokalnaZdravstvenaUstanova, string zdravstvenaKartica, int covidKartonID, 
+            string adresa, Zanimanje zanimanje): base(ime, prezime, spol, jmbg, email, brojTelefona, lokalnaZdravstvenaUstanova)
         {
             ZdravstvenaKartica = zdravstvenaKartica;
-            CovidKarton = covidKarton;
+            CovidKartonID = covidKartonID;
             Adresa = adresa;
             Zanimanje = zanimanje;
         }

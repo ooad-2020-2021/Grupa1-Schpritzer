@@ -49,12 +49,11 @@ namespace Imunizacija21.Models
         public string JMBG { get; set; }
         [Required]
         public string Email { get; set; }
-        [NotMapped]
         //[Required]
-        public List<string> BrojeviTelefona;
+        public string BrojTelefona { get; set; }
         [EnumDataType(typeof(LokalnaZdravstvenaUstanova))]
         [Required]
-        public LokalnaZdravstvenaUstanova LokalnaZdravstvenaUstanova;
+        public LokalnaZdravstvenaUstanova LokalnaZdravstvenaUstanova { get; set; }
         [NotMapped]
         public Dictionary<Osoba, string> PrimljenePoruke { get; set; }
         [NotMapped]
@@ -64,7 +63,7 @@ namespace Imunizacija21.Models
         #region Constructors
         public Osoba() { }
 
-        public Osoba(string ime, string prezime, string spol, string jmbg, string email, List<String> brojeviTelefona, 
+        public Osoba(string ime, string prezime, string spol, string jmbg, string email, string brojTelefona, 
             LokalnaZdravstvenaUstanova lokalnaZdravstvenaUstanova)
         {
             Ime = ime;
@@ -72,7 +71,7 @@ namespace Imunizacija21.Models
             Spol = spol;
             JMBG = jmbg;
             Email = email;
-            BrojeviTelefona = brojeviTelefona;
+            BrojTelefona = brojTelefona;
             LokalnaZdravstvenaUstanova = lokalnaZdravstvenaUstanova;
         }
         #endregion

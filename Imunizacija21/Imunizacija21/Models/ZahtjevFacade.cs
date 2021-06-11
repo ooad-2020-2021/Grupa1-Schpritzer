@@ -13,7 +13,9 @@ namespace Imunizacija21.Models
         [Required]
         public int ID { get; set; }
         public ZahtjevZaTestiranje ZahtjevZaTestiranje { get; set; }
+        /*public int ZahtjevZaTestiranjeID { get; set; }*/
         public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }
+        /*public int ZahtjevZaVakcinacijuID { get; set; }*/
         #endregion
 
         #region Constructors
@@ -45,7 +47,7 @@ namespace Imunizacija21.Models
         {
             ZahtjevZaVakcinaciju.OdobrenZahtjev = odobren;
         }
-        public StrucnaOsoba GetStrucnaOsobaTestiranja()
+        /*public StrucnaOsoba GetStrucnaOsobaTestiranja()
         {
             return ZahtjevZaTestiranje.StrucnaOsoba;
         }
@@ -60,7 +62,7 @@ namespace Imunizacija21.Models
         public void SetStrucnaOsobaVakcinacije(StrucnaOsoba strucnaOsoba)
         {
             ZahtjevZaVakcinaciju.StrucnaOsoba = strucnaOsoba;
-        }
+        }*/
         public List<string> GetRazloziTestiranja()
         {
             return ZahtjevZaTestiranje.Razlozi;

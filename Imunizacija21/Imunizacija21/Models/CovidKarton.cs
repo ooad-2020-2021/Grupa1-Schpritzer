@@ -13,25 +13,27 @@ namespace Imunizacija21.Models
         [Required]
         [Key]
         public int ID { get; set; }
+        /*[Required]
+        public Vakcinacija Vakcinacija { get; set; }*/
         [Required]
-        public Vakcinacija Vakcinacija { get; set; }
+        public int VakcinacijaID { get; set; }
         [NotMapped]
         [Required]
         public List<CovidTest> Testovi { get; set; }
         [NotMapped]
         [Required]
         public List<Bolest> Bolesti { get; set; }
-        [NotMapped]
+        /*[NotMapped]
         [Required]
-        public ZahtjevZaVakcinaciju? ZahtjevZaVakcinaciju { get; set; }
+        public ZahtjevZaVakcinaciju? ZahtjevZaVakcinaciju { get; set; }*/
         [NotMapped]
         [Required]
         public List<ZahtjevZaTestiranje> ZahtjeviZaTestiranje { get; set; }
         #endregion
 
         #region Constructors
-        public CovidKarton() {
-            Vakcinacija = new Vakcinacija();
+        public CovidKarton(/*int vakcinacijaID*/) {
+            /*VakcinacijaID = vakcinacijaID;*/
             Testovi = new List<CovidTest>();
             Bolesti = new List<Bolest>();
             ZahtjeviZaTestiranje = new List<ZahtjevZaTestiranje>();

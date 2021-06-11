@@ -12,27 +12,33 @@ namespace Imunizacija21.Models {
         [Required]
         [Key]
         public int ID { get; set; }
-        public Vakcina Vakcina { get; set; }
-        public Doza PrvaDoza { get; set; }
-        public Doza DrugaDoza { get; set; }
-        [NotMapped]
-        public StrucnaOsoba StrucnaOsoba { get; set; }
+        /*public Vakcina Vakcina { get; set; }*/
+        [Required]
+        public int VakcinaID { get; set; }
+        /*public Doza PrvaDoza { get; set; }*/
+        public int PrvaDozaID { get; set; }
+        /*public Doza DrugaDoza { get; set; }*/
+        public int DrugaDozaID { get; set; }
+        /*[NotMapped]
+        public StrucnaOsoba StrucnaOsoba { get; set; }*/
+        public int StrucnaOsobaID { get; set; }
+
         #endregion
 
         #region Constructors
 
         public Vakcinacija() { }
 
-        public Vakcinacija(Vakcina vakcina, StrucnaOsoba strucnaOsoba) {
-            Vakcina = vakcina;
-            StrucnaOsoba = strucnaOsoba;
-            PrvaDoza = null;
-            DrugaDoza = null;
+        public Vakcinacija(int vakcinaID, int strucnaOsobaID) {
+            VakcinaID = vakcinaID;
+            StrucnaOsobaID = strucnaOsobaID;
+            /*PrvaDoza = null;
+            DrugaDoza = null;*/
         }
 
         #endregion
 
-        #region Methods
+        /*#region Methods
 
         public void ZakaziDozu(DateTime datum, string lokacija) {
             if(PrvaDoza == null) {
@@ -68,7 +74,7 @@ namespace Imunizacija21.Models {
                 throw new ArgumentException("Ne postoji doza " + i);
         }
 
-        #endregion
+        #endregion*/
 
     }
 }

@@ -23,7 +23,7 @@ namespace Imunizacija21.Models
         #region Constructors
         public ZahtjevZaTestiranje() { }
 
-        public ZahtjevZaTestiranje(Korisnik korisnik, List<string> razlozi, string opis, TipCovidTesta tip): base(korisnik)
+        public ZahtjevZaTestiranje(int korisnikID, List<string> razlozi, string opis, TipCovidTesta tip): base(korisnikID)
         {
             Razlozi = razlozi;
             Opis = opis;

@@ -21,7 +21,7 @@ namespace Imunizacija21.Models
 
         #region Constructors
         public Bolest() { }
-
+        
         public Bolest(string doktor, DateTime datumDijagnoze)
         {
             Doktor = doktor;

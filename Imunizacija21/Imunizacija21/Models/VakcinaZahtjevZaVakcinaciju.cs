@@ -12,10 +12,14 @@ namespace Imunizacija21.Models
         [Required]
         [Key]
         public int ID { get; set; }
+        /*[Required]
+        public Vakcina Vakcina { get; set; }*/
         [Required]
-        public Vakcina Vakcina { get; set; }
+        public int VakcinaID { get; set; }
+        /*[Required]
+        public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }*/
         [Required]
-        public ZahtjevZaVakcinaciju ZahtjevZaVakcinaciju { get; set; }
+        public int ZahtjevZaVakcinacijuID { get; set; }
         #endregion
 
         #region Constructors

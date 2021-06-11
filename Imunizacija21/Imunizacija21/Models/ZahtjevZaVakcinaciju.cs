@@ -18,7 +18,7 @@ namespace Imunizacija21.Models
         #region Constructors
         public ZahtjevZaVakcinaciju() { }
 
-        public ZahtjevZaVakcinaciju(Korisnik korisnik, List<Vakcina> odabraneVakcine): base(korisnik)
+        public ZahtjevZaVakcinaciju(int korisnikID, List<Vakcina> odabraneVakcine): base(korisnikID)
         {
             OdabraneVakcine = odabraneVakcine;
         }

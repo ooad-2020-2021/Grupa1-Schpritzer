@@ -18,7 +18,7 @@ namespace Imunizacija21.Models
         }
     }
 
-    class PoPrezimenuSort : IZahtjeviSort
+    /*class PoPrezimenuSort : IZahtjeviSort
     {
         public void SortirajZahtjeve(List<Zahtjev> zahtjevi)
         {
@@ -32,7 +32,7 @@ namespace Imunizacija21.Models
         {
             zahtjevi.OrderByDescending(z => z.Korisnik.DatumRodjenja).ToList();
         }
-    }
+    }*/
 
     class PoPrioritetuSort : IZahtjeviSort
     {

@@ -98,7 +98,7 @@ namespace Imunizacija21.Models
             int dan = ((int)jmbg[0] - 48) * 10 + (int)jmbg[1] - 48;
             int mjesec = ((int)jmbg[2] - 48) * 10 + (int)jmbg[3] - 48;
             int godina = ((int)jmbg[4] - 48) * 100 + ((int)jmbg[5] - 48) * 10 + (int)jmbg[6] - 48;
-            if ((int)jmbg[4] > 6)
+            if ((int)jmbg[4]-48 > 6)
                 godina = godina + 1000;
             else
                 godina = godina + 2000;

@@ -60,6 +60,7 @@ namespace Imunizacija21.Models
         public Dictionary<Osoba, string> PrimljenePoruke { get; set; }
         [NotMapped]
         public Dictionary<Osoba, string> PoslanePoruke { get; set; }
+        public bool Ulogovan { get; set; }
         #endregion
 
         #region Constructors
@@ -75,6 +76,7 @@ namespace Imunizacija21.Models
             Email = email;
             BrojTelefona = brojTelefona;
             LokalnaZdravstvenaUstanova = lokalnaZdravstvenaUstanova;
+            Ulogovan = false;
 
             int dan = ((int)jmbg[0] - 48) * 10 + (int)jmbg[1] - 48;
             int mjesec = ((int)jmbg[2] - 48) * 10 + (int)jmbg[3] - 48;

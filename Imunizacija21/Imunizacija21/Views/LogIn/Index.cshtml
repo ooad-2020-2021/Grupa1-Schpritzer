@@ -1,0 +1,17 @@
+﻿@*@model IEnumerable<Imunizacija21.Models.LogIn>*@
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Prijavite se</h1>
+
+<form asp-action="LogIn">
+    <label>JMBG:</label>
+    <input type="text" name="JMBG" />
+    <br />
+    <label>Broj zdravstvene kartice:</label>
+    <input type="text" name="brZK" />
+    <br />
+    <input type="submit" name="submit" />
+</form>

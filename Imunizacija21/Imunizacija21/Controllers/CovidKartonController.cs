@@ -10,27 +10,22 @@ using Imunizacija21.Models;
 
 namespace Imunizacija21.Controllers
 {
-    public class ProfileChangeController : Controller
+    public class CovidKartonController : Controller
     {
         private readonly DataContext _context;
 
-        static CovidKarton karton = new CovidKarton();
-        static Korisnik user = new Korisnik("Bogic", "Bogicevic", "M", "1503953172311", "bogic.bogicevic@gmail.com", "061123456", LokalnaZdravstvenaUstanova.VRAZOVA, "1A2B3C4D", karton.ID, "Zmaja od Bosne 11", Zanimanje.PENZIONER);
-        
-        public ProfileChangeController(DataContext context)
+        public CovidKartonController(DataContext context)
         {
             _context = context;
-            /*_context.Add(user);
-            _context.SaveChangesAsync();*/
         }
 
-        // GET: ProfileChange
+        // GET: CovidKarton
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Korisnik.ToListAsync());
+            return View(await _context.CovidKarton.ToListAsync());
         }
 
-        // GET: ProfileChange/Details/5
+        // GET: CovidKarton/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,39 +33,39 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik
+            var covidKarton = await _context.CovidKarton
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (korisnik == null)
+            if (covidKarton == null)
             {
                 return NotFound();
             }
 
-            return View(korisnik);
+            return View(covidKarton);
         }
 
-        // GET: ProfileChange/Create
+        // GET: CovidKarton/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: ProfileChange/Create
+        // POST: CovidKarton/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
+        public async Task<IActionResult> Create([Bind("ID,VakcinacijaID")] CovidKarton covidKarton)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(korisnik);
+                _context.Add(covidKarton);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnik);
+            return View(covidKarton);
         }
 
-        // GET: ProfileChange/Edit/5
+        // GET: CovidKarton/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,22 +73,22 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik.FindAsync(id);
-            if (korisnik == null)
+            var covidKarton = await _context.CovidKarton.FindAsync(id);
+            if (covidKarton == null)
             {
                 return NotFound();
             }
-            return View(korisnik);
+            return View(covidKarton);
         }
 
-        // POST: ProfileChange/Edit/5
+        // POST: CovidKarton/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,VakcinacijaID")] CovidKarton covidKarton)
         {
-            if (id != korisnik.ID)
+            if (id != covidKarton.ID)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace Imunizacija21.Controllers
             {
                 try
                 {
-                    _context.Update(korisnik);
+                    _context.Update(covidKarton);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!KorisnikExists(korisnik.ID))
+                    if (!CovidKartonExists(covidKarton.ID))
                     {
                         return NotFound();
                     }
@@ -118,10 +113,10 @@ namespace Imunizacija21.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnik);
+            return View(covidKarton);
         }
 
-        // GET: ProfileChange/Delete/5
+        // GET: CovidKarton/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,30 +124,30 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik
+            var covidKarton = await _context.CovidKarton
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (korisnik == null)
+            if (covidKarton == null)
             {
                 return NotFound();
             }
 
-            return View(korisnik);
+            return View(covidKarton);
         }
 
-        // POST: ProfileChange/Delete/5
+        // POST: CovidKarton/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var korisnik = await _context.Korisnik.FindAsync(id);
-            _context.Korisnik.Remove(korisnik);
+            var covidKarton = await _context.CovidKarton.FindAsync(id);
+            _context.CovidKarton.Remove(covidKarton);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool KorisnikExists(int id)
+        private bool CovidKartonExists(int id)
         {
-            return _context.Korisnik.Any(e => e.ID == id);
+            return _context.CovidKarton.Any(e => e.ID == id);
         }
     }
 }

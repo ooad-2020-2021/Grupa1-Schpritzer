@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,6 +39,7 @@ namespace Imunizacija21.Models
         [Required]
         public int CovidKartonID { get; set; }
         [Required]
+        [DisplayName("Adresa stanovanja")]
         public string Adresa { get; set; }
         [Required]
         public Zanimanje Zanimanje { get; set; }

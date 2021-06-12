@@ -4,9 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+@*<h1>Uredite vaš profil</h1>*@
 
-<h4>Korisnik</h4>
+<h1>@Html.DisplayFor(model => model.Ime) @Html.DisplayFor(model => model.Prezime)</h1>
+<h4>Datum rođenja: @Html.DisplayFor(model => model.DatumRodjenja)</h4>
+<h4>JMBG: @Html.DisplayFor(model => model.JMBG)</h4>
+<p>Broj zdravstvene kartice: @Html.DisplayFor(model => model.ZdravstvenaKartica)</p>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,11 +21,11 @@
                 <input asp-for="ZdravstvenaKartica" class="form-control" />
                 <span asp-validation-for="ZdravstvenaKartica" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CovidKartonID" class="control-label"></label>
                 <input asp-for="CovidKartonID" class="form-control" />
                 <span asp-validation-for="CovidKartonID" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Adresa" class="control-label"></label>
                 <input asp-for="Adresa" class="form-control" />
@@ -74,14 +78,14 @@
                 <span asp-validation-for="LokalnaZdravstvenaUstanova" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Sačuvaj promjene" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Poništi</a>
 </div>
 
 @section Scripts {

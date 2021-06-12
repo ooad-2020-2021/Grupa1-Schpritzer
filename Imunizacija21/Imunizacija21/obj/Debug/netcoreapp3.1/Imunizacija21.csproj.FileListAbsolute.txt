@@ -742,8 +742,8 @@ C:\Users\anuhic\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\D
 C:\Users\anuhic\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.Views.pdb
 C:\Users\anuhic\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.csproj.CopyComplete
 C:\Users\anuhic\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.genruntimeconfig.cache
+C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Edit.cshtml.g.cs
+C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Index.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Create.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Delete.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Details.cshtml.g.cs
-C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Edit.cshtml.g.cs
-C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Index.cshtml.g.cs

@@ -462,31 +462,6 @@ C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\De
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Create.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Edit.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Index.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Create.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Edit.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Index.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Create.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Edit.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsobaZahtjev\Index.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaKorisnika\Create.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaKorisnika\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaKorisnika\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaKorisnika\Edit.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaKorisnika\Index.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Create.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Edit.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfilChange\Index.cshtml.g.cs
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Create.cshtml.g.cs
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Delete.cshtml.g.cs
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Details.cshtml.g.cs
@@ -941,3 +916,17 @@ C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.dll
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.pdb
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Imunizacija21.genruntimeconfig.cache
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\FAQ\Index.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\LogIn\Index.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Edit.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Index.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Create.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Delete.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Details.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Edit.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Index.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Create.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Delete.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Details.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Edit.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Index.cshtml.g.cs

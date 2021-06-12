@@ -21,24 +21,39 @@
                     @*<partial name="_LoginPartial" />*@
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="Index">Prijavite se</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="Index">Prijavite se</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="LogOut">Odjavi se</a>
                         </li>
+
                     </ul>
                     <ul class="navbar-nav flex-grow-1">
+                        <!--
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Vakcinacija</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trenutno stanje</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home">Mapa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="FAQ">FAQ</a>
+    </li>
+        -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Vakcinacija</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CovidKarton" asp-action="Index">Moj Covid karton</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trenutno stanje</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ProfileChange" asp-action="Index">Izmjena profila</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home">Mapa</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaTestiranje" asp-action="Index">Prijava za testiranje</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="FAQ">FAQ</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaVakcinaciju" asp-action="Index">Prijava za vakcinaciju</a>
                         </li>
                     </ul>
                 </div>

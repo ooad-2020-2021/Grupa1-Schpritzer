@@ -1,0 +1,73 @@
+﻿body {
+    font-family: Arial;
+    padding: 0px;
+    background-color: #f2f2f2;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+}
+
+label {
+    margin-top: 10px;
+    display: inline-block
+}
+
+.flex {
+    display: flex;
+}
+
+.kolona-1 {
+    flex: 1;
+    /*background-color: blue;*/
+}
+
+.kolona-2 { /*
+  background-color: red;*/
+    flex: 1;
+}
+
+.element-info {
+}
+
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+    .active, .collapsible:hover {
+        background-color: #ccc;
+    }
+
+.content {
+    /*prvi gore dole drugi desno lijevo*/
+    background-color: gray;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.popunjeno {
+    border-radius: 3px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+div {
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}

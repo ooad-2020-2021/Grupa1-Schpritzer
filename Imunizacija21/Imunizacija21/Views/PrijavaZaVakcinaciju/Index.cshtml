@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Imunizacija21.Models.ZahtjevZaVakcinaciju>
+
+@{
+    ViewData["Title"] = "Prijava za vakcinaciju";
+}
+
+<link href="~/css/PrijavaZaVakcinacijuStyle.css" rel="stylesheet" type="text/css" />
+
+<div>
+    <h2 style="padding-top: 10px">Identifikacija</h2>
+    <hr>
+    <div class="flex">
+        <div class="kolona-1">
+            <div class="element-info">
+                <label>Ime:</label>
+                <label class="popunjeno informacije">Bogić</label>
+            </div>
+            <div class="element-info">
+                <label>Broj zdravstvene kartice:</label>
+                <label class="popunjeno">1A2B3C4D</label>
+            </div>
+            <div class="element-info">
+                <label>Datum rođenja:</label>
+                <label class="popunjeno">04.07.1975.</label>
+            </div>
+            <div class="element-info">
+                <label>Adresa:</label>
+                <label class="popunjeno">Zmaja od Bosne 2</label>
+            </div>
+            <div class="element-info">
+                <label>Zanimanje:</label>
+                <label class="popunjeno">Penzioner</label>
+            </div>
+
+        </div>
+        <div class="kolona-2">
+            <div class="element-info">
+                <label>Prezime:</label>
+                <label class="popunjeno">Bogićević</label>
+            </div>
+            <div class="element-info">
+                <label>JMBG:</label>
+                <label class="popunjeno">1234567890123</label>
+            </div>
+            <div class="element-info">
+                <label>Spol:</label>
+                <input type="checkbox" name="name" checked="checked" onClick="return false;">
+                <label>M</label>
+                <input type="checkbox" name="name" onClick="return false;">
+                <label>Z</label>
+            </div>
+            <div class="element-info">
+                <label>Općina:</label>
+                <label class="popunjeno">Centar</label>
+            </div>
+            <div class="element-info">
+                <label>Kontakt telefon:</label>
+                <label class="popunjeno">+387 62 192 259</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label>Lokalna zdravstvena ustanova:</label>
+        <label class="popunjeno">Dom zdravlja Vrazova, Vrazova 11</label>
+    </div>
+    <br>
+
+    <h2>Odabir vakcine</h2>
+    <hr>
+    <input type="radio" id="sve" name="vakcina" value="sve">
+    <label for="sve">Iskazujem interesovanje da primim bilo koju vrstu vakcine koju je odobrila Agencija za lijekove Bosne i Hercegovine</label><br>
+    <input type="radio" id="odredjena" name="vakcina" value="odredjena">
+    <label for="odredjena">Iskazujem interesovanje da primim određenu vrstu vakcina koju je odobrila Agencija za lijekove Bosne i Hercegovine</label><br>
+
+    <br />
+    <h2>Saglasnost</h2>
+    <hr>
+    <label"><input type="checkbox">   Saglasan sam da ovlašteno lice Doma Zdravlja Kantona Sarajevo obradi navedene podatke u vezi sa vakcinisanjem protiv Covid-19 i predloži termin i mjesto vakcinacije.</label> <br> <br />
+
+    <div class="form-group">
+        <input type="submit" value="Podnesi zahtjev" class="btn btn-primary" style="background-color: mediumseagreen" />
+        <input type="submit" value="Otkaži" class="btn btn-primary" style="background-color: red" />
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Imunizacija21.Models.ZahtjevZaTestiranje>
+
+@{
+    ViewData["Title"] = "Prijava za testiranje";
+}
+
+<link href="~/css/PrijavaZaTestiranjeStyle.css" rel="stylesheet" type="text/css" />
+
+<div>
+    <h2 style="padding-top: 10px">Identifikacija</h2>
+    <hr>
+    <div class="flex">
+        <div class="kolona-1">
+            <div class="element-info">
+                <label>Ime:</label>
+                <label class="popunjeno informacije">Bogić</label>
+            </div>
+            <div class="element-info">
+                <label>Broj zdravstvene kartice:</label>
+                <label class="popunjeno">1A2B3C4D</label>
+            </div>
+            <div class="element-info">
+                <label>Datum rođenja:</label>
+                <label class="popunjeno">04.07.1975.</label>
+            </div>
+            <div class="element-info">
+                <label>Adresa:</label>
+                <label class="popunjeno">Zmaja od Bosne 2</label>
+            </div>
+            <div class="element-info">
+                <label>Zanimanje:</label>
+                <label class="popunjeno">Penzioner</label>
+            </div>
+
+        </div>
+        <div class="kolona-2">
+            <div class="element-info">
+                <label>Prezime:</label>
+                <label class="popunjeno">Bogićević</label>
+            </div>
+            <div class="element-info">
+                <label>JMBG:</label>
+                <label class="popunjeno">1234567890123</label>
+            </div>
+            <div class="element-info">
+                <label>Spol:</label>
+                <input type="checkbox" name="name" checked="checked" onClick="return false;">
+                <label>M</label>
+                <input type="checkbox" name="name" onClick="return false;">
+                <label>Z</label>
+            </div>
+            <div class="element-info">
+                <label>Općina:</label>
+                <label class="popunjeno">Centar</label>
+            </div>
+            <div class="element-info">
+                <label>Kontakt telefon:</label>
+                <label class="popunjeno">+387 62 192 259</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <label>Lokalna zdravstvena ustanova:</label>
+        <label class="popunjeno">Dom zdravlja Vrazova, Vrazova 11</label>
+    </div>
+    <br>
+
+    <h2>Navedite razloge za testiranje</h2>
+    <hr>
+    <label><input type="checkbox">Bio/la sam u kontaktu sa zaraženom osobom</label> <br>
+    <label><input type="checkbox">Imam simptome (kašljanje, izgubljena čula okusa/mirisa, povišena temperatura, ...)</label> <br>
+    <textarea style="resize: none; height: 100px; width: 50%" placeholder="Ništa od navedenog (navedite razloge)"></textarea> <br>
+
+    Odaberite termin za testiranje: <input type="date">
+    <br>
+    <br>
+
+    <h2>Saglasnost</h2>
+    <hr>
+    <label><input type="checkbox">Saglasan sam da ovlašteno lice Doma Zdravlja Kantona Sarajevo obradi navedene podatke u vezi sa testiranjem protiv Covid-19.</label> <br> <br />
+
+
+    <div class="form-group">
+        <input type="submit" value="Podnesi zahtjev" class="btn btn-primary" style="background-color: mediumseagreen" />
+        <input type="submit" value="Otkaži" class="btn btn-primary" style="background-color: red" />
+    </div>
+</div>

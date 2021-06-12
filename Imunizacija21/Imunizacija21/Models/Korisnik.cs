@@ -34,7 +34,7 @@ namespace Imunizacija21.Models
     public class Korisnik : Osoba
     {
         #region Properties
-        [Required]
+        //[Required]
         [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
         [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "Zdravstvena kartica mora imati tačno 8 brojeva!")]
         public string ZdravstvenaKartica { get; set; }

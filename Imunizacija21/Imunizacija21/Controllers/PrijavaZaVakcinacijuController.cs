@@ -10,27 +10,22 @@ using Imunizacija21.Models;
 
 namespace Imunizacija21.Controllers
 {
-    public class ProfileChangeController : Controller
+    public class PrijavaZaVakcinacijuController : Controller
     {
         private readonly DataContext _context;
 
-        static CovidKarton karton = new CovidKarton();
-        static Korisnik user = new Korisnik("Bogic", "Bogicevic", "M", "1503953172311", "bogic.bogicevic@gmail.com", "061123456", LokalnaZdravstvenaUstanova.VRAZOVA, "1A2B3C4D", karton.ID, "Zmaja od Bosne 11", Zanimanje.PENZIONER);
-
-        public ProfileChangeController(DataContext context)
+        public PrijavaZaVakcinacijuController(DataContext context)
         {
             _context = context;
-            /*_context.Add(user);
-            _context.SaveChangesAsync();*/
         }
 
-        // GET: ProfileChange
+        // GET: PrijavaZaVakcinaciju
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Korisnik.ToListAsync());
+            return View(await _context.ZahtjevZaVakcinaciju.ToListAsync());
         }
 
-        // GET: ProfileChange/Details/5
+        // GET: PrijavaZaVakcinaciju/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -38,39 +33,39 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik
+            var zahtjevZaVakcinaciju = await _context.ZahtjevZaVakcinaciju
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (korisnik == null)
+            if (zahtjevZaVakcinaciju == null)
             {
                 return NotFound();
             }
 
-            return View(korisnik);
+            return View(zahtjevZaVakcinaciju);
         }
 
-        // GET: ProfileChange/Create
+        // GET: PrijavaZaVakcinaciju/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: ProfileChange/Create
+        // POST: PrijavaZaVakcinaciju/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
+        public async Task<IActionResult> Create([Bind("ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaVakcinaciju zahtjevZaVakcinaciju)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(korisnik);
+                _context.Add(zahtjevZaVakcinaciju);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnik);
+            return View(zahtjevZaVakcinaciju);
         }
 
-        // GET: ProfileChange/Edit/5
+        // GET: PrijavaZaVakcinaciju/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,43 +73,36 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik.FindAsync(id);
-            if (korisnik == null)
+            var zahtjevZaVakcinaciju = await _context.ZahtjevZaVakcinaciju.FindAsync(id);
+            if (zahtjevZaVakcinaciju == null)
             {
                 return NotFound();
             }
-            return View(korisnik);
+            return View(zahtjevZaVakcinaciju);
         }
 
-        // POST: ProfileChange/Edit/5
+        // POST: PrijavaZaVakcinaciju/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaVakcinaciju zahtjevZaVakcinaciju)
         {
-            if (id != korisnik.ID)
+            if (id != zahtjevZaVakcinaciju.ID)
             {
                 return NotFound();
             }
-
-            Korisnik korisnikKojiSeEdituje = _context.Korisnik.Where(k => k.ID == korisnik.ID).First();
-            korisnikKojiSeEdituje.Adresa = korisnik.Adresa;
-            korisnikKojiSeEdituje.LokalnaZdravstvenaUstanova = korisnik.LokalnaZdravstvenaUstanova;
-            korisnikKojiSeEdituje.BrojTelefona = korisnik.BrojTelefona;
-            korisnikKojiSeEdituje.Email = korisnik.Email;
-            korisnikKojiSeEdituje.Zanimanje = korisnik.Zanimanje;
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(korisnikKojiSeEdituje);
+                    _context.Update(zahtjevZaVakcinaciju);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!KorisnikExists(korisnikKojiSeEdituje.ID))
+                    if (!ZahtjevZaVakcinacijuExists(zahtjevZaVakcinaciju.ID))
                     {
                         return NotFound();
                     }
@@ -125,10 +113,10 @@ namespace Imunizacija21.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnikKojiSeEdituje);
+            return View(zahtjevZaVakcinaciju);
         }
 
-        // GET: ProfileChange/Delete/5
+        // GET: PrijavaZaVakcinaciju/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,30 +124,30 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik
+            var zahtjevZaVakcinaciju = await _context.ZahtjevZaVakcinaciju
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (korisnik == null)
+            if (zahtjevZaVakcinaciju == null)
             {
                 return NotFound();
             }
 
-            return View(korisnik);
+            return View(zahtjevZaVakcinaciju);
         }
 
-        // POST: ProfileChange/Delete/5
+        // POST: PrijavaZaVakcinaciju/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var korisnik = await _context.Korisnik.FindAsync(id);
-            _context.Korisnik.Remove(korisnik);
+            var zahtjevZaVakcinaciju = await _context.ZahtjevZaVakcinaciju.FindAsync(id);
+            _context.ZahtjevZaVakcinaciju.Remove(zahtjevZaVakcinaciju);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool KorisnikExists(int id)
+        private bool ZahtjevZaVakcinacijuExists(int id)
         {
-            return _context.Korisnik.Any(e => e.ID == id);
+            return _context.ZahtjevZaVakcinaciju.Any(e => e.ID == id);
         }
     }
 }

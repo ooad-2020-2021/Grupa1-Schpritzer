@@ -31,6 +31,13 @@ namespace Imunizacija21.Models
         [Display(Name = "Vogošća")]
         VOGOSCA
     }
+
+    public class DatumIzProšlosti : RangeAttribute
+    {
+        public DatumIzProšlosti() : base(typeof(DateTime), DateTime.MinValue.ToString(), DateTime.Now.ToString())
+        {
+        }
+    }
     public abstract class Osoba : IPrototip
     {
         #region Properties
@@ -38,20 +45,30 @@ namespace Imunizacija21.Models
         [Key]
         public int ID { get; set; }
         [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = "Ime smije imati između 2 i 50 karaktera!")]
+        [RegularExpression(@"[-|a-z|A-Z]*[a-z][A-Z]*", ErrorMessage = "Dozvoljeno je samo korištenje velikih i malih slova!")]
         public string Ime { get; set; }
         [Required]
+        [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = "Prezime smije imati između 2 i 50 karaktera!")]
+        [RegularExpression(@"[-|a-z|A-Z]*[a-z][A-Z]*", ErrorMessage = "Dozvoljeno je samo korištenje velikih i malih slova!")]
         public string Prezime { get; set; }
         [DataType(DataType.Date)]
         [Required]
+        [DatumIzProšlosti(ErrorMessage = "Datum dospjeća mora biti u prošlosti!")]
         public DateTime DatumRodjenja { get; set; }
         [Required]
+        [RegularExpression(@"[M|Z|Ž]", ErrorMessage = "Dozvoljeno je unos M i Z")]
         public string Spol { get; set; }
-        //[Required]
+        [Required]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljeno je unos samo brojeva")]
+        [StringLength(maximumLength: 13, MinimumLength = 13, ErrorMessage = "JMBG mora imati 13 brojeva!")]
         public string JMBG { get; set; }
         [Required]
+        [RegularExpression(@"[@]*", ErrorMessage = "Mora imati najmanje jedan '@'")]
         public string Email { get; set; }
         //[Required]
         [DisplayName("Broj telefona")]
+        [RegularExpression(@"[-|/|[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
         public string BrojTelefona { get; set; }
         [EnumDataType(typeof(LokalnaZdravstvenaUstanova))]
         [Required]

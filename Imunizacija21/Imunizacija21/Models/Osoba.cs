@@ -44,11 +44,11 @@ namespace Imunizacija21.Models
         [Required]
         [Key]
         public int ID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ime ne smije biti prazno.")]
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = "Ime smije imati između 2 i 50 karaktera!")]
         [RegularExpression(@"[-|a-z|A-Z]*[a-z][A-Z]*", ErrorMessage = "Dozvoljeno je samo korištenje velikih i malih slova!")]
         public string Ime { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Prezime ne smije biti prazno.")]
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = "Prezime smije imati između 2 i 50 karaktera!")]
         [RegularExpression(@"[-|a-z|A-Z]*[a-z][A-Z]*", ErrorMessage = "Dozvoljeno je samo korištenje velikih i malih slova!")]
         public string Prezime { get; set; }
@@ -60,15 +60,15 @@ namespace Imunizacija21.Models
         [RegularExpression(@"[M|Z|Ž]", ErrorMessage = "Dozvoljeno je unos M i Z")]
         public string Spol { get; set; }
         [Required]
-        [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljeno je unos samo brojeva")]
-        [StringLength(maximumLength: 13, MinimumLength = 13, ErrorMessage = "JMBG mora imati 13 brojeva!")]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
+        [StringLength(maximumLength: 13, MinimumLength = 13, ErrorMessage = "JMBG mora imati tačno 13 brojeva!")]
         public string JMBG { get; set; }
         [Required]
-        [RegularExpression(@"[@]*", ErrorMessage = "Mora imati najmanje jedan '@'")]
+        //[RegularExpression(@"[@]*", ErrorMessage = "Mora imati najmanje jedan '@'")]
         public string Email { get; set; }
         //[Required]
         [DisplayName("Broj telefona")]
-        [RegularExpression(@"[-|/|[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
+        [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
         public string BrojTelefona { get; set; }
         [EnumDataType(typeof(LokalnaZdravstvenaUstanova))]
         [Required]

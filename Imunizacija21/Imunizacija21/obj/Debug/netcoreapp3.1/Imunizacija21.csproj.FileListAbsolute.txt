@@ -895,9 +895,6 @@ C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\LogIn\Index.cshtml.g.cs
-C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Create.cshtml.g.cs
-C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Delete.cshtml.g.cs
-C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Details.cshtml.g.cs
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Edit.cshtml.g.cs
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\ProfileChange\Index.cshtml.g.cs
 C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -947,3 +944,28 @@ C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\De
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Details.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Edit.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Index.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminKorisnici\Create.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminKorisnici\Delete.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminKorisnici\Details.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminKorisnici\Edit.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminKorisnici\Index.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Create.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Delete.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Details.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Edit.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\AdminStrucneOsobe\Index.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Create.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Delete.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Details.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Edit.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaTestiranje\Index.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Create.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Delete.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Details.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Edit.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\PrijavaZaVakcinaciju\Index.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Create.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Delete.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Details.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Edit.cshtml.g.cs
+C:\Users\DT User4\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Index.cshtml.g.cs

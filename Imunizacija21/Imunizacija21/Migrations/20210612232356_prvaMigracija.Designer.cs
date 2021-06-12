@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imunizacija21.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210611172038_PrvaMigracija")]
-    partial class PrvaMigracija
+    [Migration("20210612232356_prvaMigracija")]
+    partial class prvaMigracija
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,12 +49,11 @@ namespace Imunizacija21.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("VakcinacijaID")
+                    b.Property<int?>("VakcinacijaID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("VakcinacijaID");
 
                     b.ToTable("CovidKarton");
                 });
@@ -76,7 +75,7 @@ namespace Imunizacija21.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("Rezultat")
+                    b.Property<bool?>("Rezultat")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<int>("TipCovidTesta")
@@ -124,11 +123,12 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Ime")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("JMBG")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(13)")
+                        .HasMaxLength(13);
 
                     b.Property<int>("LokalnaZdravstvenaUstanova")
                         .HasColumnType("int");
@@ -138,12 +138,14 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Prezime")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Spol")
-                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("Ulogovan")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("ID");
 
@@ -173,6 +175,9 @@ namespace Imunizacija21.Migrations
                     b.Property<string>("Link")
                         .HasColumnType("text");
 
+                    b.Property<int>("Tip")
+                        .HasColumnType("int");
+
                     b.Property<int>("VrijemeMedjuDozama")
                         .HasColumnType("int");
 
@@ -195,10 +200,6 @@ namespace Imunizacija21.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("VakcinaID");
-
-                    b.HasIndex("ZahtjevZaVakcinacijuID");
-
                     b.ToTable("VakcinaZahtjevZaVakcinaciju");
                 });
 
@@ -208,22 +209,19 @@ namespace Imunizacija21.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("DrugaDozaID")
+                    b.Property<int>("DrugaDozaID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PrvaDozaID")
+                    b.Property<int>("PrvaDozaID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VakcinaID")
+                    b.Property<int>("StrucnaOsobaID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VakcinaID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("DrugaDozaID");
-
-                    b.HasIndex("PrvaDozaID");
-
-                    b.HasIndex("VakcinaID");
 
                     b.ToTable("Vakcinacija");
                 });
@@ -237,6 +235,9 @@ namespace Imunizacija21.Migrations
                     b.Property<DateTime>("DatumZahtjeva")
                         .HasColumnType("datetime");
 
+                    b.Property<int>("KorisnikID")
+                        .HasColumnType("int");
+
                     b.Property<bool?>("OdobrenZahtjev")
                         .HasColumnType("tinyint(1)");
 
@@ -248,8 +249,6 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("StrucnaOsobaID");
 
                     b.ToTable("Zahtjev");
 
@@ -517,8 +516,8 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ZdravstvenaKartica")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(8)")
+                        .HasMaxLength(8);
 
                     b.HasDiscriminator().HasValue("Korisnik");
                 });
@@ -548,54 +547,6 @@ namespace Imunizacija21.Migrations
                     b.HasBaseType("Imunizacija21.Models.Zahtjev");
 
                     b.HasDiscriminator().HasValue("ZahtjevZaVakcinaciju");
-                });
-
-            modelBuilder.Entity("Imunizacija21.Models.CovidKarton", b =>
-                {
-                    b.HasOne("Imunizacija21.Models.Vakcinacija", "Vakcinacija")
-                        .WithMany()
-                        .HasForeignKey("VakcinacijaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Imunizacija21.Models.VakcinaZahtjevZaVakcinaciju", b =>
-                {
-                    b.HasOne("Imunizacija21.Models.Vakcina", "Vakcina")
-                        .WithMany()
-                        .HasForeignKey("VakcinaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Imunizacija21.Models.ZahtjevZaVakcinaciju", "ZahtjevZaVakcinaciju")
-                        .WithMany()
-                        .HasForeignKey("ZahtjevZaVakcinacijuID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Imunizacija21.Models.Vakcinacija", b =>
-                {
-                    b.HasOne("Imunizacija21.Models.Doza", "DrugaDoza")
-                        .WithMany()
-                        .HasForeignKey("DrugaDozaID");
-
-                    b.HasOne("Imunizacija21.Models.Doza", "PrvaDoza")
-                        .WithMany()
-                        .HasForeignKey("PrvaDozaID");
-
-                    b.HasOne("Imunizacija21.Models.Vakcina", "Vakcina")
-                        .WithMany()
-                        .HasForeignKey("VakcinaID");
-                });
-
-            modelBuilder.Entity("Imunizacija21.Models.Zahtjev", b =>
-                {
-                    b.HasOne("Imunizacija21.Models.StrucnaOsoba", "StrucnaOsoba")
-                        .WithMany()
-                        .HasForeignKey("StrucnaOsobaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Imunizacija21.Models.ZahtjevFacade", b =>

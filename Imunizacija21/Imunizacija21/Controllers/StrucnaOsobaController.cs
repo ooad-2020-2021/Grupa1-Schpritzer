@@ -10,22 +10,22 @@ using Imunizacija21.Models;
 
 namespace Imunizacija21.Controllers
 {
-    public class AdminStrucneOsobeController : Controller
+    public class StrucnaOsobaController : Controller
     {
         private readonly DataContext _context;
 
-        public AdminStrucneOsobeController(DataContext context)
+        public StrucnaOsobaController(DataContext context)
         {
             _context = context;
         }
 
-        // GET: AdminStrucneOsobe
+        // GET: StrucnaOsoba
         public async Task<IActionResult> Index()
         {
-            return View(await _context.StrucnaOsoba.ToListAsync());
+            return View(await _context.ZahtjevZaTestiranje.ToListAsync());
         }
 
-        // GET: AdminStrucneOsobe/Details/5
+        // GET: StrucnaOsoba/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var strucnaOsoba = await _context.StrucnaOsoba
+            var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (strucnaOsoba == null)
+            if (zahtjevZaTestiranje == null)
             {
                 return NotFound();
             }
 
-            return View(strucnaOsoba);
+            return View(zahtjevZaTestiranje);
         }
 
-        // GET: AdminStrucneOsobe/Create
+        // GET: StrucnaOsoba/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminStrucneOsobe/Create
+        // POST: StrucnaOsoba/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] StrucnaOsoba strucnaOsoba)
+        public async Task<IActionResult> Create([Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(strucnaOsoba);
+                _context.Add(zahtjevZaTestiranje);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(strucnaOsoba);
+            return View(zahtjevZaTestiranje);
         }
 
-        // GET: AdminStrucneOsobe/Edit/5
+        // GET: StrucnaOsoba/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,44 +73,36 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var strucnaOsoba = await _context.StrucnaOsoba.FindAsync(id);
-            if (strucnaOsoba == null)
+            var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje.FindAsync(id);
+            if (zahtjevZaTestiranje == null)
             {
                 return NotFound();
             }
-            return View(strucnaOsoba);
+            return View(zahtjevZaTestiranje);
         }
 
-        // POST: AdminStrucneOsobe/Edit/5
+        // POST: StrucnaOsoba/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] StrucnaOsoba strucnaOsoba)
+        public async Task<IActionResult> Edit(int id, [Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
-            if (id != strucnaOsoba.ID)
+            if (id != zahtjevZaTestiranje.ID)
             {
                 return NotFound();
             }
-            StrucnaOsoba strucnaKojaSeEdituje = _context.StrucnaOsoba.Where(k => k.ID == strucnaOsoba.ID).First();
-            strucnaKojaSeEdituje.Ime = strucnaOsoba.Ime;
-            strucnaKojaSeEdituje.Prezime = strucnaOsoba.Prezime;
-            strucnaKojaSeEdituje.Spol = strucnaOsoba.Spol;
-            strucnaKojaSeEdituje.JMBG = strucnaOsoba.JMBG;
-            strucnaKojaSeEdituje.Email = strucnaOsoba.Email;
-            strucnaKojaSeEdituje.BrojTelefona = strucnaOsoba.BrojTelefona;
-            strucnaKojaSeEdituje.LokalnaZdravstvenaUstanova = strucnaOsoba.LokalnaZdravstvenaUstanova;
-            
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(strucnaKojaSeEdituje);
+                    _context.Update(zahtjevZaTestiranje);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StrucnaOsobaExists(strucnaKojaSeEdituje.ID))
+                    if (!ZahtjevZaTestiranjeExists(zahtjevZaTestiranje.ID))
                     {
                         return NotFound();
                     }
@@ -121,10 +113,10 @@ namespace Imunizacija21.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(strucnaKojaSeEdituje);
+            return View(zahtjevZaTestiranje);
         }
 
-        // GET: AdminStrucneOsobe/Delete/5
+        // GET: StrucnaOsoba/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,30 +124,30 @@ namespace Imunizacija21.Controllers
                 return NotFound();
             }
 
-            var strucnaOsoba = await _context.StrucnaOsoba
+            var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (strucnaOsoba == null)
+            if (zahtjevZaTestiranje == null)
             {
                 return NotFound();
             }
 
-            return View(strucnaOsoba);
+            return View(zahtjevZaTestiranje);
         }
 
-        // POST: AdminStrucneOsobe/Delete/5
+        // POST: StrucnaOsoba/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var strucnaOsoba = await _context.StrucnaOsoba.FindAsync(id);
-            _context.StrucnaOsoba.Remove(strucnaOsoba);
+            var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje.FindAsync(id);
+            _context.ZahtjevZaTestiranje.Remove(zahtjevZaTestiranje);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool StrucnaOsobaExists(int id)
+        private bool ZahtjevZaTestiranjeExists(int id)
         {
-            return _context.StrucnaOsoba.Any(e => e.ID == id);
+            return _context.ZahtjevZaTestiranje.Any(e => e.ID == id);
         }
     }
 }

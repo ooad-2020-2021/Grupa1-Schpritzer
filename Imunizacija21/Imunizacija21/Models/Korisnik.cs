@@ -35,8 +35,8 @@ namespace Imunizacija21.Models
     {
         #region Properties
         //[Required]
-        [RegularExpression(@"[0-9]*", ErrorMessage = "Dozvoljen je unos samo brojeva")]
-        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "Zdravstvena kartica mora imati tačno 8 brojeva!")]
+        [RegularExpression(@"[0-9|A-Z]*", ErrorMessage = "Dozvoljen je unos samo brojeva i velikih slova.")]
+        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "Zdravstvena kartica mora imati tačno 8 znakova!")]
         public string ZdravstvenaKartica { get; set; }
         [Required]
         public int CovidKartonID { get; set; }

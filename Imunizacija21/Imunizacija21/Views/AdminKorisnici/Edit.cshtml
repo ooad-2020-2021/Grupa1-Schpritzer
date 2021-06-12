@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Zanimanje" class="control-label"></label>
-                <select asp-for="Zanimanje" class="form-control"></select>
+                <select asp-for="Zanimanje" asp-items="Html.GetEnumSelectList<Zanimanje>()" class="form-control"></select>
                 <span asp-validation-for="Zanimanje" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="ID" />
@@ -43,11 +43,11 @@
                 <input asp-for="Prezime" class="form-control" />
                 <span asp-validation-for="Prezime" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label asp-for="DatumRodjenja" class="control-label"></label>
                 <input asp-for="DatumRodjenja" class="form-control" />
                 <span asp-validation-for="DatumRodjenja" class="text-danger"></span>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label asp-for="Spol" class="control-label"></label>
                 <input asp-for="Spol" class="form-control" />
@@ -70,14 +70,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="LokalnaZdravstvenaUstanova" class="control-label"></label>
-                <select asp-for="LokalnaZdravstvenaUstanova" class="form-control"></select>
+                <select asp-for="LokalnaZdravstvenaUstanova" asp-items="Html.GetEnumSelectList<LokalnaZdravstvenaUstanova>()" class="form-control"></select>
                 <span asp-validation-for="LokalnaZdravstvenaUstanova" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Ulogovan" /> @Html.DisplayNameFor(model => model.Ulogovan)
-                </label>
-            </div>
+            <!--    <div class="form-group form-check">
+       <label class="form-check-label">
+            <input class="form-check-input" asp-for="Ulogovan" /> @Html.DisplayNameFor(model => model.Ulogovan)
+        </label>
+    </div>-->
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

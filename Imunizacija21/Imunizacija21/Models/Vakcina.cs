@@ -28,7 +28,7 @@ namespace Imunizacija21.Models {
         public int ID { get; set; }
         [EnumDataType(typeof(TipVakcine))]
         [Required]
-        public TipVakcine Tip;
+        public TipVakcine Tip { get; set; }
         public double Efikanost { get; set; }
         [Required]
         public int BrojDostupnih { get; private set; }

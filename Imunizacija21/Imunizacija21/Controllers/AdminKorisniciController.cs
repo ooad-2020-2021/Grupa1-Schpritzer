@@ -94,17 +94,28 @@ namespace Imunizacija21.Controllers
             {
                 return NotFound();
             }
-
+            Korisnik korisnikKojiSeEdituje = _context.Korisnik.Where(k => k.ID == korisnik.ID).First();
+            korisnikKojiSeEdituje.Ime = korisnik.Ime;
+            korisnikKojiSeEdituje.Prezime = korisnik.Prezime;
+            korisnikKojiSeEdituje.Spol = korisnik.Spol;
+            korisnikKojiSeEdituje.JMBG = korisnik.JMBG;
+            korisnikKojiSeEdituje.Email = korisnik.Email;
+            korisnikKojiSeEdituje.BrojTelefona = korisnik.BrojTelefona;
+            korisnikKojiSeEdituje.LokalnaZdravstvenaUstanova = korisnik.LokalnaZdravstvenaUstanova;
+            korisnikKojiSeEdituje.ZdravstvenaKartica = korisnik.ZdravstvenaKartica;
+            korisnikKojiSeEdituje.CovidKartonID = korisnik.CovidKartonID;
+            korisnikKojiSeEdituje.Adresa = korisnik.Adresa;
+            korisnikKojiSeEdituje.Zanimanje = korisnik.Zanimanje;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(korisnik);
+                    _context.Update(korisnikKojiSeEdituje);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!KorisnikExists(korisnik.ID))
+                    if (!KorisnikExists(korisnikKojiSeEdituje.ID))
                     {
                         return NotFound();
                     }
@@ -115,7 +126,7 @@ namespace Imunizacija21.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(korisnik);
+            return View(korisnikKojiSeEdituje);
         }
 
         // GET: AdminKorisnici/Delete/5

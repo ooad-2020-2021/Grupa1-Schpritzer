@@ -29,7 +29,7 @@ namespace Imunizacija21.Models
         [Required]
         public DateTime DatumTestiranja { get; set; }
         //[Required]
-        public bool Rezultat { get; set; }
+        public bool? Rezultat { get; set; }
         [Required]
         public string OpisTesta { get; set; }
         [Required]

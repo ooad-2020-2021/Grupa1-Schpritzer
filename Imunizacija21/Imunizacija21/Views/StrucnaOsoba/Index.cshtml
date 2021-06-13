@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Imunizacija21.Models.ZahtjevZaTestiranje>
+﻿@model IEnumerable<Tuple<Imunizacija21.Models.ZahtjevZaTestiranje, Imunizacija21.Models.Korisnik>>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,47 +13,63 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Opis)
+                Ime i prezime
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipCovidTesta)
+                Datum Rođenja
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DatumZahtjeva)
+                @Html.DisplayNameFor(model => model.Item1.Opis)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OdobrenZahtjev)
+                @Html.DisplayNameFor(model => model.Item1.TipCovidTesta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StrucnaOsobaID)
+                @Html.DisplayNameFor(model => model.Item1.DatumZahtjeva)
             </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.OdobrenZahtjev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StrucnaOsobaID)
+        </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        
+       @foreach (var item in Model)
+        {
+            <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Opis)
+                @Html.DisplayFor(modelItem => item.Item2.Ime) @Html.DisplayFor(modelItem => item.Item2.Prezime)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipCovidTesta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatumZahtjeva)
-            </td>
-            <td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item2.DatumRodjenja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item1.Opis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item1.TipCovidTesta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item1.DatumZahtjeva)
+                </td>
+
+                @*<td>
                 @Html.DisplayFor(modelItem => item.OdobrenZahtjev)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StrucnaOsobaID)
-            </td>
+            </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Item1.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Item1.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Item1.ID">Delete</a>
             </td>
-        </tr>
-}
+            </tr>
+        }
+        
     </tbody>
 </table>

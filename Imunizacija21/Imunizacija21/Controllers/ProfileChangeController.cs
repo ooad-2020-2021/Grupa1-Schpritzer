@@ -39,7 +39,14 @@ namespace Imunizacija21.Controllers
         //static ZahtjevZaTestiranje zahtjev = new ZahtjevZaTestiranje(0, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
 
         //Alergija alergija = new Alergija("dr.sc. Muhamed Borovac", new DateTime(2015, 1, 4), TipAlergije.PENCILIN);
+        //Alergija alergija = new Alergija("dr.sc. Muhamed Borovac", new DateTime(2012, 6, 8), TipAlergije.POLEN);
+        //Alergija alergija1 = new Alergija("dr.sc. Dzenan Nuhic", new DateTime(2017, 1, 30), TipAlergije.PRASINA);
+        //Alergija alergija2 = new Alergija("dr.sc. Alen Maslar", new DateTime(2005, 9, 2), TipAlergije.GLUTEN);
+        //Alergija alergija3 = new Alergija("dr.sc. Amra Civgin", new DateTime(2009,3, 5), TipAlergije.JAGODE);
         //Oboljenja oboljenje = new Oboljenja("dr.sc. Eldar Čivgin", new DateTime(2017, 12, 9), VrsteOboljenja.BRONHITIS);
+        //Oboljenja oboljenje1 = new Oboljenja("dr.sc. Dzenan Nuhic", new DateTime(2019, 6, 12), VrsteOboljenja.ASTMA);
+        //Oboljenja oboljenje2 = new Oboljenja("dr.sc. Benjamin Pasic", new DateTime(2015, 3, 21), VrsteOboljenja.DIJABETES);
+        //Oboljenja oboljenje3 = new Oboljenja("dr.sc. Eldar Civgin", new DateTime(2018, 9, 4), VrsteOboljenja.MIGRENA);
 
         //CovidTest covidTest1 = new CovidTest(TipCovidTesta.SEROLOSKI, new DateTime(2019, 4, 2), "Vrazova");
         //CovidTest covidTest2 = new CovidTest(TipCovidTesta.PCR, new DateTime(2019, 6, 20), "Zetra");
@@ -72,6 +79,13 @@ namespace Imunizacija21.Controllers
             //_context.Add(strucna4);
             //_context.Add(zahtjev);
             //_context.Add(alergija);
+            //_context.Add(alergija1);
+            //_context.Add(alergija2);
+            //_context.Add(alergija3);
+            //_context.Add(oboljenje);
+            //_context.Add(oboljenje1);
+            //_context.Add(oboljenje2);
+            //_context.Add(oboljenje3);
             //_context.Add(covidTest1);
             //_context.Add(covidTest2);
             //_context.Add(covidTest3);

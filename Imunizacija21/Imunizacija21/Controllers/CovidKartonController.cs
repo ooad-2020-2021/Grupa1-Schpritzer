@@ -25,7 +25,8 @@ namespace Imunizacija21.Controllers
         public async Task<IActionResult> Index()
         {
             Korisnik k = LoginController.GetUlogovani(_context);
-            Tuple<CovidKarton, Korisnik> tuple = new Tuple<CovidKarton, Korisnik>(_context.CovidKarton.Find(k.CovidKartonID), k);
+            List<Bolest> b = _context.Bolest.Where(b => b.CovidKartonID == k.CovidKartonID).ToList();
+            Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>> tuple = new Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>>(_context.CovidKarton.Find(k.CovidKartonID), k, b);
             return View(tuple);
         }
 

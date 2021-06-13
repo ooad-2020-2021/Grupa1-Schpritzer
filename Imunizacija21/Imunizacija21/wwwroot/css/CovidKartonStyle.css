@@ -1,15 +1,6 @@
-body {
-    font-family: Arial;
-    padding: 0px;
-    margin: 10px;
-}
-
 h1 {
     padding: 0px;
-    margin: 0px;
-}
-
-h2 {
+    margin: 0px 0px;
 }
 
 label {
@@ -23,11 +14,14 @@ label {
 
 .kolona-1 {
     flex: 1;
-    /*background-color: blue;*/
+    margin-right: 20px;
+/*    background-color: blue;*/
 }
 
-.kolona-2 { /*
-  background-color: red;*/
+.kolona-2 { /**/
+    /*  background-color: red;*/
+
+    margin-right: 10px;
     flex: 1;
 }
 
@@ -36,7 +30,11 @@ label {
 
 .rectangle {
     border: 2px solid black;
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px 10px;
+    
 }
 
 .collapsible {
@@ -45,7 +43,8 @@ label {
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: none;
+    border: 1px solid black;
+    border-radius: 7px;
     text-align: left;
     outline: none;
     font-size: 15px;
@@ -53,22 +52,74 @@ label {
 
     .active, .collapsible:hover {
         background-color: #ccc;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .collapsible:focus {
+        outline: none;
+        
     }
 
 .content {
     /*prvi gore dole drugi desno lijevo*/
-    background-color: gray;
+    background-color: white;
     max-height: 0;
     overflow: hidden;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     transition: max-height 0.2s ease-out;
+    margin-bottom: 10px;
 }
 
 .popunjeno {
     border-radius: 3px;
     padding: 5px;
     border: 2px solid black;
+    width: 100%;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .inside-content {
-    padding: 10px 10px;
+    margin-left: 10px;
+}
+
+.rectangle-povijest {
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.sekcije {
+    margin: 0px 10px;
+    padding-top: 10px;
+}
+
+.zaSirinu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.checkDugme{
+    margin-left: 1.8em;
+}
+
+.spolDiv {
+    margin-top: 0.6em;
+}
+
+.alergijaMargin {
+    margin-right: 10px;
+}
+
+.dijagnozaParagraf {
+    border-radius: 3px;
+    padding: 5px;
+    border: 2px solid black;
 }

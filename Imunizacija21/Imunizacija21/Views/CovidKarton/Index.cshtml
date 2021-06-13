@@ -1,104 +1,113 @@
-﻿@model Tuple<Imunizacija21.Models.CovidKarton, Imunizacija21.Models.Korisnik>
+﻿@model Tuple<Imunizacija21.Models.CovidKarton, Imunizacija21.Models.Korisnik, IEnumerable<Bolest>>
 
 @{
     ViewData["Title"] = "Index";
 }
+
 <link rel="stylesheet" type="text/css" href="css/CovidKartonStyle.css">
 
 <h1>Covid Karton</h1>
 <hr>
-<h2>Informacije o pacijentu</h2>
+<h2 class="sekcije">Informacije o pacijentu</h2>
 <div class="rectangle">
     <div class="flex">
         <div class="kolona-1">
-            <div class="element-info">
-                <label>Br.zdravstvene kartice:</label>
+            <div class="element-info zaSirinu">
+                <label>Br.zdravstvene&nbsp;kartice:</label>
                 <label class="popunjeno informacije">@Html.DisplayFor(modelItem => Model.Item2.ZdravstvenaKartica)</label>
             </div>
-            <div class="element-info">
-                <label>Ime i prezime:</label>
+            <div class="element-info zaSirinu">
+                <label>Ime&nbsp;i&nbsp;prezime:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.Ime) @Html.DisplayFor(modelItem => Model.Item2.Prezime)</label>
             </div>
-            <div class="element-info">
-                <label>Spol:</label>
-                @if (Model.Item2.IsMusko())
-                {
-                    <input type="checkbox" name="name" checked onClick="return false;">
-                }
-                else
-                {
-                    <input type="checkbox" name="name" onClick="return false;">
-                }
-                <label>M</label>
-                @if (Model.Item2.IsZensko())
-                {
-                    <input type="checkbox" name="name" checked onClick="return false;">
-                }
-                else
-                {
-                    <input type="checkbox" name="name" onClick="return false;">
-                }
-                <label>Z</label>
-            </div>
-            <div class="element-info">
+            <div class="element-info zaSirinu">
                 <label>Adresa:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.Adresa)</label>
             </div>
-            <div class="element-info">
-                <label>Zanimanje:</label>
-                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.Zanimanje)</label>
+            <div class="element-info spolDiv">
+                <label>Spol:</label>
+                @if (Model.Item2.IsMusko())
+                {
+                    <input class="checkDugme" type="checkbox" name="name" checked onClick="return false;">
+                }
+                else
+                {
+                    <input class="checkDugme" type="checkbox" name="name" onClick="return false;">
+                }
+                <label class="labelaCheck">M</label>
+                @if (Model.Item2.IsZensko())
+                {
+                    <input class="checkDugme" type="checkbox" name="name" checked onClick="return false;">
+                }
+                else
+                {
+                    <input class="checkDugme" type="checkbox" name="name" onClick="return false;">
+                }
+                <label class="labelaCheck">Z</label>
             </div>
         </div>
         <div class="kolona-2">
-            <div class="element-info">
+            <div class="element-info zaSirinu">
                 <label>JMBG:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.JMBG)</label>
             </div>
-            <div class="element-info">
-                <label>Datum rodjenja:</label>
+            <div class="element-info zaSirinu">
+                <label>Datum&nbsp;rodjenja:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.DatumRodjenja)</label>
             </div>
-            <div class="element-info">
-                <label>Titula:</label>
-                <input type="checkbox" name="name" checked="checked" onClick="return false;">
-                <label>Gosp.</label>
-                <input type="checkbox" name="name" onClick="return false;">
-                <label>Gdja</label>
-                <input type="checkbox" name="name" onClick="return false;">
-                <label>Dr.</label>
+            <div class="element-info zaSirinu">
+                <label>Zanimanje:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.Zanimanje)</label>
             </div>
-            <div class="element-info">
-                <label>Opcina:</label>
-                <label class="popunjeno">Centar</label>
-            </div>
-            <div class="element-info">
-                <label>Kontakt telefon:</label>
+            @*<div class="element-info">
+            <label>Titula:</label>
+            <input type="checkbox" name="name" checked="checked" onClick="return false;">
+            <label>Gosp.</label>
+            <input type="checkbox" name="name" onClick="return false;">
+            <label>Gdja</label>
+            <input type="checkbox" name="name" onClick="return false;">
+            <label>Dr.</label>
+        </div>*@
+            @*<div class="element-info">
+            <label>Opcina:</label>
+            <label class="popunjeno">Centar</label>
+        </div>*@
+            <div class="element-info zaSirinu">
+                <label>Kontakt&nbsp;telefon:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.BrojTelefona)</label>
             </div>
         </div>
     </div>
 
-    <div class="element-info">
-        <label>Lokalna zdravstvena ustanova:</label>
+    <div class="element-info zaSirinu" style="padding-right: 10px; margin-bottom: 10px;">
+        <label>Lokalna&nbsp;zdravstvena&nbsp;ustanova:</label>
         <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.LokalnaZdravstvenaUstanova)</label>
     </div>
 </div>
 
-<h2>Hronicne bolesti i alergije</h2>
+<h2 class="sekcije">Alergije</h2>
 <div class="rectangle">
-    <button type="button" class="collapsible">Alergija</button>
-    <div class="content">
-        <div class="inside-content">
-            <label>Dijagnoza:</label>
-            <label class="popunjeno">Alergija na Penicilin</label>
-            <br>
-            <label>Alergo test izveo:</label>
-            <label class="popunjeno">dr.sc Dzenan Nuhic</label>
-            <data>Datum dijagnoze:</data>
-            <label class="popunjeno">01.04.2015</label>
-        </div>
-    </div>
-
+    @foreach (var bolest in Model.Item3)
+    {
+        if (bolest is Alergija)
+        {
+            <button type="button" class="collapsible">@Html.DisplayFor(modelItem => ((Alergija)bolest).Tip)</button>
+            <div class="content">
+                <div class="inside-content">
+                    <div class="element-info zaSirinu">
+                        <label>Dijagnoza:</label>
+                        <label class="popunjeno alergijaMargin">@Html.DisplayFor(modelItem => ((Alergija)bolest).Tip)</label>
+                    </div>
+                    <div class="element-info zaSirinu">
+                        <label>Alergo&nbsp;test&nbsp;izveo:</label>
+                        <label class="popunjeno alergijaMargin">@Html.DisplayFor(modelItem => ((Alergija)bolest).Doktor)</label>
+                        <label>Datum&nbsp;dijagnoze:</label>
+                        <label class="popunjeno alergijaMargin">@Html.DisplayFor(modelItem => ((Alergija)bolest).DatumDijagnoze)</label>
+                    </div>
+                </div>
+            </div>
+        }
+    }
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
@@ -117,26 +126,36 @@
     </script>
 </div>
 
-<h2>Povijest bolesti</h2>
+<h2 class="sekcije">Povijest bolesti</h2>
 <div class="rectangle">
-    <div class="rectangle">
-        <label>Dijagnoza:</label>
-        <label class="popunjeno">Acute Bronchitis</label>
-        <br>
-        <label>Ime i prezime ljekara:</label>
-        <label class="popunjeno">dr.sc.Benjamin Pasic</label>
-        <label>Datum dijagnoze</label>
-        <label class="popunjeno">09.04.2015</label>
-        <br>
-        <label>Zdravstvena ustanova:</label>
-        <label class="popunjeno">Dom zdravlja Vrazovo, Vrazovo 11</label>
-        <p class="popunjeno">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-    </div>
+    @foreach (var bolest in Model.Item3)
+    {
+        if (bolest is Oboljenja)
+        {
+            <div class="rectangle-povijest">
+                <div class="element-info zaSirinu">
+                    <label>Dijagnoza:</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Tip)</label>
+                </div>
+                <div class="element-info zaSirinu">
+                    <label>Ime&nbsp;i&nbsp;prezime&nbsp;ljekara:</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Doktor)</label>
+                    <label>Datum&nbsp;dijagnoze</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Doktor)</label>
+                </div>
+                <div class="element-info zaSirinu">
+                    <label>Zdravstvena&nbsp;ustanova:</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Ustanova)</label>
+                </div>
+                <p class="dijagnozaParagraf">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        }
+    }
 </div>

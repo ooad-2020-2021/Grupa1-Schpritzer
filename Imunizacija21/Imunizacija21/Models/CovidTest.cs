@@ -34,6 +34,8 @@ namespace Imunizacija21.Models
         public string OpisTesta { get; set; }
         [Required]
         public string Lokacija { get; set; }
+        [Required]
+        public int CovidKartonID { get; set; }
         #endregion
 
         #region Constructors

@@ -59,10 +59,9 @@ namespace Imunizacija21.Controllers
             //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje();
             if (ModelState.IsValid)
             {
-                
                 //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje(zahtjevZaTestiranje.KorisnikID, new List<string> { "uga buga" }, zahtjevZaTestiranje.Opis, zahtjevZaTestiranje.TipCovidTesta);
                 StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.Where(strucna => strucna.ID == 12).First(); // TODO - dodati pravi ID i napravit listu
-                zahtjevZaTestiranje.Razlozi = new List<string> { "uga buga" }; 
+                zahtjevZaTestiranje.Razlozi = "uga,buga";
                 zahtjevZaTestiranje.StrucnaOsobaID = strucnaOsoba.ID;
                 zahtjevZaTestiranje.OdobrenZahtjev = false;
                 //zahtjevKojiSeKreira.StrucnaOsobaID = strucnaOsoba.ID;

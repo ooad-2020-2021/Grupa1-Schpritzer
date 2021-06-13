@@ -14,7 +14,7 @@ namespace Imunizacija21.Models {
         public int ID { get; set; }
         /*public Vakcina Vakcina { get; set; }*/
         [Required]
-        public int VakcinaID { get; set; }
+        public TipVakcine TipVakcine { get; set; }
         /*public Doza PrvaDoza { get; set; }*/
         public int PrvaDozaID { get; set; }
         /*public Doza DrugaDoza { get; set; }*/
@@ -29,8 +29,8 @@ namespace Imunizacija21.Models {
 
         public Vakcinacija() { }
 
-        public Vakcinacija(int vakcinaID, int strucnaOsobaID) {
-            VakcinaID = vakcinaID;
+        public Vakcinacija(TipVakcine tipVakcine, int strucnaOsobaID) {
+            TipVakcine = tipVakcine;
             StrucnaOsobaID = strucnaOsobaID;
             /*PrvaDoza = null;
             DrugaDoza = null;*/

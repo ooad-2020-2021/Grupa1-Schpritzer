@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\DT User4\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\DT User4\\.nuget\\packages"
+=======
+      "C:\\Users\\dzena\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dzena\\.nuget\\packages"
+>>>>>>> 535b4c7c34f8d4a558d6b4d6e1b8c6beafbe893c
     ]
   }
 }

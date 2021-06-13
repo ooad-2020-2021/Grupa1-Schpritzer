@@ -27,6 +27,9 @@ namespace Imunizacija21.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("CovidKartonID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DatumDijagnoze")
                         .HasColumnType("datetime");
 
@@ -48,7 +51,6 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("VakcinacijaID")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -60,6 +62,9 @@ namespace Imunizacija21.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CovidKartonID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DatumTestiranja")
@@ -216,7 +221,7 @@ namespace Imunizacija21.Migrations
                     b.Property<int>("StrucnaOsobaID")
                         .HasColumnType("int");
 
-                    b.Property<int>("VakcinaID")
+                    b.Property<int>("TipVakcine")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -228,6 +233,9 @@ namespace Imunizacija21.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CovidKartonID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DatumZahtjeva")

@@ -25,6 +25,8 @@ namespace Imunizacija21.Models
         public StrucnaOsoba StrucnaOsoba { get; set; }*/
         [Required]
         public int StrucnaOsobaID { get; set; }
+        [Required]
+        public int CovidKartonID { get; set; }
         #endregion
 
         #region Constructors

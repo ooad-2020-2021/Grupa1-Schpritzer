@@ -63,7 +63,7 @@ namespace Imunizacija21.Models
         {
             ZahtjevZaVakcinaciju.StrucnaOsoba = strucnaOsoba;
         }*/
-        public List<string> GetRazloziTestiranja()
+        public string GetRazloziTestiranja()
         {
             return ZahtjevZaTestiranje.Razlozi;
         }
@@ -71,7 +71,7 @@ namespace Imunizacija21.Models
         {
             return ZahtjevZaTestiranje.Opis;
         }
-        public List<Vakcina> GetOdabraneVakcine()
+        public List<TipVakcine> GetOdabraneVakcine()
         {
             return ZahtjevZaVakcinaciju.OdabraneVakcine;
         }

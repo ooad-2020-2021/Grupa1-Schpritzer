@@ -9666,19 +9666,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\muham\\.nuget\\packages\\": {}
+    "C:\\Users\\dzena\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\muham\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
+      "projectUniqueName": "C:\\Users\\dzena\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
       "projectName": "Imunizacija21",
-      "projectPath": "C:\\Users\\muham\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
-      "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\muham\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\obj\\",
+      "projectPath": "C:\\Users\\dzena\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\Imunizacija21.csproj",
+      "packagesPath": "C:\\Users\\dzena\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dzena\\Source\\Repos\\Grupa1-Schpritzer\\Imunizacija21\\Imunizacija21\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dzena\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9753,7 +9753,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -12,7 +12,7 @@ namespace Imunizacija21.Models
         #region Properties
         [Required]
         [NotMapped]
-        public List<string> Razlozi { get; set; }
+        public string Razlozi { get; set; }
         //[Required]
         public string Opis { get; set; }
         [EnumDataType(typeof(TipCovidTesta))]
@@ -22,12 +22,11 @@ namespace Imunizacija21.Models
 
         #region Constructors
         public ZahtjevZaTestiranje() {
-            Razlozi = new List<string>();
         }
 
-        public ZahtjevZaTestiranje(int korisnikID, List<string> razlozi, string opis, TipCovidTesta tip): base(korisnikID)
+        public ZahtjevZaTestiranje(int korisnikID, string razlozi, string opis, TipCovidTesta tip): base(korisnikID)
         {
-            Razlozi = new List<string>(razlozi);
+            Razlozi = razlozi;
             Opis = opis;
             TipCovidTesta = tip;
         }

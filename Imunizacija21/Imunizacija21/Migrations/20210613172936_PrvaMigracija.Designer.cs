@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imunizacija21.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210612232356_prvaMigracija")]
-    partial class prvaMigracija
+    [Migration("20210613172936_PrvaMigracija")]
+    partial class PrvaMigracija
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace Imunizacija21.Migrations
                     b.Property<string>("BolestTip")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("CovidKartonID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DatumDijagnoze")
                         .HasColumnType("datetime");
@@ -50,7 +53,6 @@ namespace Imunizacija21.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("VakcinacijaID")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -62,6 +64,9 @@ namespace Imunizacija21.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CovidKartonID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DatumTestiranja")
@@ -218,7 +223,7 @@ namespace Imunizacija21.Migrations
                     b.Property<int>("StrucnaOsobaID")
                         .HasColumnType("int");
 
-                    b.Property<int>("VakcinaID")
+                    b.Property<int>("TipVakcine")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -230,6 +235,9 @@ namespace Imunizacija21.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("CovidKartonID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DatumZahtjeva")

@@ -45,6 +45,8 @@ namespace Imunizacija21.Models {
         public Vakcina(TipVakcine tipVakcine) {
             Tip = tipVakcine;
             ID = (int)Tip;
+            BrojDostupnih = 5000;
+            BrojIskoristenih = 50000;
             postaviInfoVakcina();
         }
 

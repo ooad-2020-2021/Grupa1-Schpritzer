@@ -14,8 +14,10 @@ namespace Imunizacija21.Controllers
     {
         private readonly DataContext _context;
 
+        
+
         public CovidKartonController(DataContext context)
-        {
+        { 
             _context = context;
         }
 

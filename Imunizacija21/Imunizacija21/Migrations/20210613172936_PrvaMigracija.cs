@@ -4,7 +4,7 @@ using MySql.Data.EntityFrameworkCore.Metadata;
 
 namespace Imunizacija21.Migrations
 {
-    public partial class prvaMigracija : Migration
+    public partial class PrvaMigracija : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,6 +55,7 @@ namespace Imunizacija21.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Doktor = table.Column<string>(nullable: false),
                     DatumDijagnoze = table.Column<DateTime>(nullable: false),
+                    CovidKartonID = table.Column<int>(nullable: false),
                     BolestTip = table.Column<string>(nullable: false),
                     Tip = table.Column<int>(nullable: true),
                     Oboljenja_Tip = table.Column<int>(nullable: true),
@@ -72,7 +73,7 @@ namespace Imunizacija21.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    VakcinacijaID = table.Column<int>(nullable: false)
+                    VakcinacijaID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,7 +90,8 @@ namespace Imunizacija21.Migrations
                     DatumTestiranja = table.Column<DateTime>(nullable: false),
                     Rezultat = table.Column<bool>(nullable: true),
                     OpisTesta = table.Column<string>(nullable: false),
-                    Lokacija = table.Column<string>(nullable: false)
+                    Lokacija = table.Column<string>(nullable: false),
+                    CovidKartonID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -162,7 +164,7 @@ namespace Imunizacija21.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    VakcinaID = table.Column<int>(nullable: false),
+                    TipVakcine = table.Column<int>(nullable: false),
                     PrvaDozaID = table.Column<int>(nullable: false),
                     DrugaDozaID = table.Column<int>(nullable: false),
                     StrucnaOsobaID = table.Column<int>(nullable: false)
@@ -196,6 +198,7 @@ namespace Imunizacija21.Migrations
                     DatumZahtjeva = table.Column<DateTime>(nullable: false),
                     OdobrenZahtjev = table.Column<bool>(nullable: true),
                     StrucnaOsobaID = table.Column<int>(nullable: false),
+                    CovidKartonID = table.Column<int>(nullable: false),
                     ZahtjevTip = table.Column<string>(nullable: false),
                     Opis = table.Column<string>(nullable: true),
                     TipCovidTesta = table.Column<int>(nullable: true)

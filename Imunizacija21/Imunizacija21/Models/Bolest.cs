@@ -17,6 +17,8 @@ namespace Imunizacija21.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime DatumDijagnoze { get; set; }
+        [Required]
+        public int CovidKartonID { get; set; }
         #endregion
 
         #region Constructors

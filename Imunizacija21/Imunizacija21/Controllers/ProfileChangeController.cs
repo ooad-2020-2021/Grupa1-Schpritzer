@@ -36,6 +36,22 @@ namespace Imunizacija21.Controllers
         //static StrucnaOsoba strucna3 = new StrucnaOsoba("Muhamed", "Borovac", "M", "0702000175242", "muhamed.borovac@gmail.com", "062474747", LokalnaZdravstvenaUstanova.STARI_GRAD);
         //static StrucnaOsoba strucna4 = new StrucnaOsoba("Dzenan", "Nuhic", "M", "1206000173777", "dzenan.nuhic@gmail.com", "062145415", LokalnaZdravstvenaUstanova.OMER_MASLIC);
 
+        //static ZahtjevZaTestiranje zahtjev = new ZahtjevZaTestiranje(0, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
+
+        //Alergija alergija = new Alergija("dr.sc. Muhamed Borovac", new DateTime(2015, 1, 4), TipAlergije.PENCILIN);
+        //Oboljenja oboljenje = new Oboljenja("dr.sc. Eldar Čivgin", new DateTime(2017, 12, 9), VrsteOboljenja.BRONHITIS);
+
+        //CovidTest covidTest1 = new CovidTest(TipCovidTesta.SEROLOSKI, new DateTime(2019, 4, 2), "Vrazova");
+        //CovidTest covidTest2 = new CovidTest(TipCovidTesta.PCR, new DateTime(2019, 6, 20), "Zetra");
+        //CovidTest covidTest3 = new CovidTest(TipCovidTesta.ANTIGENSKI, new DateTime(2020, 3, 17), "Ilidža");
+
+        //static Vakcina v1 = new Vakcina(TipVakcine.PFIZER);
+        //static Vakcina v2 = new Vakcina(TipVakcine.ASTRAZENECA);
+        //static Vakcina v3 = new Vakcina(TipVakcine.SINOPHARM);
+        //static Vakcina v4 = new Vakcina(TipVakcine.SPUTNIKV);
+        //static Vakcina v5 = new Vakcina(TipVakcine.SINOVAC);
+        //static Vakcina v6 = new Vakcina(TipVakcine.MODERNA);
+
         public ProfileChangeController(DataContext context)
         {
             _context = context;
@@ -54,7 +70,18 @@ namespace Imunizacija21.Controllers
             //_context.Add(strucna2);
             //_context.Add(strucna3);
             //_context.Add(strucna4);
-            //_context.SaveChangesAsync();
+            //_context.Add(zahtjev);
+            //_context.Add(alergija);
+            //_context.Add(covidTest1);
+            //_context.Add(covidTest2);
+            //_context.Add(covidTest3);
+            //_context.Add(v1);
+            //_context.Add(v2);
+            //_context.Add(v3);
+            //_context.Add(v4);
+            //_context.Add(v5);
+            //_context.Add(v6);
+            _context.SaveChangesAsync();
         }
 
         // GET: ProfileChange

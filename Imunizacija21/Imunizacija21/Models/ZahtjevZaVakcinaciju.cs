@@ -12,13 +12,13 @@ namespace Imunizacija21.Models
         #region Properties
         [Required]
         [NotMapped]
-        public List<Vakcina> OdabraneVakcine { get; set; }
+        public List<TipVakcine> OdabraneVakcine { get; set; }
         #endregion
 
         #region Constructors
         public ZahtjevZaVakcinaciju() { }
 
-        public ZahtjevZaVakcinaciju(int korisnikID, List<Vakcina> odabraneVakcine): base(korisnikID)
+        public ZahtjevZaVakcinaciju(int korisnikID, List<TipVakcine> odabraneVakcine): base(korisnikID)
         {
             OdabraneVakcine = odabraneVakcine;
         }

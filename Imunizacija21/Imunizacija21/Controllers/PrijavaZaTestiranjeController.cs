@@ -56,12 +56,24 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
+            //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje();
             if (ModelState.IsValid)
             {
+                
+                //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje(zahtjevZaTestiranje.KorisnikID, new List<string> { "uga buga" }, zahtjevZaTestiranje.Opis, zahtjevZaTestiranje.TipCovidTesta);
+                StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.Where(strucna => strucna.ID == 12).First(); // TODO - dodati pravi ID i napravit listu
+                zahtjevZaTestiranje.Razlozi = new List<string> { "uga buga" }; 
+                zahtjevZaTestiranje.StrucnaOsobaID = strucnaOsoba.ID;
+                zahtjevZaTestiranje.OdobrenZahtjev = false;
+                //zahtjevKojiSeKreira.StrucnaOsobaID = strucnaOsoba.ID;
+                //zahtjevKojiSeKreira.OdobrenZahtjev = false;
+
+                //_context.Add(zahtjevKojiSeKreira);
                 _context.Add(zahtjevZaTestiranje);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            //return View(zahtjevKojiSeKreira);
             return View(zahtjevZaTestiranje);
         }
 

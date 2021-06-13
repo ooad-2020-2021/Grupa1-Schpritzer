@@ -21,11 +21,13 @@ namespace Imunizacija21.Models
         #endregion
 
         #region Constructors
-        public ZahtjevZaTestiranje() { }
+        public ZahtjevZaTestiranje() {
+            Razlozi = new List<string>();
+        }
 
         public ZahtjevZaTestiranje(int korisnikID, List<string> razlozi, string opis, TipCovidTesta tip): base(korisnikID)
         {
-            Razlozi = razlozi;
+            Razlozi = new List<string>(razlozi);
             Opis = opis;
             TipCovidTesta = tip;
         }

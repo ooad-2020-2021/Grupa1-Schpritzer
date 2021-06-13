@@ -38,7 +38,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-
+    
 .container {
     flex: 1;
 }
@@ -46,7 +46,7 @@ body {
 /*Glavni footer*/
 .ft-main {
     padding: 1rem 1.5rem;
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
 }
 

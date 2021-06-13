@@ -20,7 +20,7 @@ namespace Imunizacija21.Models
         [Required]
         public DateTime DatumZahtjeva { get; set; }
         //[Required]
-        public bool? OdobrenZahtjev { get; set; } = null;
+        public bool OdobrenZahtjev { get; set; }
         /*[Required]
         public StrucnaOsoba StrucnaOsoba { get; set; }*/
         [Required]
@@ -32,6 +32,7 @@ namespace Imunizacija21.Models
 
         public Zahtjev(int korisnikID)
         {
+            DatumZahtjeva = DateTime.Now;
             KorisnikID = korisnikID;
         }
         #endregion

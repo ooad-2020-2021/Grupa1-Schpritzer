@@ -22,7 +22,15 @@ namespace Imunizacija21.Controllers
         // GET: StrucnaOsoba
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ZahtjevZaTestiranje.ToListAsync());
+            List<ZahtjevZaTestiranje> zahtjevZT = await _context.ZahtjevZaTestiranje.ToListAsync();
+            List<Tuple<ZahtjevZaTestiranje, Korisnik>> listaZiK = new List<Tuple<ZahtjevZaTestiranje, Korisnik>>();
+            //Korisnik k = _context.Korisnik.Where(k => k.ID == _context.ZahtjevZaTestiranje.Where(z => z.))
+            foreach(var item in zahtjevZT)
+            {
+                listaZiK.Add(new Tuple<ZahtjevZaTestiranje, Korisnik>(item, _context.Korisnik.Where(k => k.ID == item.KorisnikID).First()));
+            }
+            return View(listaZiK);
+            //return View(await _context.ZahtjevZaTestiranje.ToListAsync());
         }
 
         // GET: StrucnaOsoba/Details/5
@@ -66,7 +74,7 @@ namespace Imunizacija21.Controllers
         }
 
         // GET: StrucnaOsoba/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, int? id1)
         {
             if (id == null)
             {
@@ -74,11 +82,14 @@ namespace Imunizacija21.Controllers
             }
 
             var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje.FindAsync(id);
+            var korisnik = await _context.Korisnik.FindAsync(id1);
             if (zahtjevZaTestiranje == null)
             {
                 return NotFound();
             }
-            return View(zahtjevZaTestiranje);
+            //Korisnik korisnik = _context.Korisnik.Where(k => k.ID == zahtjevZaTestiranje.KorisnikID).First();
+            return View(new Tuple<ZahtjevZaTestiranje, Korisnik>(zahtjevZaTestiranje, korisnik));
+            //return View(zahtjevZaTestiranje);
         }
 
         // POST: StrucnaOsoba/Edit/5
@@ -86,23 +97,30 @@ namespace Imunizacija21.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
+        public async Task<IActionResult> Edit(int id, [Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje, int id1, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
         {
             if (id != zahtjevZaTestiranje.ID)
             {
                 return NotFound();
             }
 
+
+            ZahtjevZaTestiranje zahtjevKojiSeEdituje = _context.ZahtjevZaTestiranje.Where(k => k.ID == zahtjevZaTestiranje.ID).First();
+            zahtjevKojiSeEdituje.DatumZahtjeva = zahtjevZaTestiranje.DatumZahtjeva;
+            zahtjevKojiSeEdituje.OdobrenZahtjev = zahtjevZaTestiranje.OdobrenZahtjev;
+            //Korisnik korisnik = _context.Korisnik.Where(k => k.ID == zahtjevKojiSeEdituje.KorisnikID).First();
+            
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(zahtjevZaTestiranje);
+                    _context.Update(zahtjevKojiSeEdituje);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ZahtjevZaTestiranjeExists(zahtjevZaTestiranje.ID))
+                    if (!ZahtjevZaTestiranjeExists(zahtjevKojiSeEdituje.ID))
                     {
                         return NotFound();
                     }
@@ -113,7 +131,8 @@ namespace Imunizacija21.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(zahtjevZaTestiranje);
+            //return View(zahtjevKojiSeEdituje);
+            return View(new Tuple<ZahtjevZaTestiranje, Korisnik>(zahtjevKojiSeEdituje, korisnik));
         }
 
         // GET: StrucnaOsoba/Delete/5

@@ -1,9 +1,7 @@
-﻿body {
+body {
     font-family: Arial;
     padding: 0px;
-    background-color: #f2f2f2;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 10px;
 }
 
 h1 {
@@ -36,6 +34,11 @@ label {
 .element-info {
 }
 
+.rectangle {
+    border: 2px solid black;
+    padding: 10px;
+}
+
 .collapsible {
     background-color: #eee;
     color: #444;
@@ -66,8 +69,6 @@ label {
     border: 2px solid black;
 }
 
-div {
-    background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+.inside-content {
+    padding: 10px 10px;
 }

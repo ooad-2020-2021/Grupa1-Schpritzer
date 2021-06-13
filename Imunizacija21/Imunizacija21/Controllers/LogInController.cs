@@ -19,7 +19,7 @@ namespace Imunizacija21.Controllers
             _context = context;
         }
 
-        static Korisnik GetUlogovani(DataContext context)
+        public static Korisnik GetUlogovani(DataContext context)
         {
             return context.Korisnik.Where(k => k.Ulogovan == true).First();
         }

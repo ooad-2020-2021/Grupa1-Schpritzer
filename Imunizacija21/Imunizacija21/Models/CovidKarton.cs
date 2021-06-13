@@ -15,7 +15,6 @@ namespace Imunizacija21.Models
         public int ID { get; set; }
         /*[Required]
         public Vakcinacija Vakcinacija { get; set; }*/
-        [Required]
         public int? VakcinacijaID { get; set; }
         [NotMapped]
         [Required]

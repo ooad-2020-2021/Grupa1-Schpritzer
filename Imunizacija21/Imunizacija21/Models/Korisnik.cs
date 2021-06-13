@@ -63,5 +63,18 @@ namespace Imunizacija21.Models
             Zanimanje = zanimanje;
         }
         #endregion
+
+        public bool IsMusko()
+        {
+            if (Spol == "M") return true;
+            return false;
+        }
+
+        public bool IsZensko()
+        {
+            if (Spol == "Z") return true;
+            return false;
+        }
+
     }
 }

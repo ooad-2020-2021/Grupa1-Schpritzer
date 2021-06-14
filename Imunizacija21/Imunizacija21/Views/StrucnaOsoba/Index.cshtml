@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Tuple<Imunizacija21.Models.ZahtjevZaTestiranje, Imunizacija21.Models.Korisnik>>
+﻿@model IEnumerable<Imunizacija21.Models.KorisnikZahtjev>
 
 @{
     ViewData["Title"] = "Index";
@@ -19,13 +19,13 @@
                 Datum Rođenja
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Item1.Opis)
+                @Html.DisplayNameFor(model => model.Opis)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Item1.TipCovidTesta)
+                @Html.DisplayNameFor(model => model.TipCovidTesta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Item1.DatumZahtjeva)
+                @Html.DisplayNameFor(model => model.DatumZahtjeva)
             </th>
             @*<th>
             @Html.DisplayNameFor(model => model.OdobrenZahtjev)
@@ -42,19 +42,19 @@
         {
             <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Item2.Ime) @Html.DisplayFor(modelItem => item.Item2.Prezime)
+                @Html.DisplayFor(modelItem => item.Ime) @Html.DisplayFor(modelItem => item.Prezime)
             </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Item2.DatumRodjenja)
+                    @Html.DisplayFor(modelItem => item.DatumRodjenja)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Item1.Opis)
+                    @Html.DisplayFor(modelItem => item.Opis)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Item1.TipCovidTesta)
+                    @Html.DisplayFor(modelItem => item.TipCovidTesta)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Item1.DatumZahtjeva)
+                    @Html.DisplayFor(modelItem => item.DatumZahtjeva)
                 </td>
 
                 @*<td>
@@ -64,9 +64,9 @@
                 @Html.DisplayFor(modelItem => item.StrucnaOsobaID)
             </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Item1.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Item1.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Item1.ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IDZahtjeva">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IDZahtjeva">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDZahtjeva">Delete</a>
             </td>
             </tr>
         }

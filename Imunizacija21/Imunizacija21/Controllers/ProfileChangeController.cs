@@ -36,8 +36,9 @@ namespace Imunizacija21.Controllers
         //static StrucnaOsoba strucna3 = new StrucnaOsoba("Muhamed", "Borovac", "M", "0702000175242", "muhamed.borovac@gmail.com", "062474747", LokalnaZdravstvenaUstanova.STARI_GRAD);
         //static StrucnaOsoba strucna4 = new StrucnaOsoba("Dzenan", "Nuhic", "M", "1206000173777", "dzenan.nuhic@gmail.com", "062145415", LokalnaZdravstvenaUstanova.OMER_MASLIC);
 
-        //static ZahtjevZaTestiranje zahtjev = new ZahtjevZaTestiranje(0, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
-
+        //static ZahtjevZaTestiranje zahtjev = new ZahtjevZaTestiranje(15, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
+        //static ZahtjevZaTestiranje zahtjev2 = new ZahtjevZaTestiranje(15, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
+        //static ZahtjevZaTestiranje zahtjev3 = new ZahtjevZaTestiranje(15, "Temperatura,Kontakt sa zarazenim", "Prije 2 dana sam bio na kafi sa osobom koja se testirala pozitivnom", TipCovidTesta.PCR);
         //Alergija alergija = new Alergija("dr.sc. Muhamed Borovac", new DateTime(2015, 1, 4), TipAlergije.PENCILIN);
         //Alergija alergija = new Alergija("dr.sc. Muhamed Borovac", new DateTime(2012, 6, 8), TipAlergije.POLEN);
         //Alergija alergija1 = new Alergija("dr.sc. Dzenan Nuhic", new DateTime(2017, 1, 30), TipAlergije.PRASINA);
@@ -78,6 +79,8 @@ namespace Imunizacija21.Controllers
             //_context.Add(strucna3);
             //_context.Add(strucna4);
             //_context.Add(zahtjev);
+            //_context.Add(zahtjev2);
+            //_context.Add(zahtjev3);
             //_context.Add(alergija);
             //_context.Add(alergija1);
             //_context.Add(alergija2);
@@ -95,7 +98,7 @@ namespace Imunizacija21.Controllers
             //_context.Add(v4);
             //_context.Add(v5);
             //_context.Add(v6);
-            _context.SaveChangesAsync();
+            //_context.SaveChangesAsync();
         }
 
         // GET: ProfileChange

@@ -33,7 +33,7 @@ namespace Imunizacija21.Models
         [Required]
         public string OpisTesta { get; set; }
         [Required]
-        public string Lokacija { get; set; }
+        public LokalnaZdravstvenaUstanova Lokacija { get; set; }
         [Required]
         public int CovidKartonID { get; set; }
         #endregion
@@ -41,16 +41,17 @@ namespace Imunizacija21.Models
         #region Constructors
         public CovidTest() { }
 
-        public CovidTest(TipCovidTesta tipCovidTesta, DateTime datumTestiranja, string lokacija) {
+        public CovidTest(TipCovidTesta tipCovidTesta, DateTime datumTestiranja, LokalnaZdravstvenaUstanova lokacija, int covidKartonID) {
             TipCovidTesta = tipCovidTesta;
             DatumTestiranja = datumTestiranja;
             OpisTesta = ""; //TODO
             Lokacija = lokacija;
+            CovidKartonID = covidKartonID;
         }
         #endregion
 
         #region Methods
-        public Tuple<TipCovidTesta, DateTime, string> GetInfo()
+        public Tuple<TipCovidTesta, DateTime, LokalnaZdravstvenaUstanova> GetInfo()
         {
             return Tuple.Create(TipCovidTesta, DatumTestiranja, Lokacija);
         }

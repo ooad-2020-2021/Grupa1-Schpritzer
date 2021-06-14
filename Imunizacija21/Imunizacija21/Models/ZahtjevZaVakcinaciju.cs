@@ -16,11 +16,14 @@ namespace Imunizacija21.Models
         #endregion
 
         #region Constructors
-        public ZahtjevZaVakcinaciju() { }
+        public ZahtjevZaVakcinaciju()
+        {
+            OdabraneVakcine = new List<TipVakcine>();
+        }
 
         public ZahtjevZaVakcinaciju(int korisnikID, List<TipVakcine> odabraneVakcine): base(korisnikID)
         {
-            OdabraneVakcine = odabraneVakcine;
+            OdabraneVakcine = new List<TipVakcine>(odabraneVakcine);
         }
         #endregion
     }

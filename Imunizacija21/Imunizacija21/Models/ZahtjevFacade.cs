@@ -65,7 +65,7 @@ namespace Imunizacija21.Models
         }*/
         public string GetRazloziTestiranja()
         {
-            return ZahtjevZaTestiranje.Razlozi;
+            return ZahtjevZaTestiranje.Razlozi[0];
         }
         public string GetOpisTestiranja()
         {

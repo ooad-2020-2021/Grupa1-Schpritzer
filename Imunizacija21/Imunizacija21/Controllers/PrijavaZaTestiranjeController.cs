@@ -46,7 +46,10 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaTestiranje/Create
         public IActionResult Create()
         {
-            return View();
+            Korisnik k = LoginController.GetUlogovani(_context);
+            ZahtjevZaTestiranje zahtjevZaTestiranje = new ZahtjevZaTestiranje();
+            Tuple<Korisnik, ZahtjevZaTestiranje> tuple = new Tuple<Korisnik, ZahtjevZaTestiranje>(k, zahtjevZaTestiranje);
+            return View(tuple);
         }
 
         // POST: PrijavaZaTestiranje/Create
@@ -57,13 +60,16 @@ namespace Imunizacija21.Controllers
         public async Task<IActionResult> Create([Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
             //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje();
+            
             if (ModelState.IsValid)
             {
                 //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje(zahtjevZaTestiranje.KorisnikID, new List<string> { "uga buga" }, zahtjevZaTestiranje.Opis, zahtjevZaTestiranje.TipCovidTesta);
-                StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.Where(strucna => strucna.ID == 12).First(); // TODO - dodati pravi ID i napravit listu
-                zahtjevZaTestiranje.Razlozi = "uga,buga";
+                StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.First(); // TODO - dodati pravi ID i napravit listu
+                zahtjevZaTestiranje.Razlozi = new List<string> { "uga,buga" };
                 zahtjevZaTestiranje.StrucnaOsobaID = strucnaOsoba.ID;
                 zahtjevZaTestiranje.OdobrenZahtjev = false;
+                zahtjevZaTestiranje.DatumZahtjeva = DateTime.Now;
+                //zahtjevZaTestiranje.DatumZahtjeva = DateTime.Now;
                 //zahtjevKojiSeKreira.StrucnaOsobaID = strucnaOsoba.ID;
                 //zahtjevKojiSeKreira.OdobrenZahtjev = false;
 

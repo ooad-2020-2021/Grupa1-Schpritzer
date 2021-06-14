@@ -22,12 +22,15 @@ namespace Imunizacija21.Controllers
         // GET: StrucnaOsoba
         public async Task<IActionResult> Index()
         {
-            List<ZahtjevZaTestiranje> zahtjevZT = await _context.ZahtjevZaTestiranje.ToListAsync();
-            List<Tuple<ZahtjevZaTestiranje, Korisnik>> listaZiK = new List<Tuple<ZahtjevZaTestiranje, Korisnik>>();
+            List<ZahtjevZaTestiranje> z = await _context.ZahtjevZaTestiranje.ToListAsync();
+            //List<Tuple<ZahtjevZaTestiranje, Korisnik>> listaZiK = new List<Tuple<ZahtjevZaTestiranje, Korisnik>>();
+            List<KorisnikZahtjev> listaZiK = new List<KorisnikZahtjev>();
             //Korisnik k = _context.Korisnik.Where(k => k.ID == _context.ZahtjevZaTestiranje.Where(z => z.))
-            foreach(var item in zahtjevZT)
+            foreach(var item in z)
             {
-                listaZiK.Add(new Tuple<ZahtjevZaTestiranje, Korisnik>(item, _context.Korisnik.Where(k => k.ID == item.KorisnikID).First()));
+                Korisnik t = _context.Korisnik.Where(k => k.ID == item.KorisnikID).First();
+                listaZiK.Add(new KorisnikZahtjev(t.ID, t.Ime, t.Prezime, t.DatumRodjenja, t.Spol, t.JMBG, t.Email, t.BrojTelefona, t.LokalnaZdravstvenaUstanova, t.ZdravstvenaKartica, 
+                    t.Adresa, t.Zanimanje, item.ID, item.KorisnikID, item.DatumZahtjeva, item.OdobrenZahtjev, item.StrucnaOsobaID, item.CovidKartonID, item.Razlozi, item.Opis, item.TipCovidTesta, new DateTime(0), t.LokalnaZdravstvenaUstanova));
             }
             return View(listaZiK);
             //return View(await _context.ZahtjevZaTestiranje.ToListAsync());
@@ -74,21 +77,23 @@ namespace Imunizacija21.Controllers
         }
 
         // GET: StrucnaOsoba/Edit/5
-        public async Task<IActionResult> Edit(int? id, int? id1)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje.FindAsync(id);
-            var korisnik = await _context.Korisnik.FindAsync(id1);
-            if (zahtjevZaTestiranje == null)
+            var item = await _context.ZahtjevZaTestiranje.FindAsync(id);
+            var t = await _context.Korisnik.FindAsync(item.KorisnikID);
+            KorisnikZahtjev korisnikZahtjev = new KorisnikZahtjev(t.ID, t.Ime, t.Prezime, t.DatumRodjenja, t.Spol, t.JMBG, t.Email, t.BrojTelefona, t.LokalnaZdravstvenaUstanova, t.ZdravstvenaKartica,
+                    t.Adresa, t.Zanimanje, item.ID, item.KorisnikID, item.DatumZahtjeva, item.OdobrenZahtjev, item.StrucnaOsobaID, item.CovidKartonID, item.Razlozi, item.Opis, item.TipCovidTesta, DateTime.Now, t.LokalnaZdravstvenaUstanova);
+            if (korisnikZahtjev == null)
             {
                 return NotFound();
             }
             //Korisnik korisnik = _context.Korisnik.Where(k => k.ID == zahtjevZaTestiranje.KorisnikID).First();
-            return View(new Tuple<ZahtjevZaTestiranje, Korisnik>(zahtjevZaTestiranje, korisnik));
+            return View(korisnikZahtjev);
             //return View(zahtjevZaTestiranje);
         }
 
@@ -97,30 +102,43 @@ namespace Imunizacija21.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje, int id1, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
+        public async Task<IActionResult> Edit(int id, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Razlozi,Opis,TipCovidTesta,IDZahtjeva,KorisnikID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID,CovidKartonID,ZakazaniDatum")] KorisnikZahtjev korisnikZahtjev)
         {
-            if (id != zahtjevZaTestiranje.ID)
+            if (id != korisnikZahtjev.ID)
             {
                 return NotFound();
             }
 
+            //KorisnikZahtjev korisnikKojiSeEdituje = korisnikZahtjev;
 
-            ZahtjevZaTestiranje zahtjevKojiSeEdituje = _context.ZahtjevZaTestiranje.Where(k => k.ID == zahtjevZaTestiranje.ID).First();
-            zahtjevKojiSeEdituje.DatumZahtjeva = zahtjevZaTestiranje.DatumZahtjeva;
-            zahtjevKojiSeEdituje.OdobrenZahtjev = zahtjevZaTestiranje.OdobrenZahtjev;
+            //ZahtjevZaTestiranje zahtjevKojiSeEdituje = _context.ZahtjevZaTestiranje.Where(k => k.ID == zahtjevZaTestiranje.ID).First();
+            //zahtjevKojiSeEdituje.DatumZahtjeva = zahtjevZaTestiranje.DatumZahtjeva;
+            //zahtjevKojiSeEdituje.OdobrenZahtjev = zahtjevZaTestiranje.OdobrenZahtjev;
             //Korisnik korisnik = _context.Korisnik.Where(k => k.ID == zahtjevKojiSeEdituje.KorisnikID).First();
-            
+
+            ZahtjevZaTestiranje zahtjev = _context.ZahtjevZaTestiranje.Where(k => k.ID == korisnikZahtjev.IDZahtjeva).First();
+            zahtjev.DatumZahtjeva = korisnikZahtjev.DatumZahtjeva;
+            zahtjev.OdobrenZahtjev = korisnikZahtjev.OdobrenZahtjev;
+            DateTime datumTesta = korisnikZahtjev.ZakazaniDatum;
+            LokalnaZdravstvenaUstanova lokacija = korisnikZahtjev.Lokacija;
+            int covidKartonID = korisnikZahtjev.CovidKartonID;
 
             if (ModelState.IsValid)
             {
                 try
-                {
-                    _context.Update(zahtjevKojiSeEdituje);
+                {    
+                    if (zahtjev.OdobrenZahtjev)
+                    {
+                        CovidTest test = new CovidTest(zahtjev.TipCovidTesta, datumTesta, lokacija, covidKartonID);
+                        _context.Add(test);
+                    }
+                    _context.ZahtjevZaTestiranje.Remove(zahtjev);
                     await _context.SaveChangesAsync();
+                    //_context.Update(zahtjev);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ZahtjevZaTestiranjeExists(zahtjevKojiSeEdituje.ID))
+                    if (!ZahtjevZaTestiranjeExists(zahtjev.ID))
                     {
                         return NotFound();
                     }
@@ -132,7 +150,7 @@ namespace Imunizacija21.Controllers
                 return RedirectToAction(nameof(Index));
             }
             //return View(zahtjevKojiSeEdituje);
-            return View(new Tuple<ZahtjevZaTestiranje, Korisnik>(zahtjevKojiSeEdituje, korisnik));
+            return View(zahtjev);
         }
 
         // GET: StrucnaOsoba/Delete/5

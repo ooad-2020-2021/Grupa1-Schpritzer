@@ -2,8 +2,199 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="~/css/HomeStyle.css" />
 
-<!-- <div class="text-center">
-     <h1 class="display-4">Welcome</h1>
-     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div> -->
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>*@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<section>
+    <div class="text-center">
+        <h1 class="display-4">Imunizacija'21</h1>
+        <p>Dobrodošli na stranicu na kojoj možete naći sve o Covid-19.</p>
+        @*<h3 class="display-4">Trenutno stanje imunizacije u Kantonu Sarajevo</h3>*@
+    </div>
+    <hr />
+    <div class="graf-center">
+        <div id="piechart" class="home-column"></div>
+    </div>
+    @*<div class="graf-center">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        </div>*@
+
+    <div class="home-column text-center">
+        <h4 class="display-6">Broj dostavljenih vakcina po proizvođaču</h4>
+        <p>Trenutno je Kantonu Sarajevo isporučeno ukupno 74755 doza vakcina protiv Covid-19. Najviše dostavljenih vakcina je od strane proizvođača Pfizer/BioNTech u iznosu od 34564 doza.</p>
+    </div>
+</section>
+<hr />
+<section>
+    <div class="text-center" id="Presjek" style="scroll-behavior: smooth;">
+        <h1 class="display-5">Trenutno stanje COVID-19 u Kantonu Sarajevo</h1>
+        <h4 class="display-6">Presjek stanja za 14.6.2021.</h4>
+    </div>
+</section>
+<section class="ft-main">
+    <div class="ft-main-item text-center">
+        <h1 class="display-4">12</h1>
+        <p>Novozaraženih</p>
+    </div>
+    <div class="ft-main-item text-center">
+        <h1 class="display-4">27</h1>
+        <p>Oporavljenih</p>
+    </div>
+    <div class="ft-main-item text-center">
+        <h1 class="display-4">2</h1>
+        <p>Preminulih</p>
+    </div>
+</section>
+<hr />
+<div class="text-center">
+    <h4 class="display-6">Pregled zaraženih za prethodnih 10 sedmica</h4>
+</div>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<hr />
+
+<div class="text-center">
+    <h1 class="display-5">Najčešće postavljena pitanja</h1>
+</div>
+<hr />
+<section class="ft-main">
+    <div class="ft-main-item text-center">
+        <h4 class="display-7">Da li su i koje vakcine sigurne za osobe iznad 65 godina?</h4>
+        <p>Sve vakcine koje se koriste u našoj regiji su odobrene za upotrebu i kod osoba starijih od 65 godina. Dosadašnje iskustvo u primjeni Pfizer vakcine u Kantonu Sarajevo govori da starije osobe dobro podnose ovu vakcinu (reakcije na vakcinu kod starijih osoba su rjeđe nego kod mlađih).</p>
+    </div>
+    <div class="ft-main-item text-center">
+        <h4 class="display-7">Koja vakcina se preporučuje onima koji su preboljeli COVID-19?</h4>
+        <p>Osobe koje su preboljele COVID-19 mogu da prime bilo koju vakcinu protiv COVID-19.</p>
+    </div>
+    <div class="ft-main-item text-center">
+        <h4 class="display-7">Je li sigurno za moje dijete da dobije cjepivo prvotiv Covid-19?</h4>
+        <p>Da. Studije pokazuju da su cjepiva protiv COVID-19 sigurna i učinkovita. Kao i odrasli, i djeca mogu imati neke nuspojave nakon cijepljenja protiv COVID-19. Te nuspojave mogu utjecati na njihovu sposobnost obavljanja svakodnevnih aktivnosti, no trebale bi nestati za nekoliko dana.</p>
+    </div>
+</section>
+<div class="text-center">
+    <a asp-controller="FAQ" asp-action="Index">Za pritup više često postavljenih pitanja, kliknite ovdje</a>
+</div>
+<hr />
+
+
+<script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Vakcina', 'Broj Dostavljenih'],
+            ['Pfizer', 34564],
+            ['AstraZeneca', 21053],
+            ['SputnikV', 5078],
+            ['Sinopharm', 7747],
+            ['Sinovac', 6313]
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = { 'title': '', 'width': 550, 'height': 400 };
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+</script>
+
+
+<script>
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: ""
+            },
+            data: [{
+                type: "line",
+                indexLabelFontSize: 16,
+                dataPoints: [
+                    { y: 496 },
+                    { y: 707 },
+                    { y: 746 },
+                    { y: 658 },
+                    { y: 611 },
+                    { y: 497 },
+                    { y: 304 },
+                    { y: 333 },
+                    { y: 500 },
+                    { y: 281 },
+                    { y: 163 },
+                    { y: 195 },
+                    { y: 174 },
+                    { y: 282 },
+                    { y: 179 },
+                    { y: 186 },
+                    { y: 156 },
+                    { y: 99 },
+                    { y: 71 },
+                    { y: 98 },
+                    { y: 176 },
+                    { y: 137 },
+                    { y: 119 },
+                    { y: 93 },
+                    { y: 63 },
+                    { y: 65 },
+                    { y: 85 },
+                    { y: 82 },
+                    { y: 64 },
+                    { y: 67 },
+                    { y: 53 },
+                    { y: 67 },
+                    { y: 76 },
+                    { y: 48 },
+                    { y: 29 },
+                    { y: 45 },
+                    { y: 26 },
+                    { y: 33 },
+                    { y: 22 },
+                    { y: 21 },
+                    { y: 23 },
+                    { y: 17 },
+                    { y: 16 },
+                    { y: 15 },
+                    { y: 17 },
+                    { y: 14 },
+                    { y: 15 },
+                    { y: 7 },
+                    { y: 22 },
+                    { y: 11 },
+                    { y: 35 },
+                    { y: 22 },
+                    { y: 12 },
+                    { y: 13 },
+                    { y: 6 },
+                    { y: 14 },
+                    { y: 16 },
+                    { y: 21 },
+                    { y: 8 },
+                    { y: 11 },
+                    { y: 2 },
+                    { y: 12 },
+                    { y: 10 },
+                    { y: 6 },
+                    { y: 9 },
+                    { y: 9 },
+                    { y: 8 },
+                    { y: 7 },
+                    { y: 6 },
+                    { y: 7 },
+                    { y: 7 },
+                    { y: 8 },
+                    { y: 13 },
+                    { y: 11 },
+                    { y: 3 }
+                ]
+            }]
+        });
+        chart.render();
+    }
+</script>

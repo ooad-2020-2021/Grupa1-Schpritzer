@@ -168,6 +168,21 @@
             </div>
         </div>
         <hr />
-        <button class="btn-print">Print</button>
+        @*<button class="btn-print">Print</button>*@
+        <iframe src="~/files/PotvrdaOVakcinaciji.pdf" id="myFrame"
+                frameborder="0" style="border:0;"
+                width="0" height="0">
+        </iframe>
+        <p>
+            <input type="button" id="bt" onclick="print()" class="btn-print" value="Print PDF" />
+        </p>
+
+        <script>
+            let print = () => {
+                let objFra = document.getElementById('myFrame');
+                objFra.contentWindow.focus();
+                objFra.contentWindow.print();
+            }
+        </script>
     }
 </div>

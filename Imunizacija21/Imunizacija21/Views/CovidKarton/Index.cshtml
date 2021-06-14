@@ -68,18 +68,18 @@
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.Zanimanje)</label>
             </div>
             @*<div class="element-info">
-            <label>Titula:</label>
-            <input type="checkbox" name="name" checked="checked" onClick="return false;">
-            <label>Gosp.</label>
-            <input type="checkbox" name="name" onClick="return false;">
-            <label>Gdja</label>
-            <input type="checkbox" name="name" onClick="return false;">
-            <label>Dr.</label>
-        </div>*@
+                    <label>Titula:</label>
+                    <input type="checkbox" name="name" checked="checked" onClick="return false;">
+                    <label>Gosp.</label>
+                    <input type="checkbox" name="name" onClick="return false;">
+                    <label>Gdja</label>
+                    <input type="checkbox" name="name" onClick="return false;">
+                    <label>Dr.</label>
+                </div>*@
             @*<div class="element-info">
-            <label>Opcina:</label>
-            <label class="popunjeno">Centar</label>
-        </div>*@
+                    <label>Opcina:</label>
+                    <label class="popunjeno">Centar</label>
+                </div>*@
             <div class="element-info zaSirinu">
                 <label>Kontakt&nbsp;telefon:</label>
                 <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item2.BrojTelefona)</label>
@@ -168,6 +168,22 @@
     }
 </div>
 <hr />
-<button class="print-btn">
+@*<button class="print-btn">
     Print
-</button>
+</button>*@
+
+<iframe src="~/files/PotvrdaOVakcinaciji.pdf" id="myFrame"
+        frameborder="0" style="border:0;"
+        width="0" height="0">
+</iframe>
+<p>
+    <input type="button" id="bt" onclick="print()" class="print-btn" value="Print PDF" />
+</p>
+
+<script>
+    let print = () => {
+        let objFra = document.getElementById('myFrame');
+        objFra.contentWindow.focus();
+        objFra.contentWindow.print();
+    }
+</script>

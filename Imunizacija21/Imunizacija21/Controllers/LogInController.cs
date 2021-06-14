@@ -19,9 +19,12 @@ namespace Imunizacija21.Controllers
             _context = context;
         }
 
-        public static Korisnik GetUlogovani(DataContext context)
+        public static Osoba GetUlogovani(DataContext context)
         {
-            return context.Korisnik.Where(k => k.Ulogovan == true).First();
+            bool postoji = context.Osoba.Where(k => k.Ulogovan == true).Any();
+            if(postoji)
+                return context.Osoba.Where(k => k.Ulogovan == true).First();
+            return null;
         }
 
         // GET: LogIn
@@ -32,6 +35,8 @@ namespace Imunizacija21.Controllers
 
         public async Task<IActionResult> Login(string JMBG, string brZK)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             //int i = 0;
             //treba naci korisnika i stavit mu ulogovan = true
             Korisnik korisnik = _context.Korisnik.Where(k => k.JMBG == JMBG).First();
@@ -44,12 +49,14 @@ namespace Imunizacija21.Controllers
             //else
                 //error ispisati
             //return RedirectToAction(nameof(ProfileChangeController.Index));
-            return RedirectToAction("Index", "CovidKarton");
+            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> LogOut()
         {
-            Korisnik korisnik = GetUlogovani(_context);
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
+            Korisnik korisnik = (Korisnik)GetUlogovani(_context);
             korisnik.Ulogovan = false;
             _context.Update(korisnik);
             await _context.SaveChangesAsync();

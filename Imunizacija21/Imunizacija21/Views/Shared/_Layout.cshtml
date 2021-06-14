@@ -6,8 +6,8 @@
     <title>@ViewData["Title"] - Imunizacija21</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" id="epicGamer"/>
     <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
+</head> 
+<body> 
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -20,41 +20,65 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     @*<partial name="_LoginPartial" />*@
                     <ul class="navbar-nav">
+                        @if (ViewBag.Osoba == null)
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="Index">Prijavite se</a>
                         </li>
+                        }
+                        else
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="LogOut">Odjavi se</a>
                         </li>
+                        }
 
                     </ul>
                     <ul class="navbar-nav flex-grow-1">
                         <!--
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Vakcinacija</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trenutno stanje</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home">Mapa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="FAQ">FAQ</a>
-                        </li>
-                            -->
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CovidKarton" asp-action="Index">Moj Covid karton</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ProfileChange" asp-action="Index">Izmjena profila</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaTestiranje" asp-action="Create">Prijava za testiranje</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaVakcinaciju" asp-action="Create">Prijava za vakcinaciju</a>
-                        </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Vakcinacija</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Trenutno stanje</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home">Mapa</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="FAQ">FAQ</a>
+    </li>
+        -->
+                        @if (ViewBag.Osoba != null && ViewBag.Osoba is Korisnik)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="CovidKarton" asp-action="Index">Moj Covid karton</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ProfileChange" asp-action="Edit">Izmjena profila</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaTestiranje" asp-action="Create">Prijava za testiranje</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PrijavaZaVakcinaciju" asp-action="Create">Prijava za vakcinaciju</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="FAQ" asp-action="Index">FAQ</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#Presjek">Trenutno stanje</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="FAQ" asp-action="Index">FAQ</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

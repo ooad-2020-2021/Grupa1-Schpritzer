@@ -150,12 +150,15 @@ namespace Imunizacija21.Controllers
         // GET: ProfileChange/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
+            Korisnik k = (Korisnik)LoginController.GetUlogovani(_context);
+            if (k.ID == null)
             {
                 return NotFound();
             }
 
-            var korisnik = await _context.Korisnik.FindAsync(id);
+            var korisnik = await _context.Korisnik.FindAsync(k.ID);
             if (korisnik == null)
             {
                 return NotFound();
@@ -170,6 +173,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova")] Korisnik korisnik)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id != korisnik.ID)
             {
                 return NotFound();
@@ -200,7 +205,7 @@ namespace Imunizacija21.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             return View(korisnikKojiSeEdituje);
         }

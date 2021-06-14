@@ -22,12 +22,16 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaTestiranje
         public async Task<IActionResult> Index()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View(await _context.ZahtjevZaTestiranje.ToListAsync());
         }
 
         // GET: PrijavaZaTestiranje/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -46,7 +50,9 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaTestiranje/Create
         public IActionResult Create()
         {
-            Korisnik k = LoginController.GetUlogovani(_context);
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
+            Korisnik k = (Korisnik)LoginController.GetUlogovani(_context);
             ZahtjevZaTestiranje zahtjevZaTestiranje = new ZahtjevZaTestiranje();
             Tuple<Korisnik, ZahtjevZaTestiranje> tuple = new Tuple<Korisnik, ZahtjevZaTestiranje>(k, zahtjevZaTestiranje);
             return View(tuple);
@@ -60,7 +66,8 @@ namespace Imunizacija21.Controllers
         public async Task<IActionResult> Create([Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
             //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje();
-            
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (ModelState.IsValid)
             {
                 //ZahtjevZaTestiranje zahtjevKojiSeKreira = new ZahtjevZaTestiranje(zahtjevZaTestiranje.KorisnikID, new List<string> { "uga buga" }, zahtjevZaTestiranje.Opis, zahtjevZaTestiranje.TipCovidTesta);
@@ -85,6 +92,8 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaTestiranje/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -105,6 +114,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Opis,TipCovidTesta,ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaTestiranje zahtjevZaTestiranje)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id != zahtjevZaTestiranje.ID)
             {
                 return NotFound();
@@ -136,6 +147,8 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaTestiranje/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -156,6 +169,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             var zahtjevZaTestiranje = await _context.ZahtjevZaTestiranje.FindAsync(id);
             _context.ZahtjevZaTestiranje.Remove(zahtjevZaTestiranje);
             await _context.SaveChangesAsync();
@@ -164,6 +179,8 @@ namespace Imunizacija21.Controllers
 
         private bool ZahtjevZaTestiranjeExists(int id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return _context.ZahtjevZaTestiranje.Any(e => e.ID == id);
         }
     }

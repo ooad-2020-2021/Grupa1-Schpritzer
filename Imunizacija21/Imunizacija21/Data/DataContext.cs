@@ -72,5 +72,10 @@ namespace Imunizacija21.Data
             //modelBuilder.Entity<ZahtjevZaVakcinaciju>().ToTable("ZahtjevZaVakcinaciju");
             modelBuilder.Entity<VakcinaZahtjevZaVakcinaciju>().ToTable("VakcinaZahtjevZaVakcinaciju");
         }
+
+        public DataContext getContext()
+        {
+            return this;
+        }
     }
 }

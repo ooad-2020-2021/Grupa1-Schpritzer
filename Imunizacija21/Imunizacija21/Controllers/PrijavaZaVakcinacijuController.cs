@@ -22,12 +22,16 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaVakcinaciju
         public async Task<IActionResult> Index()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View(await _context.ZahtjevZaVakcinaciju.ToListAsync());
         }
 
         // GET: PrijavaZaVakcinaciju/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -46,7 +50,9 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaVakcinaciju/Create
         public IActionResult Create()
         {
-            Korisnik k = LoginController.GetUlogovani(_context);
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
+            Korisnik k = (Korisnik)LoginController.GetUlogovani(_context);
             List<Bolest> b = _context.Bolest.Where(b => b.CovidKartonID == k.CovidKartonID).ToList();
             Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>> tuple = new Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>>(_context.CovidKarton.Find(k.CovidKartonID), k, b);
             return View(tuple);
@@ -60,11 +66,13 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaVakcinaciju zahtjevZaVakcinaciju)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (ModelState.IsValid)
             {
                 StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.First();
                 strucnaOsoba.Zahtjevi.Add(zahtjevZaVakcinaciju);
-                Korisnik korisnik = LoginController.GetUlogovani(_context);
+                Korisnik korisnik = (Korisnik)LoginController.GetUlogovani(_context);
                 zahtjevZaVakcinaciju.DatumZahtjeva = DateTime.Now;
                 zahtjevZaVakcinaciju.KorisnikID = korisnik.ID;
                 zahtjevZaVakcinaciju.StrucnaOsobaID = strucnaOsoba.ID;
@@ -80,6 +88,8 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaVakcinaciju/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -100,6 +110,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,DatumZahtjeva,OdobrenZahtjev,StrucnaOsobaID")] ZahtjevZaVakcinaciju zahtjevZaVakcinaciju)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id != zahtjevZaVakcinaciju.ID)
             {
                 return NotFound();
@@ -131,6 +143,8 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaVakcinaciju/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -151,6 +165,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             var zahtjevZaVakcinaciju = await _context.ZahtjevZaVakcinaciju.FindAsync(id);
             _context.ZahtjevZaVakcinaciju.Remove(zahtjevZaVakcinaciju);
             await _context.SaveChangesAsync();

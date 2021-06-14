@@ -22,6 +22,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminStrucneOsobe
         public async Task<IActionResult> Index()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View(await _context.StrucnaOsoba.ToListAsync());
         }
 
@@ -56,6 +58,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] StrucnaOsoba strucnaOsoba)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (ModelState.IsValid)
             {
                 _context.Add(strucnaOsoba);
@@ -68,6 +72,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminStrucneOsobe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -88,6 +94,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] StrucnaOsoba strucnaOsoba)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id != strucnaOsoba.ID)
             {
                 return NotFound();
@@ -127,6 +135,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminStrucneOsobe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -147,6 +157,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             var strucnaOsoba = await _context.StrucnaOsoba.FindAsync(id);
             _context.StrucnaOsoba.Remove(strucnaOsoba);
             await _context.SaveChangesAsync();

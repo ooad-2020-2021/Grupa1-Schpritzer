@@ -1,0 +1,61 @@
+﻿/*body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}*/
+
+p {
+    
+}
+
+.display-5 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-6 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.display-7 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 0.75;
+}
+
+.ft-main {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ft-main-item {
+    padding: 1rem;
+    min-width: 10rem;
+}
+
+.container {
+    flex: 1;
+}
+
+.graf-center {
+/*    left: 35%;*/
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+/*    position: absolute;*/
+}
+
+.stimanje {
+    top: 35%;
+    left: 40%;
+    position: absolute;
+}
+
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,74 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    /*padding-left: 0;*/
+}
+
+footer {
+    background-color: #474B4D;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #eee;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: deepskyblue;
+}
+
+.ft-title {
+    color: #fff;
+    /*font-family: "Merriweather", serif;*/
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+}
+/* Sticks footer to bottom */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/*Glavni footer*/
+.ft-main {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 29.8125rem /* 477px */ ) {
+    .ft-main {
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (min-width: 77.5rem /* 1240px */ ) {
+    .ft-main {
+        justify-content: space-evenly;
+    }
+}
+
+.ft-main-item {
+    padding: 1rem;
+    min-width: 15rem;
+}
+
+/*Copyright footer*/
+.ft-copyright {
+    padding: 1rem 2rem;
+    background-color: #2D2F31;
+}

@@ -12,7 +12,7 @@ namespace Imunizacija21.Controllers
 {
     public class FAQController : Controller
     {
-        /*private readonly DataContext _context;*/
+        private readonly DataContext _context;
 
         public List<Tuple<String, String>> FAQ = new List<Tuple<String, String>>()
         {
@@ -29,12 +29,14 @@ namespace Imunizacija21.Controllers
 
         public FAQController(DataContext context)
         {
-            
+            _context = context;
         }
 
         // GET: FAQ
         public IActionResult Index()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View(FAQ);
         }
     }

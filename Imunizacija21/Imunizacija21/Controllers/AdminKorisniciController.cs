@@ -24,12 +24,16 @@ namespace Imunizacija21.Controllers
         // GET: AdminKorisnici
         public async Task<IActionResult> Index()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View(await _context.Korisnik.ToListAsync());
         }
 
         // GET: AdminKorisnici/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -48,6 +52,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminKorisnici/Create
         public IActionResult Create()
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             return View();
         }
 
@@ -58,6 +64,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] Korisnik korisnik)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (ModelState.IsValid)
             {
                 _context.Add(korisnik);
@@ -70,6 +78,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminKorisnici/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -90,6 +100,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ZdravstvenaKartica,CovidKartonID,Adresa,Zanimanje,ID,Ime,Prezime,DatumRodjenja,Spol,JMBG,Email,BrojTelefona,LokalnaZdravstvenaUstanova,Ulogovan")] Korisnik korisnik)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id != korisnik.ID)
             {
                 return NotFound();
@@ -132,6 +144,8 @@ namespace Imunizacija21.Controllers
         // GET: AdminKorisnici/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             if (id == null)
             {
                 return NotFound();
@@ -152,6 +166,8 @@ namespace Imunizacija21.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            Osoba o = LoginController.GetUlogovani(_context);
+            ViewBag.Osoba = o;
             var korisnik = await _context.Korisnik.FindAsync(id);
             _context.Korisnik.Remove(korisnik);
             await _context.SaveChangesAsync();

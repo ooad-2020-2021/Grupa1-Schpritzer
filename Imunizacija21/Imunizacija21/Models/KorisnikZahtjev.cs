@@ -33,7 +33,7 @@ namespace Imunizacija21.Models
         public int CovidKartonID { get; set; }
 
 
-        public string Razlozi { get; set; }
+        public List<string> Razlozi { get; set; }
         public string Opis { get; set; }
         public TipCovidTesta TipCovidTesta { get; set; }
 
@@ -44,7 +44,7 @@ namespace Imunizacija21.Models
         public KorisnikZahtjev() { }
 
         public KorisnikZahtjev(int id, string ime, string prezime, DateTime datumRodjenja, string spol, string jmbg, string email, string brojTelefona, LokalnaZdravstvenaUstanova lzu, string kartica, string adresa, 
-            Zanimanje z, int IDz, int korisnikID, DateTime datumZahtjeva, bool odobren, int strucna, int covidkartonID, string razlozi, string opis, TipCovidTesta tipCovidTesta, DateTime zakazaniDatum, LokalnaZdravstvenaUstanova lokacija)
+            Zanimanje z, int IDz, int korisnikID, DateTime datumZahtjeva, bool odobren, int strucna, int covidkartonID, List<string> razlozi, string opis, TipCovidTesta tipCovidTesta, DateTime zakazaniDatum, LokalnaZdravstvenaUstanova lokacija)
         {
             ID = id;
             Ime = ime;

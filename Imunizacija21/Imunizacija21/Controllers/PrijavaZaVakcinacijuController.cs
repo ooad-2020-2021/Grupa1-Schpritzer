@@ -46,7 +46,11 @@ namespace Imunizacija21.Controllers
         // GET: PrijavaZaVakcinaciju/Create
         public IActionResult Create()
         {
-            return View();
+            Korisnik k = LoginController.GetUlogovani(_context);
+            List<Bolest> b = _context.Bolest.Where(b => b.CovidKartonID == k.CovidKartonID).ToList();
+            Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>> tuple = new Tuple<CovidKarton, Korisnik, IEnumerable<Bolest>>(_context.CovidKarton.Find(k.CovidKartonID), k, b);
+            return View(tuple);
+            //return View();
         }
 
         // POST: PrijavaZaVakcinaciju/Create
@@ -58,6 +62,14 @@ namespace Imunizacija21.Controllers
         {
             if (ModelState.IsValid)
             {
+                StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.First();
+                strucnaOsoba.Zahtjevi.Add(zahtjevZaVakcinaciju);
+                Korisnik korisnik = LoginController.GetUlogovani(_context);
+                zahtjevZaVakcinaciju.DatumZahtjeva = DateTime.Now;
+                zahtjevZaVakcinaciju.KorisnikID = korisnik.ID;
+                zahtjevZaVakcinaciju.StrucnaOsobaID = strucnaOsoba.ID;
+                zahtjevZaVakcinaciju.CovidKartonID = korisnik.CovidKartonID;
+                
                 _context.Add(zahtjevZaVakcinaciju);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

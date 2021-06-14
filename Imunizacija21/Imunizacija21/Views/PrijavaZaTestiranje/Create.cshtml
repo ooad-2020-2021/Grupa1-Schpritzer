@@ -1,43 +1,113 @@
-﻿@model Imunizacija21.Models.ZahtjevZaTestiranje
+﻿@model Tuple<Imunizacija21.Models.Korisnik, Imunizacija21.Models.ZahtjevZaTestiranje>
 
 @{
     ViewData["Title"] = "Create";
 }
 
+<link href="~/css/PrijavaStyle.css" rel="stylesheet" type="text/css" />
+
 <h1>Create</h1>
 
 <h4>ZahtjevZaTestiranje</h4>
 <hr />
+
+<div class="izgled">
+    <h2 style="padding-top: 10px">Identifikacija</h2>
+    <hr>
+    <div class="flex">
+        <div class="kolona-1">
+            <div class="element-info">
+                <label>Ime:</label>
+                <label class="popunjeno informacije">@Html.DisplayFor(modelItem => Model.Item1.Ime)</label>
+            </div>
+            <div class="element-info">
+                <label>Broj zdravstvene kartice:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.ZdravstvenaKartica)</label>
+            </div>
+            <div class="element-info">
+                <label>Datum rođenja:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.DatumRodjenja)</label>
+            </div>
+            <div class="element-info">
+                <label>Adresa:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.Adresa)</label>
+            </div>
+            <div class="element-info">
+                <label>Zanimanje:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.Zanimanje)</label>
+            </div>
+
+        </div>
+        <div class="kolona-2">
+            <div class="element-info">
+                <label>Prezime:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.Prezime)</label>
+            </div>
+            <div class="element-info">
+                <label>JMBG:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.JMBG)</label>
+                <div class="element-info">
+                    @if (Model.Item1.IsMusko())
+                    {
+                        <input class="checkDugme" type="checkbox" name="name" checked onClick="return false;">
+                    }
+                    else
+                    {
+                        <input class="checkDugme" type="checkbox" name="name" onClick="return false;">
+                    }
+                    <label class="labelaCheck">M</label>
+                    @if (Model.Item1.IsZensko())
+                    {
+                        <input class="checkDugme" type="checkbox" name="name" checked onClick="return false;">
+                    }
+                    else
+                    {
+                        <input class="checkDugme" type="checkbox" name="name" onClick="return false;">
+                    }
+                    <label class="labelaCheck">Z</label>
+                </div>
+
+                <div class="element-info">
+                    <label>Kontakt telefon:</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.BrojTelefona)</label>
+                </div>
+            </div>
+            <div>
+                <label>Lokalna zdravstvena ustanova:</label>
+                <label class="popunjeno">@Html.DisplayFor(modelItem => Model.Item1.LokalnaZdravstvenaUstanova)</label>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <br />
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Opis" class="control-label"></label>
-                <input asp-for="Opis" class="form-control" />
-                <span asp-validation-for="Opis" class="text-danger"></span>
+                <label asp-for="Item2.Opis" class="control-label"></label>
+                <input asp-for="Item2.Opis" class="form-control" />
+                <span asp-validation-for="Item2.Opis" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TipCovidTesta" class="control-label"></label>
-                <select asp-for="TipCovidTesta" asp-items="Html.GetEnumSelectList<TipCovidTesta>()" class="form-control"></select>
-                <span asp-validation-for="TipCovidTesta" class="text-danger"></span>
+                <label asp-for="Item2.TipCovidTesta" class="control-label"></label>
+                <select asp-for="Item2.TipCovidTesta" asp-items="Html.GetEnumSelectList<TipCovidTesta>()" class="form-control"></select>
+                <span asp-validation-for="Item2.TipCovidTesta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DatumZahtjeva" class="control-label"></label>
-                <input asp-for="DatumZahtjeva" class="form-control" />
-                <span asp-validation-for="DatumZahtjeva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Podnesi zahtjev" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Otkaži</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

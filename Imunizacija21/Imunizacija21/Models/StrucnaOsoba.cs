@@ -17,11 +17,13 @@ namespace Imunizacija21.Models {
         #endregion
 
         #region Constructors
-        public StrucnaOsoba() { }
+        public StrucnaOsoba() {
+            Zahtjevi = new List<Zahtjev>();
+        }
 
         public StrucnaOsoba(string ime, string prezime, string spol, string jmbg, string email, string brojTelefona,
             LokalnaZdravstvenaUstanova lokalnaZdravstvenaUstanova) : base(ime, prezime, spol, jmbg, email, brojTelefona, lokalnaZdravstvenaUstanova) {
-
+            Zahtjevi = new List<Zahtjev>();
         }
         #endregion
 

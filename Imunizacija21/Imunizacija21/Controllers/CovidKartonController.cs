@@ -30,6 +30,38 @@ namespace Imunizacija21.Controllers
             return View(tuple);
         }
 
+        public async Task<IActionResult> TestiranjaNaCovid()
+        {
+            Korisnik k = LoginController.GetUlogovani(_context);
+            List<CovidTest> covidTestovi = _context.CovidTest.Where(cT => cT.CovidKartonID == k.CovidKartonID).ToList();
+            List<CovidTest> prethodniTestovi = covidTestovi.Where(test => test.DatumTestiranja.CompareTo(DateTime.Now) < 0).ToList();
+            List<CovidTest> zakazaniTestovi = covidTestovi.Where(test => test.DatumTestiranja.CompareTo(DateTime.Now) >= 0).ToList();
+            return View(new Tuple<List<CovidTest>, List<CovidTest>>(prethodniTestovi, zakazaniTestovi));
+        }
+
+        public async Task<IActionResult> Vakcinacija()
+        {
+            Korisnik k = LoginController.GetUlogovani(_context);
+            CovidKarton cK = _context.CovidKarton.Where(c => c.ID == k.CovidKartonID).First();
+            Vakcinacija v = _context.Vakcinacija.Find(cK.VakcinacijaID);
+            if(v != null)
+            {
+                Doza prvaDoza = _context.Doza.Find(v.PrvaDozaID);
+                Doza drugaDoza = _context.Doza.Find(v.DrugaDozaID);
+                Tuple<Korisnik, Vakcinacija, Doza, Doza, bool> tuple = new Tuple<Korisnik, Vakcinacija, Doza, Doza, bool>(k, v, prvaDoza, drugaDoza, true);
+                return View(tuple);
+            }
+            else
+            {
+                bool z = _context.ZahtjevZaVakcinaciju.Where(zH => zH.KorisnikID == k.ID).Any();
+                return View(new Tuple<Korisnik, Vakcinacija, Doza, Doza, bool>(k, null, null, null, z));
+                //if (z == null)
+                //    return View(new Tuple<Korisnik, Vakcinacija, Doza, Doza, bool>(k, null, null, null, false));
+                //else return View(new Tuple<Korisnik, Vakcinacija, Doza, Doza, bool>(k, null, null, null, true));
+            }
+            
+        }
+
         //// GET: CovidKarton/Details/5
         //public async Task<IActionResult> Details(int? id)
         //{

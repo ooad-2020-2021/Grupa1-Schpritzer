@@ -6,6 +6,14 @@
 
 <link rel="stylesheet" type="text/css" href="css/CovidKartonStyle.css">
 
+<nav>
+    <ul>
+        <li><a>Covid Karton</a></li>
+        <li><a asp-action="TestiranjaNaCovid">Testiranja na Covid</a></li>
+        <li><a asp-action="Vakcinacija">Vakcinacija</a></li>
+    </ul>
+</nav>
+
 <h1>Covid Karton</h1>
 <hr>
 <h2 class="sekcije">Informacije o pacijentu</h2>
@@ -139,23 +147,27 @@
                 </div>
                 <div class="element-info zaSirinu">
                     <label>Ime&nbsp;i&nbsp;prezime&nbsp;ljekara:</label>
-                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Doktor)</label>
+                    <label class="popunjeno" style="margin-right: 10px;">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Doktor)</label>
                     <label>Datum&nbsp;dijagnoze</label>
-                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Doktor)</label>
+                    <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).DatumDijagnoze)</label>
                 </div>
                 <div class="element-info zaSirinu">
                     <label>Zdravstvena&nbsp;ustanova:</label>
                     <label class="popunjeno">@Html.DisplayFor(modelItem => ((Oboljenja)bolest).Ustanova)</label>
                 </div>
-                <p class="dijagnozaParagraf">
+                <label class="dijagnozaParagraf zaSirinu">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                     consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                </label>
             </div>
         }
     }
 </div>
+<hr />
+<button class="print-btn">
+    Print
+</button>

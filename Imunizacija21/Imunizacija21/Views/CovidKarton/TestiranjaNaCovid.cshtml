@@ -1,0 +1,170 @@
+﻿@model Tuple<List<Imunizacija21.Models.CovidTest>, List<Imunizacija21.Models.CovidTest>>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/TestiranjaNaCovidStyle.css">
+
+<nav>
+    <ul>
+        <li><a asp-action="Index">Covid Karton</a></li>
+        <li><a>Testiranja na Covid</a></li>
+        <li><a asp-action="Vakcinacija">Vakcinacija</a></li>
+    </ul>
+</nav>
+
+<h2>Zakazani testovi</h2>
+@if (Model.Item2.Count() == 0)
+{
+    <label>Trenutno nemate zakazanih testova</label>
+}
+else
+{
+    <div class="table-glava">
+        <label>Datum</label>
+        <label>Ustanova</label>
+        <label>Vrsta testa</label>
+        <label>Rezultat</label>
+    </div>
+    foreach (var item in Model.Item2)
+    {
+        <button type="button" class="collapsible">
+            <div class="button-red">
+                <label>@Html.DisplayFor(modelItem => item.DatumTestiranja)</label>
+                <label>@Html.DisplayFor(modelItem => item.Lokacija)</label>
+                <label>@Html.DisplayFor(modelItem => item.TipCovidTesta)</label>
+                <label>?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+        </button>
+        <div class="content">
+            <div class="inside-content">
+                <div class="kol1">
+                    <div>
+                        <label>Ustanova:</label>
+                        <label>@Html.DisplayFor(modelItem => item.Lokacija)</label>
+                    </div>
+                    <div>
+                        <label>Datum:</label>
+                        <label>@Html.DisplayFor(modelItem => item.DatumTestiranja)</label>
+                    </div>
+                    <div>
+                        <label>Broj zahtjeva:</label>
+                        <label>@Html.DisplayFor(modelItem => item.ID)</label>
+                    </div>
+                </div>
+                <div class="kol2">
+                    <div>
+                        <label>Tip uzorka:</label>
+                        <label>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.
+                        </label>
+                    </div>
+                    <div class="rezultat">
+                        <label class="rezultat-labela1">@Html.DisplayFor(modelItem => item.TipCovidTesta):</label>
+                        <label class="rezultat-labela2">Test u obradi:</label>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="extend-button">Print</button>
+        </div>
+    }
+}
+<hr />
+
+<h2>Prethodni testovi</h2>
+@if (Model.Item1.Count() == 0)
+{
+    <label>Nepostoje prethodni testovi.</label>
+}
+else
+{
+    <div class="table-glava">
+        <label>Datum</label>
+        <lebel>Ustanova</lebel>
+        <label>Vrsta testa</label>
+        <label>Rezultat</label>
+    </div>
+    foreach (var item in Model.Item1)
+    {
+        <button type="button" class="collapsible">
+            <div class="button-red">
+                <label>@Html.DisplayFor(modelItem => item.DatumTestiranja)</label>
+                <label>@Html.DisplayFor(modelItem => item.Lokacija)</label>
+                <label>@Html.DisplayFor(modelItem => item.TipCovidTesta)</label>
+                @if (item.Rezultat == true)
+                {
+                    <label>Pozitivan</label>
+                }
+                else
+                {
+                    <label>Negativan</label>
+                }
+            </div>
+        </button>
+        <div class="content">
+            <div class="inside-content">
+                <div class="kol1">
+                    <div>
+                        <label>Ustanova:</label>
+                        <label>@Html.DisplayFor(modelItem => item.Lokacija)</label>
+                    </div>
+                    <div>
+                        <label>Datum:</label>
+                        <label>@Html.DisplayFor(modelItem => item.DatumTestiranja)</label>
+                    </div>
+                    <div>
+                        <label>Broj zahtjeva:</label>
+                        <label>@Html.DisplayFor(modelItem => item.ID)</label>
+                    </div>
+                </div>
+                <div class="kol2">
+                    <div>
+                        <label>Tip uzorka:</label>
+                        <label>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.
+                        </label>
+                    </div>
+                    <div class="rezultat">
+                        <label class="rezultat-labela1">@Html.DisplayFor(modelItem => item.TipCovidTesta):</label>
+                        @if (item.Rezultat == true)
+                        {
+                            <label class="rezultat-labela2">Pozitivan</label>
+                        }
+                        else
+                        {
+                            <label class="rezultat-labela2">Negativan</label>
+                        }
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="extend-button">Print</button>
+        </div>
+    }
+}
+
+
+<hr />
+<div class="button-label">
+    <label>Ukoliko zelite da se prijavite na testiranje, kliknite sljedece dugme:</label>
+    <button type="button" class="prijava-btn"><a asp-action="Create" asp-controller="PrijavaZaTestiranje" class="prijava-a">Prijava za testiranje</a></button>
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+@*prethodni pa zakazani*@

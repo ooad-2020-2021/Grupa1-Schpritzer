@@ -12,7 +12,7 @@ namespace Imunizacija21.Models {
         [Key]
         [Required]
         public int ID { get; set; }
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime Datum { get; set; }
         public bool Primljena { get; set; }
         public string Lokacija { get; set; }

@@ -122,4 +122,28 @@ label {
     border-radius: 3px;
     padding: 5px;
     border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 10px;
+    color: black;
+    float: right;
+    margin-left: 5px;
+    border: none;
+    align-content: center;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.print-btn {
+    margin: 10px;
+    padding: 5px 50px;
+    margin-top: 0px;
+    float: right;
+    background-color: mediumseagreen;
+    color: white;
 }

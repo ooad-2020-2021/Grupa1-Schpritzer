@@ -1,0 +1,103 @@
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 7px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+    .active, .collapsible:hover {
+        background-color: #ccc;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .collapsible:focus {
+        outline: none;
+    }
+
+.content {
+    /*prvi gore dole drugi desno lijevo*/
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 10px;
+}
+
+.table-glava {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+
+.button-red {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.prijava-btn {
+    padding: 5px 10px;
+    margin-top: 0px;
+    float: right;
+    background-color: mediumseagreen;
+    color: white;
+}
+
+.button-label {
+    padding: 10px;
+    padding-right: 0px;
+}
+
+.inside-content {
+    font-size: 18px;
+    padding: 10px 30px;
+    padding-bottom: 0px;
+    display: flex;
+}
+
+.extend-button {
+    margin: 10px;
+    padding: 5px 30px;
+    margin-top: 0px;
+    float: right;
+    background-color: mediumseagreen;
+    color: white;
+}
+
+.kol1 {
+    margin-right: 50px;
+}
+
+.kol2 {
+
+}
+
+.prijava-a {
+    color: white;
+}
+
+.rezultat {
+
+}
+
+.rezultat-labela1 {
+    padding:5px;
+    padding-left: 0px;
+}
+
+.rezultat-labela2 {
+    border: 2px solid black;
+    padding: 5px 20px;
+}

@@ -1,0 +1,173 @@
+﻿@model Tuple<Imunizacija21.Models.Korisnik, Imunizacija21.Models.Vakcinacija, Imunizacija21.Models.Doza, Imunizacija21.Models.Doza, bool>
+
+@{
+    ViewData["Title"] = "Vakcinacija";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/VakcinacijaStyle.css">
+
+<nav>
+    <ul>
+        <li><a asp-action="Index">Covid Karton</a></li>
+        <li><a asp-action="TestiranjaNaCovid">Testiranja na Covid</a></li>
+        <li><a>Vakcinacija</a></li>
+    </ul>
+</nav>
+
+<h2>Vakcinacija</h2>
+<hr />
+<div class="glavniSadrzaj">
+    @if (Model.Item2 == null)
+    {
+        if (Model.Item5)
+        {
+            <p>Vas zahtjev za vakcinaciju je u obradi, molimo Vas da sacekate odgovor strucne osobe.</p>
+        }
+        else
+        {
+            <p>Trenutno niste prijavljeni za vakcinaciju, ukoliko se zelite prijaviti, molimo Vas da ispunite formular za prijavu.</p>
+            <button><a asp-action="Create" asp-controller="PrijavaZaVakcinaciju">Prijava za vakcinisanje</a></button>
+        }
+    }
+    else
+    {
+        <div class="head-vakc">
+            <h3>Prva doza</h3>
+            @if (Model.Item3.Primljena)
+            {
+                <label>Primljena</label>
+            }
+            else
+            {
+                <label>Zakazana</label>
+            }
+        </div>
+        <div>
+            <div class="details-div">
+                <div class="kol1">
+                    <div>
+                        <label>Ime pacijenta:</label>
+                        <label>@Html.DisplayFor(modelItem => Model.Item1.Ime) @Html.DisplayFor(modelItem => Model.Item1.Prezime)</label>
+                    </div>
+                    <div>
+                        <label>Spol:</label>
+                        @if (Model.Item1.IsMusko())
+                        {
+                            <label>Musko</label>
+                        }
+                        else
+                        {
+                            <label>Zensko</label>
+                        }
+                    </div>
+                    <div>
+                        <label>Datum rodjenja:</label>
+                        <label>@Html.DisplayFor(modelItem => Model.Item1.DatumRodjenja)</label>
+                    </div>
+                </div>
+                <div class=kol2>
+                    <div>
+                        <label>Ustanova:</label>
+                        <label>@Html.DisplayFor(modelItem => Model.Item3.Lokacija)</label>
+                    </div>
+                    <div>
+                        <label>Datum/Vrijeme: @Html.DisplayFor(modelItem => Model.Item3.Datum)</label>
+                    </div>
+                    <div>
+                        <label>Duzina:</label>
+                        <label>10min</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="red3">
+                <div class="red3-margin">
+                    <label>Vrsta vakcine:</label>
+                    <label>@Html.DisplayFor(modelItem => Model.Item2.TipVakcine)</label>
+                </div>
+                <div>
+                    <label>Status:</label>
+                    @if (Model.Item3.Primljena)
+                    {
+                        <label>Primljena</label>
+                    }
+                    else
+                    {
+                        <label>Zakazana</label>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <hr />
+
+        <div class="head-vakc">
+            <h3>Druga doza</h3>
+            @if (Model.Item4.Primljena)
+            {
+                <label>Primljena</label>
+            }
+            else
+            {
+                <label>Zakazana</label>
+            }
+        </div>
+        <div class="details-div">
+            <div class="kol1">
+                <div>
+                    <label>Ime pacijenta:</label>
+                    <label>@Html.DisplayFor(modelItem => Model.Item1.Ime) @Html.DisplayFor(modelItem => Model.Item1.Prezime)</label>
+                </div>
+                <div>
+                    <label>Spol:</label>
+                    @if (Model.Item1.IsMusko())
+                    {
+                        <label>Musko</label>
+                    }
+                    else
+                    {
+                        <label>Zensko</label>
+                    }
+                </div>
+                <div>
+                    <label>Datum rodjenja:</label>
+                    <label>@Html.DisplayFor(modelItem => Model.Item1.DatumRodjenja)</label>
+                </div>
+            </div>
+            <div class="kol2">
+                <div>
+                    <label>Ustanova:</label>
+                    <label>@Html.DisplayFor(modelItem => Model.Item4.Lokacija)</label>
+                </div>
+                <div>
+                    <label>Datum/Vrijeme: @Html.DisplayFor(modelItem => Model.Item4.Datum)</label>
+                </div>
+                <div>
+                    <label>Duzina:</label>
+                    <label>10min</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="red3">
+            <div class="red3-margin">
+                <label>Vrsta vakcine:</label>
+                <label>@Html.DisplayFor(modelItem => Model.Item2.TipVakcine)</label>
+            </div>
+            <div>
+                <label>Status:</label>
+                @if (Model.Item4.Primljena)
+                {
+                    <label>Primljena</label>
+                }
+                else
+                {
+                    <label>Zakazana</label>
+                }
+            </div>
+        </div>
+        <hr />
+        <button class="btn-print">Print</button>
+    }
+</div>

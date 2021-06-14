@@ -464,8 +464,6 @@ C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\De
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Create.cshtml.g.cs
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Delete.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Details.cshtml.g.cs
-C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Edit.cshtml.g.cs
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Index.cshtml.g.cs
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\eldar\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
@@ -1102,3 +1100,5 @@ C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\De
 C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\StrucnaOsoba\Index.cshtml.g.cs
 C:\Users\dzena\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\TestiranjaNaCovid.cshtml.g.cs
 C:\Users\dzena\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Vakcinacija.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\TestiranjaNaCovid.cshtml.g.cs
+C:\Users\muham\Source\Repos\Grupa1-Schpritzer\Imunizacija21\Imunizacija21\obj\Debug\netcoreapp3.1\Razor\Views\CovidKarton\Vakcinacija.cshtml.g.cs

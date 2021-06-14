@@ -74,7 +74,7 @@ namespace Imunizacija21.Controllers
                 strucnaOsoba.Zahtjevi.Add(zahtjevZaVakcinaciju);
                 Korisnik korisnik = (Korisnik)LoginController.GetUlogovani(_context);
                 zahtjevZaVakcinaciju.DatumZahtjeva = DateTime.Now;
-                zahtjevZaVakcinaciju.KorisnikID = korisnik.ID;
+                zahtjevZaVakcinaciju.KorisnikID = ((Korisnik)o).ID;
                 zahtjevZaVakcinaciju.StrucnaOsobaID = strucnaOsoba.ID;
                 zahtjevZaVakcinaciju.CovidKartonID = korisnik.CovidKartonID;
                 

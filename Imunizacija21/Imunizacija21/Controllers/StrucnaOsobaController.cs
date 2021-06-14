@@ -28,11 +28,15 @@ namespace Imunizacija21.Controllers
             //List<Tuple<ZahtjevZaTestiranje, Korisnik>> listaZiK = new List<Tuple<ZahtjevZaTestiranje, Korisnik>>();
             List<KorisnikZahtjev> listaZiK = new List<KorisnikZahtjev>();
             //Korisnik k = _context.Korisnik.Where(k => k.ID == _context.ZahtjevZaTestiranje.Where(z => z.))
-            foreach(var item in z)
+            foreach (var item in z)
             {
-                Korisnik t = _context.Korisnik.Where(k => k.ID == item.KorisnikID).First();
-                listaZiK.Add(new KorisnikZahtjev(t.ID, t.Ime, t.Prezime, t.DatumRodjenja, t.Spol, t.JMBG, t.Email, t.BrojTelefona, t.LokalnaZdravstvenaUstanova, t.ZdravstvenaKartica, 
-                    t.Adresa, t.Zanimanje, item.ID, item.KorisnikID, item.DatumZahtjeva, item.OdobrenZahtjev, item.StrucnaOsobaID, item.CovidKartonID, item.Razlozi, item.Opis, item.TipCovidTesta, new DateTime(0), t.LokalnaZdravstvenaUstanova));
+                bool ima = _context.Korisnik.Where(k => k.ID == item.KorisnikID).Any();
+                if (ima)
+                {
+                    Korisnik t = _context.Korisnik.Where(k => k.ID == item.KorisnikID).First();
+                    listaZiK.Add(new KorisnikZahtjev(t.ID, t.Ime, t.Prezime, t.DatumRodjenja, t.Spol, t.JMBG, t.Email, t.BrojTelefona, t.LokalnaZdravstvenaUstanova, t.ZdravstvenaKartica,
+                        t.Adresa, t.Zanimanje, item.ID, item.KorisnikID, item.DatumZahtjeva, item.OdobrenZahtjev, item.StrucnaOsobaID, item.CovidKartonID, item.Razlozi, item.Opis, item.TipCovidTesta, new DateTime(0), t.LokalnaZdravstvenaUstanova));
+                }
             }
             return View(listaZiK);
             //return View(await _context.ZahtjevZaTestiranje.ToListAsync());

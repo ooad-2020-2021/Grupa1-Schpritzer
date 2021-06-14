@@ -74,6 +74,7 @@ namespace Imunizacija21.Controllers
                 StrucnaOsoba strucnaOsoba = _context.StrucnaOsoba.First(); // TODO - dodati pravi ID i napravit listu
                 zahtjevZaTestiranje.Razlozi = new List<string> { "uga,buga" };
                 zahtjevZaTestiranje.StrucnaOsobaID = strucnaOsoba.ID;
+                zahtjevZaTestiranje.KorisnikID = ((Korisnik) o).ID;
                 zahtjevZaTestiranje.OdobrenZahtjev = false;
                 zahtjevZaTestiranje.DatumZahtjeva = DateTime.Now;
                 //zahtjevZaTestiranje.DatumZahtjeva = DateTime.Now;
